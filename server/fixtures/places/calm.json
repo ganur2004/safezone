@@ -1,0 +1,3102 @@
+{
+ "version": 0.6,
+ "generator": "Overpass API 0.7.62.11 87bfad18",
+ "osm3s": {
+  "timestamp_osm_base": "2026-09-26T18:43:10Z",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+ },
+ "elements": [
+  {
+   "type": "node",
+   "id": 368066282,
+   "lat": 42.1028754,
+   "lon": -87.7316091,
+   "tags": {
+    "addr:city": "Winnetka",
+    "addr:housenumber": "428",
+    "addr:postcode": "60093",
+    "addr:state": "IL",
+    "addr:street": "Green Bay Road",
+    "amenity": "fire_station",
+    "ele": "198",
+    "gnis:feature_id": "2099454",
+    "name": "Winneta-Kenilworth Fire Station #28",
+    "operator": "Winnetka-Kenilworth Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368066600,
+   "lat": 41.823004,
+   "lon": -87.8729426,
+   "tags": {
+    "addr:city": "La Grange Park",
+    "addr:postcode": "60525",
+    "addr:state": "IL",
+    "addr:street": "Woodlawn Avenue",
+    "amenity": "fire_station",
+    "ele": "197",
+    "gnis:feature_id": "2100555",
+    "name": "La Grange Park Fire Station Number 1",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "node",
+   "id": 4207766239,
+   "lat": 41.9549204,
+   "lon": -87.8647819,
+   "tags": {
+    "addr:city": "Schiller Park",
+    "addr:housenumber": "9526",
+    "addr:postcode": "60176",
+    "addr:state": "IL",
+    "addr:street": "Irving Park Road",
+    "amenity": "fire_station",
+    "name": "Schiller Park Fire Department"
+   }
+  },
+  {
+   "type": "node",
+   "id": 4781854392,
+   "lat": 41.6458431,
+   "lon": -87.64016,
+   "tags": {
+    "addr:city": "Riverdale",
+    "addr:housenumber": "725",
+    "addr:postcode": "60827",
+    "addr:state": "IL",
+    "addr:street": "West 138th Street",
+    "amenity": "fire_station",
+    "name": "Riverdale Fire Department"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5276572197,
+   "lat": 41.7235705,
+   "lon": -87.732089,
+   "tags": {
+    "addr:city": "Oak Lawn",
+    "addr:housenumber": "4440",
+    "addr:postcode": "60453",
+    "addr:state": "IL",
+    "addr:street": "West 95th Street",
+    "amenity": "hospital",
+    "beds": "444",
+    "emergency": "yes",
+    "healthcare": "hospital",
+    "healthcare:speciality": "paediatrics;paediatric_surgery",
+    "name": "Advocate Children's Hospital - Oak Lawn",
+    "opening_hours": "24/7",
+    "operator": "Advocate Health Care",
+    "operator:short": "AAH",
+    "operator:type": "private",
+    "operator:wikidata": "Q30254233",
+    "operator:wikipedia": "en:Advocate Aurora Health",
+    "phone": "+1 708 684 8000",
+    "website": "https://www.advocatechildrenshospital.com/",
+    "wikidata": "Q30254234"
+   }
+  },
+  {
+   "type": "node",
+   "id": 7143811010,
+   "lat": 41.8873349,
+   "lon": -87.8199037,
+   "tags": {
+    "addr:city": "River Forest",
+    "addr:housenumber": "400",
+    "addr:postcode": "60305",
+    "addr:state": "IL",
+    "addr:street": "Park Avenue",
+    "amenity": "fire_station",
+    "name": "River Forest Fire Department"
+   }
+  },
+  {
+   "type": "node",
+   "id": 7262555849,
+   "lat": 41.8088479,
+   "lon": -87.7979528,
+   "tags": {
+    "addr:city": "Forest View",
+    "addr:housenumber": "7010",
+    "addr:postcode": "60402",
+    "addr:state": "IL",
+    "addr:street": "46th Street",
+    "amenity": "fire_station",
+    "name": "Forest View Fire Department",
+    "operator": "Forest View Fire Department"
+   }
+  },
+  {
+   "type": "node",
+   "id": 8288951713,
+   "lat": 41.6786596,
+   "lon": -87.4900875,
+   "tags": {
+    "addr:city": "Whiting",
+    "addr:housenumber": "1916",
+    "addr:postcode": "46394",
+    "addr:state": "IN",
+    "addr:street": "Schrage Avenue",
+    "amenity": "fire_station",
+    "name": "Whiting Fire Department"
+   }
+  },
+  {
+   "type": "node",
+   "id": 9021322459,
+   "lat": 41.8806543,
+   "lon": -87.7498744,
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "4952",
+    "addr:postcode": "60644",
+    "addr:state": "IL",
+    "addr:street": "West Madison Street",
+    "amenity": "social_facility",
+    "name": "Primo Center",
+    "social_facility": "shelter",
+    "social_facility:for": "homeless"
+   }
+  },
+  {
+   "type": "node",
+   "id": 9365466211,
+   "lat": 41.9236361,
+   "lon": -87.8122565,
+   "tags": {
+    "addr:city": "Elmwood Park",
+    "addr:housenumber": "7420",
+    "addr:postcode": "60707",
+    "addr:state": "IL",
+    "addr:street": "West Fullerton Avenue",
+    "amenity": "fire_station",
+    "gnis:feature_id": "2682285",
+    "name": "Elmwood Park Fire Department Station #2",
+    "operator": "Elmwood Park Fire Department",
+    "source": "United States Geological Survey"
+   }
+  },
+  {
+   "type": "node",
+   "id": 9552117838,
+   "lat": 41.8906882,
+   "lon": -87.7951471,
+   "tags": {
+    "addr:city": "Oak Park",
+    "addr:housenumber": "211",
+    "addr:postcode": "60302",
+    "addr:state": "IL",
+    "addr:street": "North Oak Park Avenue",
+    "amenity": "social_facility",
+    "name": "Oak Park Interim Housing and Medical Respite Center",
+    "operator": "Housing Forward",
+    "operator:type": "private_non_profit",
+    "social_facility": "shelter",
+    "social_facility:for": "homeless"
+   }
+  },
+  {
+   "type": "node",
+   "id": 9658051822,
+   "lat": 41.7206016,
+   "lon": -87.7538262,
+   "tags": {
+    "addr:city": "Oak Lawn",
+    "addr:housenumber": "9446",
+    "addr:postcode": "60453",
+    "addr:state": "IL",
+    "addr:street": "Raymond Avenue",
+    "amenity": "fire_station",
+    "name": "Oak Lawn Fire Department Station #3",
+    "operator": "Oak Lawn Fire Department"
+   }
+  },
+  {
+   "type": "node",
+   "id": 9753028385,
+   "lat": 41.8842728,
+   "lon": -87.7003249,
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "2934",
+    "addr:postcode": "60612",
+    "addr:state": "IL",
+    "addr:street": "West Lake Street",
+    "amenity": "social_facility",
+    "description": "Focuses on teens and young adults.",
+    "name": "Covenant House",
+    "social_facility": "shelter",
+    "social_facility:for": "homeless"
+   }
+  },
+  {
+   "type": "node",
+   "id": 10815801757,
+   "lat": 41.7549989,
+   "lon": -87.8054178,
+   "tags": {
+    "addr:city": "Bridgeview",
+    "addr:housenumber": "7500",
+    "addr:postcode": "60455",
+    "addr:state": "IL",
+    "addr:street": "South Oketo Avenue",
+    "amenity": "fire_station",
+    "name": "Bridgeview Fire Department Station 1",
+    "operator": "Bridgeview Fire Department",
+    "website": "https://www.bridgeview-il.gov/residents/fire_department/"
+   }
+  },
+  {
+   "type": "node",
+   "id": 10874634231,
+   "lat": 42.0434377,
+   "lon": -87.8790341,
+   "tags": {
+    "addr:city": "Des Plaines",
+    "addr:housenumber": "555",
+    "addr:postcode": "60016",
+    "addr:state": "IL",
+    "addr:street": "Wilson Lane",
+    "amenity": "hospital",
+    "beds": "146",
+    "healthcare": "hospital",
+    "healthcare:speciality": "psychiatry",
+    "name": "Chicago Behavioral Hospital",
+    "phone": "+1 847 768 5430",
+    "website": "https://chicagobehavioralhospital.com"
+   }
+  },
+  {
+   "type": "node",
+   "id": 11335080464,
+   "lat": 41.8814272,
+   "lon": -87.8728895,
+   "tags": {
+    "addr:city": "Bellwood",
+    "addr:housenumber": "3200",
+    "addr:postcode": "60104",
+    "addr:state": "IL",
+    "addr:street": "Washington Boulevard",
+    "amenity": "fire_station",
+    "name": "Bellwood Fire Department"
+   }
+  },
+  {
+   "type": "node",
+   "id": 12818003790,
+   "lat": 42.039058,
+   "lon": -87.8459241,
+   "tags": {
+    "addr:city": "Park Ridge",
+    "addr:housenumber": "1675",
+    "addr:postcode": "60068",
+    "addr:state": "IL",
+    "addr:street": "Dempster Street",
+    "amenity": "hospital",
+    "emergency": "yes",
+    "healthcare": "hospital",
+    "healthcare:speciality": "paediatrics",
+    "name": "Advocate Children's Hospital - Park Ridge",
+    "operator": "Advocate Health Care",
+    "operator:type": "private",
+    "operator:wikidata": "Q30254233",
+    "phone": "+1 847 723 2210",
+    "website": "https://www.advocatechildrenshospital.com/"
+   }
+  },
+  {
+   "type": "node",
+   "id": 14103626839,
+   "lat": 41.8853638,
+   "lon": -87.6241906,
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "155",
+    "addr:postcode": "60601",
+    "addr:state": "IL",
+    "addr:street": "N Michigan Ave",
+    "addr:unit": "Suite #450",
+    "amenity": "hospital",
+    "contact:facebook": "https://www.facebook.com/cityscapecounselingchicago/",
+    "description": "Cityscape Counseling is a multi-specialty psychotherapy practice located at 155 N. Michigan Ave, Suite 450, Chicago, IL 60601, in the downtown Loop/Magnificent Mile area. Tthey offer specialized in-person and virtual mental health services since 2016",
+    "email": "intake@cityscapecounseling.com",
+    "healthcare": "psychotherapist",
+    "healthcare:speciality": "psychotherapist;psychology;behavior",
+    "name": "Cityscape Counseling",
+    "opening_hours": "Mo-Fr 07:00-21:00, Sa-Su 08:00-17:00",
+    "operator": "Cityscape Counseling",
+    "operator:type": "private",
+    "phone": "+1-708-628-7645",
+    "website": "https://www.cityscapecounseling.com"
+   }
+  },
+  {
+   "type": "way",
+   "id": 28709496,
+   "center": {
+    "lat": 42.056657,
+    "lon": -87.740002
+   },
+   "tags": {
+    "addr:city": "Skokie",
+    "addr:housenumber": "9600",
+    "addr:postcode": "60076",
+    "addr:state": "IL",
+    "addr:street": "Gross Point Road",
+    "amenity": "hospital",
+    "beds": "123",
+    "emergency": "yes",
+    "healthcare": "hospital",
+    "name": "Skokie Hospital",
+    "opening_hours": "24/7",
+    "operator": "NorthShore University HealthSystem",
+    "phone": "+1 847 677 9600",
+    "website": "https://www.northshore.org/locations/our-hospitals/skokie-hospital/",
+    "wikidata": "Q30280816"
+   }
+  },
+  {
+   "type": "way",
+   "id": 28755306,
+   "center": {
+    "lat": 41.9882781,
+    "lon": -87.8142959
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "7435",
+    "addr:postcode": "60631",
+    "addr:state": "IL",
+    "addr:street": "West Talcott Avenue",
+    "addr:street:name": "Talcott",
+    "amenity": "hospital",
+    "beds": "360",
+    "emergency": "yes",
+    "gnis:feature_id": "416556",
+    "healthcare": "hospital",
+    "name": "Resurrection Medical Center",
+    "opening_hours": "24/7",
+    "operator": "Prime Healthcare Services",
+    "operator:type": "private",
+    "operator:wikidata": "Q7243267",
+    "phone": "+1 773 774 8000",
+    "website": "https://resurrectionmedicalcenter.com/",
+    "wikidata": "Q30280684"
+   }
+  },
+  {
+   "type": "way",
+   "id": 31125521,
+   "center": {
+    "lat": 41.9030846,
+    "lon": -87.683373
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "2233",
+    "addr:postcode": "60622",
+    "addr:state": "IL",
+    "addr:street": "West Division Street",
+    "alt_name": "Presence Saints Mary and Elizabeth Medical Center",
+    "amenity": "hospital",
+    "beds": "361",
+    "check_date": "2026-09-04",
+    "emergency": "yes",
+    "gnis:feature_id": "417534",
+    "healthcare": "hospital",
+    "name": "Saint Mary of Nazareth Hospital",
+    "opening_hours": "24/7",
+    "operator": "Prime Healthcare Services",
+    "operator:type": "private",
+    "operator:wikidata": "Q7243267",
+    "phone": "+1 312 770 2000",
+    "website": "https://saintmaryofnazarethhospital.com/",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "type": "way",
+   "id": 32052949,
+   "center": {
+    "lat": 42.0244685,
+    "lon": -87.6834209
+   },
+   "tags": {
+    "addr:city": "Evanston",
+    "addr:housenumber": "355",
+    "addr:postcode": "60202",
+    "addr:state": "IL",
+    "addr:street": "Ridge Avenue",
+    "amenity": "hospital",
+    "beds": "215",
+    "emergency": "yes",
+    "gnis:feature_id": "417285",
+    "healthcare": "hospital",
+    "name": "Saint Francis Hospital Evanston",
+    "opening_hours": "24/7",
+    "operator": "Prime Healthcare Services",
+    "operator:type": "private",
+    "operator:wikidata": "Q7243267",
+    "phone": "+1 847 316 4000",
+    "website": "https://saintfrancisevanston.org/",
+    "wikidata": "Q7401257",
+    "wikipedia": "en:Saint Francis Hospital of Evanston"
+   }
+  },
+  {
+   "type": "way",
+   "id": 32615758,
+   "center": {
+    "lat": 42.0789108,
+    "lon": -87.7366467
+   },
+   "tags": {
+    "addr:city": "Wilmette",
+    "addr:housenumber": "747",
+    "addr:postcode": "60091",
+    "addr:state": "IL",
+    "addr:street": "Illinois Road",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "ele": "191",
+    "gnis:feature_id": "2099453",
+    "name": "Wilmette Fire Station 27",
+    "operator": "Wilmette Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 42304885,
+   "center": {
+    "lat": 41.9857902,
+    "lon": -87.8613888
+   },
+   "tags": {
+    "addr:city": "Rosemont",
+    "addr:housenumber": "5800",
+    "addr:postcode": "60018",
+    "addr:state": "IL",
+    "addr:street": "North River Road",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "check_date": "2025-07-31",
+    "name": "Rosemont Fire Department Station 1",
+    "operator": "Rosemont Fire Department"
+   }
+  },
+  {
+   "type": "way",
+   "id": 47055764,
+   "center": {
+    "lat": 41.8962599,
+    "lon": -87.622027
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "225",
+    "addr:postcode": "60611",
+    "addr:state": "IL",
+    "addr:street": "East Chicago Avenue",
+    "amenity": "hospital",
+    "beds": "360",
+    "building": "hospital",
+    "building:levels": "24",
+    "emergency": "yes",
+    "healthcare": "hospital",
+    "healthcare:speciality": "paediatrics",
+    "layer": "1",
+    "name": "Ann & Robert H. Lurie Children's Hospital",
+    "name:etymology:wikidata": "Q4766763",
+    "name:etymology:wikipedia": "en:Ann and Robert H. Lurie Foundation",
+    "opening_hours": "24/7",
+    "operator": "Northwestern Medicine",
+    "operator:type": "private",
+    "operator:wikidata": "Q50036890",
+    "phone": "+1 312 227 4000",
+    "website": "https://www.luriechildrens.org/",
+    "wikidata": "Q6704935",
+    "wikipedia": "en:Lurie Children's Hospital"
+   }
+  },
+  {
+   "type": "way",
+   "id": 48359551,
+   "center": {
+    "lat": 42.0379823,
+    "lon": -87.9177777
+   },
+   "tags": {
+    "addr:city": "Des Plaines",
+    "addr:housenumber": "130",
+    "addr:postcode": "60016",
+    "addr:state": "IL",
+    "addr:street": "East Thacker Street",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "ele": "199",
+    "gnis:feature_id": "2099608",
+    "name": "Des Plaines Fire Department Station 3",
+    "operator": "Des Plaines Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 74269533,
+   "center": {
+    "lat": 41.8762426,
+    "lon": -87.6333587
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "419",
+    "addr:postcode": "60607",
+    "addr:state": "IL",
+    "addr:street": "South Wells Street",
+    "addr:street:name": "Wells",
+    "addr:street:prefix": "South",
+    "addr:street:type": "Street",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "2",
+    "chicago:building_id": "362673",
+    "ele": "180",
+    "gnis:feature_id": "2100695",
+    "name": "Chicago Fire Department Engine Company 1",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department"
+   }
+  },
+  {
+   "type": "way",
+   "id": 114822733,
+   "center": {
+    "lat": 41.9964522,
+    "lon": -87.87855
+   },
+   "tags": {
+    "addr:city": "Rosemont",
+    "addr:housenumber": "10073",
+    "addr:postcode": "60018",
+    "addr:state": "IL",
+    "addr:street": "West Higgins Road",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "name": "Rosemont Fire Department Station 2",
+    "operator": "Rosemont Fire Department"
+   }
+  },
+  {
+   "type": "way",
+   "id": 134578632,
+   "center": {
+    "lat": 41.973141,
+    "lon": -87.6710508
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "5025",
+    "addr:postcode": "60640",
+    "addr:state": "IL",
+    "addr:street": "North Paulina Street",
+    "amenity": "hospital",
+    "beds": "145",
+    "emergency": "yes",
+    "gnis:feature_id": "1831114",
+    "healthcare": "hospital",
+    "name": "Thorek Memorial Hospital Andersonville",
+    "old_name": "Methodist Hospital of Chicago",
+    "opening_hours": "24/7",
+    "operator": "Thorek Memorial Hospital",
+    "phone": "+1 773 271 9040",
+    "website": "https://thorekandersonville.org/",
+    "wikidata": "Q96392746",
+    "wikipedia": "en:Methodist Hospital of Chicago"
+   }
+  },
+  {
+   "type": "way",
+   "id": 143762100,
+   "center": {
+    "lat": 41.8970782,
+    "lon": -87.6226403
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "202",
+    "addr:postcode": "60611",
+    "addr:state": "IL",
+    "addr:street": "East Chicago Avenue",
+    "addr:street:name": "Chicago",
+    "addr:street:prefix": "East",
+    "addr:street:type": "Avenue",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "2",
+    "chicago:building_id": "336176",
+    "ele": "180",
+    "gnis:feature_id": "2104984",
+    "name": "Chicago Fire Department Engine Company 98",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department"
+   }
+  },
+  {
+   "type": "way",
+   "id": 144458837,
+   "center": {
+    "lat": 41.7954212,
+    "lon": -87.5976265
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "1150",
+    "addr:postcode": "60615",
+    "addr:state": "IL",
+    "addr:street": "East 55th Street",
+    "addr:street:name": "55th",
+    "addr:street:prefix": "East",
+    "addr:street:type": "Street",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "chicago:building_id": "478348",
+    "ele": "180",
+    "gnis:feature_id": "2104960",
+    "name": "Chicago Fire Department Engine Company 60",
+    "opening_hours": "24/7",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "ref": "E60",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 144827572,
+   "center": {
+    "lat": 42.0444095,
+    "lon": -87.6840792
+   },
+   "tags": {
+    "addr:city": "Evanston",
+    "addr:housenumber": "909",
+    "addr:postcode": "60201",
+    "addr:state": "IL",
+    "addr:street": "Lake Street",
+    "addr:street:name": "Lake",
+    "addr:street:type": "Street",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "name": "Evanston Fire Department Headquarters",
+    "operator": "Evanston Fire Department",
+    "website": "https://www.cityofevanston.org/government/departments/fire"
+   }
+  },
+  {
+   "type": "way",
+   "id": 150857069,
+   "center": {
+    "lat": 41.877188,
+    "lon": -87.6443087
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "324",
+    "addr:postcode": "60607",
+    "addr:state": "IL",
+    "addr:street": "South Desplaines Street",
+    "addr:street:name": "Desplaines",
+    "addr:street:prefix": "South",
+    "addr:street:type": "Street",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "2",
+    "building:material": "brick",
+    "chicago:building_id": "821492",
+    "name": "Chicago Fire Department Engine Company 5",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "ref": "E 5",
+    "roof:shape": "flat"
+   }
+  },
+  {
+   "type": "way",
+   "id": 153291613,
+   "center": {
+    "lat": 41.8905725,
+    "lon": -87.6300598
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "55",
+    "addr:postcode": "60654",
+    "addr:state": "IL",
+    "addr:street": "West Illinois Street",
+    "addr:street:name": "Illinois",
+    "addr:street:prefix": "West",
+    "addr:street:type": "Street",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "21",
+    "chicago:building_id": "349012",
+    "ele": "180",
+    "gnis:feature_id": "2100713",
+    "name": "Chicago Fire Department Engine Company 42",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 155559107,
+   "center": {
+    "lat": 41.8693636,
+    "lon": -87.6417205
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "558",
+    "addr:postcode": "60607",
+    "addr:state": "IL",
+    "addr:street": "West DeKoven Street",
+    "addr:street:name": "DeKoven",
+    "addr:street:prefix": "West",
+    "addr:street:type": "Street",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "chicago:building_id": "369839",
+    "name": "Chicago Fire Academy",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department"
+   }
+  },
+  {
+   "type": "way",
+   "id": 155559121,
+   "center": {
+    "lat": 41.8694355,
+    "lon": -87.6410954
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "1010",
+    "addr:postcode": "60607",
+    "addr:state": "IL",
+    "addr:street": "South Clinton Street",
+    "addr:street:name": "Clinton",
+    "addr:street:prefix": "South",
+    "addr:street:type": "Street",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "chicago:building_id": "369850",
+    "name": "Chicago Fire Department Survive Alive House",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department"
+   }
+  },
+  {
+   "type": "way",
+   "id": 156494972,
+   "center": {
+    "lat": 41.9507657,
+    "lon": -87.6783136
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "3801",
+    "addr:postcode": "60613",
+    "addr:state": "IL",
+    "addr:street": "North Damen Avenue",
+    "addr:street:name": "Damen",
+    "addr:street:prefix": "North",
+    "addr:street:type": "Avenue",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "2",
+    "chicago:building_id": "162650",
+    "ele": "182",
+    "gnis:feature_id": "2104992",
+    "name": "Chicago Fire Department Engine Company 112",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 162292468,
+   "center": {
+    "lat": 41.8373236,
+    "lon": -87.7283208
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "3042",
+    "addr:postcode": "60623",
+    "addr:state": "IL",
+    "addr:street": "South Kedvale Avenue",
+    "addr:street:name": "Kedvale",
+    "addr:street:prefix": "South",
+    "addr:street:type": "Avenue",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "2",
+    "chicago:building_id": "409685",
+    "ele": "181",
+    "gnis:feature_id": "2105017",
+    "name": "Chicago Fire Department Engine Company 99",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 162314599,
+   "center": {
+    "lat": 41.883016,
+    "lon": -87.7262981
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "4001",
+    "addr:postcode": "60624",
+    "addr:state": "IL",
+    "addr:street": "West West End Avenue",
+    "addr:street:name": "West End",
+    "addr:street:prefix": "West",
+    "addr:street:type": "Avenue",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "chicago:building_id": "356108",
+    "ele": "184",
+    "gnis:feature_id": "2105016",
+    "name": "Chicago Fire Department Engine Company 95",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 162386447,
+   "center": {
+    "lat": 41.9132323,
+    "lon": -87.7261046
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "1751",
+    "addr:postcode": "60647",
+    "addr:state": "IL",
+    "addr:street": "North Pulaski Road",
+    "addr:street:name": "Pulaski",
+    "addr:street:prefix": "North",
+    "addr:street:type": "Road",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "2",
+    "chicago:building_id": "297318",
+    "ele": "184",
+    "gnis:feature_id": "2105011",
+    "name": "Chicago Fire Department Engine Company 76",
+    "opening_hours": "24/7",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 162433688,
+   "center": {
+    "lat": 41.9325793,
+    "lon": -87.7266561
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "2827",
+    "addr:postcode": "60641",
+    "addr:state": "IL",
+    "addr:street": "North Pulaski Road",
+    "addr:street:name": "Pulaski",
+    "addr:street:prefix": "North",
+    "addr:street:type": "Road",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "chicago:building_id": "239935",
+    "name": "Chicago Fire Department Engine Company 91",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department"
+   }
+  },
+  {
+   "type": "way",
+   "id": 162446838,
+   "center": {
+    "lat": 41.954138,
+    "lon": -87.7336407
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "4017",
+    "addr:postcode": "60641",
+    "addr:state": "IL",
+    "addr:street": "North Tripp Avenue",
+    "addr:street:name": "Tripp",
+    "addr:street:prefix": "North",
+    "addr:street:type": "Avenue",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "2",
+    "chicago:building_id": "153327",
+    "ele": "184",
+    "gnis:feature_id": "2104964",
+    "name": "Chicago Fire Department Engine Company 69",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 162472394,
+   "center": {
+    "lat": 41.9898589,
+    "lon": -87.7280491
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "3945",
+    "addr:postcode": "60659",
+    "addr:state": "IL",
+    "addr:street": "West Peterson Avenue",
+    "addr:street:name": "Peterson",
+    "addr:street:prefix": "West",
+    "addr:street:type": "Avenue",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "chicago:building_id": "43569",
+    "ele": "183",
+    "gnis:feature_id": "2104978",
+    "name": "Chicago Fire Department Engine Company 89",
+    "opening_hours": "24/7",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 162498452,
+   "center": {
+    "lat": 41.7786107,
+    "lon": -87.7525448
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "5200",
+    "addr:postcode": "60638",
+    "addr:state": "IL",
+    "addr:street": "West 63rd Street",
+    "addr:street:name": "63rd",
+    "addr:street:prefix": "West",
+    "addr:street:type": "Street",
+    "amenity": "fire_station",
+    "building": "yes",
+    "building:levels": "2",
+    "chicago:building_id": "536306",
+    "ele": "189",
+    "gnis:feature_id": "2105001",
+    "name": "Chicago Fire Department Engine Company 127",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 162512428,
+   "center": {
+    "lat": 41.8731854,
+    "lon": -87.7554801
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "5212",
+    "addr:postcode": "60644",
+    "addr:state": "IL",
+    "addr:street": "West Harrison Street",
+    "addr:street:name": "Harrison",
+    "addr:street:prefix": "West",
+    "addr:street:type": "Street",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "3",
+    "chicago:building_id": "366400",
+    "ele": "183",
+    "gnis:feature_id": "2104993",
+    "name": "Chicago Fire Department Engine Company 113",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 162513176,
+   "center": {
+    "lat": 41.8721259,
+    "lon": -87.7635298
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "645",
+    "addr:postcode": "60644",
+    "addr:state": "IL",
+    "addr:street": "South Central Avenue",
+    "addr:street:name": "Central",
+    "addr:street:prefix": "South",
+    "addr:street:type": "Avenue",
+    "amenity": "hospital",
+    "beds": "177",
+    "building": "hospital",
+    "building:levels": "6",
+    "chicago:building_id": "367621",
+    "emergency": "yes",
+    "healthcare": "hospital",
+    "name": "Loretto Hospital",
+    "opening_hours": "24/7",
+    "phone": "+1 773 626 4300",
+    "website": "https://www.lorettohospital.org/"
+   }
+  },
+  {
+   "type": "way",
+   "id": 162514324,
+   "center": {
+    "lat": 41.8884111,
+    "lon": -87.7674064
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "439",
+    "addr:postcode": "60644",
+    "addr:state": "IL",
+    "addr:street": "North Waller Avenue",
+    "addr:street:name": "Waller",
+    "addr:street:prefix": "North",
+    "addr:street:type": "Avenue",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "2",
+    "chicago:building_id": "351927",
+    "ele": "189",
+    "gnis:feature_id": "2104982",
+    "name": "Chicago Fire Department Engine Company 96",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 162520968,
+   "center": {
+    "lat": 41.8952739,
+    "lon": -87.7487038
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "4900",
+    "addr:postcode": "60651",
+    "addr:state": "IL",
+    "addr:street": "West Chicago Avenue",
+    "addr:street:name": "Chicago",
+    "addr:street:prefix": "West",
+    "addr:street:type": "Avenue",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "chicago:building_id": "341728",
+    "ele": "185",
+    "gnis:feature_id": "2105020",
+    "name": "Chicago Fire Department Engine Company 117",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 162547035,
+   "center": {
+    "lat": 41.9175879,
+    "lon": -87.7580999
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "5258",
+    "addr:postcode": "60639",
+    "addr:state": "IL",
+    "addr:street": "West Grand Avenue",
+    "addr:street:name": "Grand",
+    "addr:street:prefix": "West",
+    "addr:street:type": "Avenue",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "2",
+    "chicago:building_id": "287359",
+    "name": "Chicago Fire Department Engine Company 68",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department"
+   }
+  },
+  {
+   "type": "way",
+   "id": 162624577,
+   "center": {
+    "lat": 41.9385245,
+    "lon": -87.749937
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "4911",
+    "addr:postcode": "60641",
+    "addr:state": "IL",
+    "addr:street": "West Belmont Avenue",
+    "addr:street:name": "Belmont",
+    "addr:street:prefix": "West",
+    "addr:street:type": "Avenue",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "2",
+    "chicago:building_id": "216017",
+    "ele": "187",
+    "gnis:feature_id": "2100699",
+    "name": "Chicago Fire Department Engine Company 7",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 162702301,
+   "center": {
+    "lat": 41.9646877,
+    "lon": -87.7576004
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "4625",
+    "addr:postcode": "60630",
+    "addr:state": "IL",
+    "addr:street": "North Milwaukee Avenue",
+    "addr:street:name": "Milwaukee",
+    "addr:street:prefix": "North",
+    "addr:street:type": "Avenue",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "chicago:building_id": "117126",
+    "ele": "187",
+    "gnis:feature_id": "2105018",
+    "name": "Chicago Fire Department Engine Company 108",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 162836508,
+   "center": {
+    "lat": 41.9981743,
+    "lon": -87.7665419
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "6424",
+    "addr:postcode": "60646",
+    "addr:state": "IL",
+    "addr:street": "North Lehigh Avenue",
+    "addr:street:name": "Lehigh",
+    "addr:street:prefix": "North",
+    "addr:street:type": "Avenue",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "1",
+    "chicago:building_id": "25459",
+    "ele": "189",
+    "gnis:feature_id": "2104972",
+    "name": "Chicago Fire Department Engine Company 79",
+    "opening_hours": "24/7",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 162849214,
+   "center": {
+    "lat": 41.790744,
+    "lon": -87.7814063
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "5555",
+    "addr:postcode": "60638",
+    "addr:state": "IL",
+    "addr:street": "South Narragansett Avenue",
+    "addr:street:name": "Narragansett",
+    "addr:street:prefix": "South",
+    "addr:street:type": "Avenue",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "chicago:building_id": "497242",
+    "ele": "186",
+    "gnis:feature_id": "2100708",
+    "name": "Chicago Fire Department Engine Company 32",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 163043284,
+   "center": {
+    "lat": 41.9225994,
+    "lon": -87.7875357
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "2323",
+    "addr:postcode": "60707",
+    "addr:state": "IL",
+    "addr:street": "North Natchez Avenue",
+    "addr:street:name": "Natchez",
+    "addr:street:prefix": "North",
+    "addr:street:type": "Avenue",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "2",
+    "chicago:building_id": "271758",
+    "ele": "197",
+    "gnis:feature_id": "2104999",
+    "name": "Chicago Fire Department Engine Company 125",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 163162993,
+   "center": {
+    "lat": 41.9496992,
+    "lon": -87.7715722
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "5758",
+    "addr:postcode": "60634",
+    "addr:state": "IL",
+    "addr:street": "West Grace Street",
+    "addr:street:name": "Grace",
+    "addr:street:prefix": "West",
+    "addr:street:type": "Street",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "2",
+    "chicago:building_id": "169595",
+    "ele": "189",
+    "gnis:feature_id": "2104981",
+    "name": "Chicago Fire Department Engine Company 94",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 163293153,
+   "center": {
+    "lat": 41.9513901,
+    "lon": -87.8075616
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "3918",
+    "addr:postcode": "60634",
+    "addr:state": "IL",
+    "addr:street": "North Harlem Avenue",
+    "addr:street:name": "Harlem",
+    "addr:street:prefix": "North",
+    "addr:street:type": "Avenue",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "2",
+    "chicago:building_id": "163096",
+    "ele": "196",
+    "gnis:feature_id": "2104977",
+    "name": "Chicago Fire Department Engine Company 86",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 163331053,
+   "center": {
+    "lat": 41.9907531,
+    "lon": -87.7985243
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "6030",
+    "addr:postcode": "60631",
+    "addr:state": "IL",
+    "addr:street": "North Avondale Avenue",
+    "addr:street:name": "Avondale",
+    "addr:street:prefix": "North",
+    "addr:street:type": "Avenue",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "2",
+    "chicago:building_id": "42756",
+    "ele": "195",
+    "gnis:feature_id": "2104995",
+    "name": "Chicago Fire Department Engine Company 119",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 163480686,
+   "center": {
+    "lat": 41.9769877,
+    "lon": -87.8362166
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "5343",
+    "addr:postcode": "60656",
+    "addr:state": "IL",
+    "addr:street": "North Cumberland Avenue",
+    "addr:street:name": "Cumberland",
+    "addr:street:prefix": "North",
+    "addr:street:type": "Avenue",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "2",
+    "chicago:building_id": "76485",
+    "ele": "193",
+    "gnis:feature_id": "2105003",
+    "name": "Chicago Fire Department Engine Company 11",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 163493362,
+   "center": {
+    "lat": 41.963771,
+    "lon": -87.9079273
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:postcode": "60666",
+    "addr:state": "IL",
+    "addr:street": "South Cargo Road",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "chicago:building_id": "123037",
+    "name": "Chicago Fire Department ARFF Station #1",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department"
+   }
+  },
+  {
+   "type": "way",
+   "id": 163500094,
+   "center": {
+    "lat": 41.9808208,
+    "lon": -87.8979898
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:postcode": "60666",
+    "addr:state": "IL",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "chicago:building_id": "65419",
+    "name": "Chicago Fire Department ARFF Station #3",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department"
+   }
+  },
+  {
+   "type": "way",
+   "id": 163500864,
+   "center": {
+    "lat": 42.0007439,
+    "lon": -87.9185365
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:postcode": "60666",
+    "addr:state": "IL",
+    "amenity": "fire_station",
+    "building": "yes",
+    "chicago:building_id": "22069",
+    "name": "Chicago Fire Department ARFF Station #4",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department"
+   }
+  },
+  {
+   "type": "way",
+   "id": 163526812,
+   "center": {
+    "lat": 41.7530451,
+    "lon": -87.7215852
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "7659",
+    "addr:postcode": "60652",
+    "addr:state": "IL",
+    "addr:street": "South Pulaski Road",
+    "addr:street:name": "Pulaski",
+    "addr:street:prefix": "South",
+    "addr:street:type": "Road",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "chicago:building_id": "609143",
+    "name": "Chicago Fire Department Engine Company 64",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department"
+   }
+  },
+  {
+   "type": "way",
+   "id": 163572885,
+   "center": {
+    "lat": 41.764899,
+    "lon": -87.7255195
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "7050",
+    "addr:postcode": "60629",
+    "addr:state": "IL",
+    "addr:street": "South Pulaski Road",
+    "addr:street:name": "Pulaski",
+    "addr:street:prefix": "South",
+    "addr:street:type": "Road",
+    "amenity": "social_facility",
+    "building": "retail",
+    "building:levels": "1",
+    "chicago:building_id": "575506",
+    "name": "ICH-1",
+    "operator": "Illinois Coalition for The Homeless",
+    "operator:type": "private_non_profit",
+    "social_facility": "shelter",
+    "social_facility:for": "homeless"
+   }
+  },
+  {
+   "type": "way",
+   "id": 163667476,
+   "center": {
+    "lat": 41.8081384,
+    "lon": -87.7251947
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "4034",
+    "addr:postcode": "60632",
+    "addr:state": "IL",
+    "addr:street": "West 47th Street",
+    "addr:street:name": "47th",
+    "addr:street:prefix": "West",
+    "addr:street:type": "Street",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "1",
+    "chicago:building_id": "447504",
+    "ele": "182",
+    "gnis:feature_id": "2100709",
+    "name": "Chicago Fire Department Engine Company 34",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 163773530,
+   "center": {
+    "lat": 41.8586287,
+    "lon": -87.7243302
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "3959",
+    "addr:postcode": "60623",
+    "addr:state": "IL",
+    "addr:street": "West 16th Street",
+    "addr:street:name": "16th",
+    "addr:street:prefix": "West",
+    "addr:street:type": "Street",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "1",
+    "ele": "183",
+    "gnis:feature_id": "2100711",
+    "name": "Chicago Fire Department Engine Company 38",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 163779320,
+   "center": {
+    "lat": 41.88881,
+    "lon": -87.7066483
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "412",
+    "addr:postcode": "60624",
+    "addr:state": "IL",
+    "addr:street": "North Kedzie Avenue",
+    "addr:street:name": "Kedzie",
+    "addr:street:prefix": "North",
+    "addr:street:type": "Avenue",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "ele": "184",
+    "gnis:feature_id": "2105007",
+    "name": "Chicago Fire Department Engine Company 44",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 163944074,
+   "center": {
+    "lat": 41.962068,
+    "lon": -87.7086078
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "4426",
+    "addr:postcode": "60625",
+    "addr:state": "IL",
+    "addr:street": "North Kedzie Avenue",
+    "addr:street:name": "Kedzie",
+    "addr:street:prefix": "North",
+    "addr:street:type": "Avenue",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "2",
+    "ele": "181",
+    "gnis:feature_id": "2104998",
+    "name": "Chicago Fire Department Engine Company 124",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 165042190,
+   "center": {
+    "lat": 41.691821,
+    "lon": -87.6990012
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "3112",
+    "addr:postcode": "60655",
+    "addr:state": "IL",
+    "addr:street": "West 111th Street",
+    "addr:street:name": "111th",
+    "addr:street:prefix": "West",
+    "addr:street:type": "Street",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "2",
+    "chicago:building_id": "770005",
+    "ele": "190",
+    "gnis:feature_id": "2104979",
+    "name": "Chicago Fire Department Engine Company 92",
+    "opening_hours": "24/7",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "ref": "E92",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 165098011,
+   "center": {
+    "lat": 41.7471426,
+    "lon": -87.7026925
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "8026",
+    "addr:postcode": "60652",
+    "addr:state": "IL",
+    "addr:street": "South Kedzie Avenue",
+    "addr:street:name": "Kedzie",
+    "addr:street:prefix": "South",
+    "addr:street:type": "Avenue",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "3",
+    "ele": "189",
+    "gnis:feature_id": "2100701",
+    "name": "Chicago Fire Department Engine Company 15",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 165150816,
+   "center": {
+    "lat": 41.8175389,
+    "lon": -87.6996983
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "3000",
+    "addr:postcode": "60632",
+    "addr:state": "IL",
+    "addr:street": "West 42nd Street",
+    "addr:street:name": "42nd",
+    "addr:street:prefix": "West",
+    "addr:street:type": "Street",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "2",
+    "ele": "182",
+    "gnis:feature_id": "2104962",
+    "name": "Chicago Fire Department Engine Company 65",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 166233463,
+   "center": {
+    "lat": 42.0314052,
+    "lon": -87.680653
+   },
+   "tags": {
+    "addr:city": "Evanston",
+    "addr:housenumber": "702",
+    "addr:postcode": "60202",
+    "addr:state": "IL",
+    "addr:street": "Madison Street",
+    "addr:street:name": "Madison",
+    "addr:street:type": "Street",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "2",
+    "ele": "183",
+    "gnis:feature_id": "2099431",
+    "name": "Evanston Fire Department Station #22",
+    "operator": "Evanston Fire Department",
+    "source": "http://www.chicagoareafire.com/Div_3_EVAN_Sta22.html"
+   }
+  },
+  {
+   "type": "way",
+   "id": 181481170,
+   "center": {
+    "lat": 41.8124236,
+    "lon": -87.846767
+   },
+   "tags": {
+    "addr:city": "Brookfield",
+    "addr:postcode": "60513",
+    "addr:state": "IL",
+    "addr:street": "Shields Avenue",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "ele": "190",
+    "gnis:feature_id": "2100558",
+    "name": "Brookfield Fire Station 1",
+    "operator": "Brookfield Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 182659956,
+   "center": {
+    "lat": 42.0645072,
+    "lon": -87.6863799
+   },
+   "tags": {
+    "addr:city": "Evanston",
+    "addr:housenumber": "1105",
+    "addr:postcode": "60201",
+    "addr:state": "IL",
+    "addr:street": "Central Street",
+    "addr:street:name": "Central",
+    "addr:street:type": "Street",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "ele": "184",
+    "gnis:feature_id": "2099451",
+    "name": "Evanston Fire Department Station #23",
+    "operator": "Evanston Fire Department",
+    "source": "http://www.chicagoareafire.com/Div_3_EVAN_Sta23.html"
+   }
+  },
+  {
+   "type": "way",
+   "id": 183027692,
+   "center": {
+    "lat": 42.0519171,
+    "lon": -87.6914508
+   },
+   "tags": {
+    "addr:city": "Evanston",
+    "addr:housenumber": "1332",
+    "addr:postcode": "60201",
+    "addr:state": "IL",
+    "addr:street": "Emerson Street",
+    "addr:street:name": "Emerson",
+    "addr:street:type": "Street",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "ele": "185",
+    "gnis:feature_id": "2099443",
+    "name": "Evanston Fire Department Station #21",
+    "operator": "Evanston Fire Department",
+    "source": "http://www.chicagoareafire.com/Div_3_EVAN_Sta21.html"
+   }
+  },
+  {
+   "type": "way",
+   "id": 184075245,
+   "center": {
+    "lat": 42.0795026,
+    "lon": -87.710829
+   },
+   "tags": {
+    "addr:city": "Wilmette",
+    "addr:housenumber": "1304",
+    "addr:postcode": "60091",
+    "addr:state": "IL",
+    "addr:street": "Lake Avenue",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "ele": "187",
+    "gnis:feature_id": "2099452",
+    "name": "Wilmette Fire Station 26",
+    "operator": "Wilmette Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 186117715,
+   "center": {
+    "lat": 41.8603923,
+    "lon": -87.8350632
+   },
+   "tags": {
+    "addr:city": "Maywood",
+    "addr:housenumber": "2160",
+    "addr:postcode": "60153",
+    "addr:state": "IL",
+    "addr:street": "South 1st Avenue",
+    "amenity": "hospital",
+    "building": "hospital",
+    "emergency": "yes",
+    "healthcare": "hospital",
+    "name": "Loyola University Hospital",
+    "operator": "Loyola Medicine",
+    "operator:wikidata": "Q30265483",
+    "website": "https://www.loyolamedicine.org/location/loyola-university-medical-center-2"
+   }
+  },
+  {
+   "type": "way",
+   "id": 186890345,
+   "center": {
+    "lat": 42.0330161,
+    "lon": -87.6986664
+   },
+   "tags": {
+    "addr:city": "Evanston",
+    "addr:housenumber": "1817",
+    "addr:postcode": "60202",
+    "addr:state": "IL",
+    "addr:street": "Washington Street",
+    "addr:street:name": "Washington",
+    "addr:street:type": "Street",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "ele": "182",
+    "gnis:feature_id": "2099430",
+    "name": "Evanston Fire Department Station #24",
+    "operator": "Evanston Fire Department",
+    "source": "http://www.chicagoareafire.com/Div_3_EVAN_Sta24.html"
+   }
+  },
+  {
+   "type": "way",
+   "id": 187916237,
+   "center": {
+    "lat": 41.7735655,
+    "lon": -87.5899278
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "1440",
+    "addr:postcode": "60637",
+    "addr:state": "IL",
+    "addr:street": "East 67th Street",
+    "addr:street:name": "67th",
+    "addr:street:prefix": "East",
+    "addr:street:type": "Street",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "1",
+    "chicago:building_id": "826108",
+    "ele": "181",
+    "gnis:feature_id": "2105010",
+    "name": "Chicago Fire Department Engine Company 63",
+    "opening_hours": "24/7",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "ref": "E63",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 194573970,
+   "center": {
+    "lat": 42.0159983,
+    "lon": -87.761275
+   },
+   "tags": {
+    "addr:city": "Skokie",
+    "addr:housenumber": "7424",
+    "addr:postcode": "60077",
+    "addr:state": "IL",
+    "addr:street": "Niles Center Road",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "ele": "189",
+    "gnis:feature_id": "2026757",
+    "name": "Skokie Fire Department Station #16",
+    "operator": "Skokie Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 201512184,
+   "center": {
+    "lat": 42.0146606,
+    "lon": -87.7921188
+   },
+   "tags": {
+    "addr:city": "Niles",
+    "addr:housenumber": "6611",
+    "addr:postcode": "60714",
+    "addr:state": "IL",
+    "addr:street": "West Jarvis Avenue",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "name": "Niles Fire Department Station #3",
+    "operator": "Niles Fire Department",
+    "source": "http://www.chicagoareafire.com/Div_3_NILE_Sta3.html"
+   }
+  },
+  {
+   "type": "way",
+   "id": 203053301,
+   "center": {
+    "lat": 42.079504,
+    "lon": -87.77972
+   },
+   "tags": {
+    "addr:city": "Glenview",
+    "addr:housenumber": "831",
+    "addr:postcode": "60025",
+    "addr:state": "IL",
+    "addr:street": "East Lake Avenue",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "ele": "192",
+    "gnis:feature_id": "2098179",
+    "name": "Glenview Fire Department Station 13",
+    "operator": "Glenview Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 205593979,
+   "center": {
+    "lat": 42.0259535,
+    "lon": -87.8411028
+   },
+   "tags": {
+    "addr:city": "Park Ridge",
+    "addr:housenumber": "1000",
+    "addr:postcode": "60068",
+    "addr:state": "IL",
+    "addr:street": "North Greenwood Avenue",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "ele": "198",
+    "gnis:feature_id": "2098198",
+    "name": "Park Ridge Fire Department Station #36",
+    "operator": "Park Ridge Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 206471239,
+   "center": {
+    "lat": 42.0453009,
+    "lon": -87.7527523
+   },
+   "tags": {
+    "addr:city": "Skokie",
+    "addr:housenumber": "9024",
+    "addr:postcode": "60077",
+    "addr:state": "IL",
+    "addr:street": "Gross Point Road",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "ele": "192",
+    "gnis:feature_id": "2026758",
+    "name": "Skokie Fire Department Station #18",
+    "operator": "Skokie Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 207122181,
+   "center": {
+    "lat": 41.996133,
+    "lon": -87.837022
+   },
+   "tags": {
+    "addr:city": "Park Ridge",
+    "addr:housenumber": "901",
+    "addr:postcode": "60068",
+    "addr:state": "IL",
+    "addr:street": "Devon Avenue",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "ele": "195",
+    "gnis:feature_id": "2098197",
+    "name": "Park Ridge Fire Department Station #35",
+    "operator": "Park Ridge Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 208808881,
+   "center": {
+    "lat": 41.8756198,
+    "lon": -87.7119398
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "3435",
+    "addr:postcode": "60624",
+    "addr:state": "IL",
+    "addr:street": "West Van Buren Street",
+    "amenity": "hospital",
+    "emergency": "no",
+    "gnis:feature_id": "404257",
+    "healthcare": "hospital",
+    "name": "RML Specialty Hospital",
+    "old_name": "Bethany Hospital",
+    "operator": "RML Specialty Hospital",
+    "phone": "+1 773 826 6300",
+    "website": "https://www.rmlspecialtyhospital.org/"
+   }
+  },
+  {
+   "type": "way",
+   "id": 209357209,
+   "center": {
+    "lat": 41.868108,
+    "lon": -87.6956403
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "1101",
+    "addr:postcode": "60612",
+    "addr:state": "IL",
+    "addr:street": "South California Avenue",
+    "addr:street:name": "California",
+    "addr:street:prefix": "South",
+    "addr:street:type": "Avenue",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "1",
+    "chicago:building_id": "370940",
+    "ele": "183",
+    "gnis:feature_id": "2104989",
+    "name": "Chicago Fire Department Engine Company 107",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 209388181,
+   "center": {
+    "lat": 41.9045657,
+    "lon": -87.687445
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "1244",
+    "addr:postcode": "60622",
+    "addr:state": "IL",
+    "addr:street": "North Western Avenue",
+    "addr:street:name": "Western",
+    "addr:street:prefix": "North",
+    "addr:street:type": "Avenue",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "2",
+    "chicago:building_id": "319945",
+    "ele": "182",
+    "gnis:feature_id": "2105009",
+    "name": "Chicago Fire Department Engine Company 57",
+    "opening_hours": "24/7",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 209401152,
+   "center": {
+    "lat": 41.920933,
+    "lon": -87.696461
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "2179",
+    "addr:postcode": "60647",
+    "addr:state": "IL",
+    "addr:street": "North Stave Street",
+    "addr:street:name": "Stave",
+    "addr:street:prefix": "North",
+    "addr:street:type": "Street",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "2",
+    "chicago:building_id": "275612",
+    "name": "Chicago Fire Department Engine Company 43",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department"
+   }
+  },
+  {
+   "type": "way",
+   "id": 209453596,
+   "center": {
+    "lat": 41.93791,
+    "lon": -87.6838463
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "2214",
+    "addr:postcode": "60618",
+    "addr:state": "IL",
+    "addr:street": "West Barry Avenue",
+    "addr:street:name": "Barry",
+    "addr:street:prefix": "West",
+    "addr:street:type": "Avenue",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "2",
+    "chicago:building_id": "217263",
+    "ele": "180",
+    "gnis:feature_id": "2104958",
+    "name": "Chicago Fire Department Engine Company 56",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 209463961,
+   "center": {
+    "lat": 41.9430726,
+    "lon": -87.703233
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "3401",
+    "addr:postcode": "60618",
+    "addr:state": "IL",
+    "addr:street": "North Elston Avenue",
+    "addr:street:name": "Elston",
+    "addr:street:prefix": "North",
+    "addr:street:type": "Avenue",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "2",
+    "check_date": "2024-11-09",
+    "chicago:building_id": "195058",
+    "ele": "182",
+    "gnis:feature_id": "2104988",
+    "name": "Chicago Fire Department Engine Company 106",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 209479030,
+   "center": {
+    "lat": 41.961547,
+    "lon": -87.6929705
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "2544",
+    "addr:postcode": "60618",
+    "addr:state": "IL",
+    "addr:street": "West Montrose Avenue",
+    "addr:street:name": "Montrose",
+    "addr:street:prefix": "West",
+    "addr:street:type": "Avenue",
+    "amenity": "hospital",
+    "building": "yes",
+    "chicago:building_id": "127044",
+    "ele": "179",
+    "emergency": "no",
+    "gnis:feature_id": "1831355",
+    "healthcare": "hospital",
+    "name": "Kindred Hospital Chicago (North Campus)",
+    "operator": "Kindred Healthcare",
+    "operator:type": "private",
+    "operator:wikidata": "Q921363",
+    "operator:wikipedia": "en:Kindred Healthcare"
+   }
+  },
+  {
+   "type": "way",
+   "id": 209484037,
+   "center": {
+    "lat": 41.9761585,
+    "lon": -87.6877574
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "2322",
+    "addr:postcode": "60625",
+    "addr:state": "IL",
+    "addr:street": "West Foster Avenue",
+    "addr:street:name": "Foster",
+    "addr:street:prefix": "West",
+    "addr:street:type": "Avenue",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "2",
+    "chicago:building_id": "76770",
+    "ele": "184",
+    "gnis:feature_id": "2104991",
+    "name": "Chicago Fire Department Engine Company 110",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 209569695,
+   "center": {
+    "lat": 41.9951386,
+    "lon": -87.6992481
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "6239",
+    "addr:postcode": "60659",
+    "addr:state": "IL",
+    "addr:street": "North California Avenue",
+    "addr:street:name": "California",
+    "addr:street:prefix": "North",
+    "addr:street:type": "Avenue",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "2",
+    "chicago:building_id": "31010",
+    "ele": "181",
+    "gnis:feature_id": "2104966",
+    "name": "Chicago Fire Department Engine Company 71",
+    "opening_hours": "24/7",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 209604505,
+   "center": {
+    "lat": 41.6929789,
+    "lon": -87.6687483
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "11035",
+    "addr:postcode": "60643",
+    "addr:state": "IL",
+    "addr:street": "South Homewood Avenue",
+    "addr:street:name": "Homewood",
+    "addr:street:prefix": "South",
+    "addr:street:type": "Avenue",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "2",
+    "chicago:building_id": "767596",
+    "ele": "190",
+    "gnis:feature_id": "2104996",
+    "name": "Chicago Fire Department Engine Company 120",
+    "opening_hours": "24/7",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "ref": "E120",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 209615431,
+   "center": {
+    "lat": 41.7214823,
+    "lon": -87.665829
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "1724",
+    "addr:postcode": "60643",
+    "addr:state": "IL",
+    "addr:street": "West 95th Street",
+    "addr:street:name": "95th",
+    "addr:street:prefix": "West",
+    "addr:street:type": "Street",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "chicago:building_id": "886062",
+    "ele": "190",
+    "gnis:feature_id": "2104997",
+    "name": "Chicago Fire Department Engine Company 121",
+    "opening_hours": "24/7",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "ref": "E121",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 209633337,
+   "center": {
+    "lat": 41.7460082,
+    "lon": -87.663703
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "8120",
+    "addr:postcode": "60620",
+    "addr:state": "IL",
+    "addr:street": "South Ashland Avenue",
+    "addr:street:name": "Ashland",
+    "addr:street:prefix": "South",
+    "addr:street:type": "Avenue",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "2",
+    "chicago:building_id": "633583",
+    "name": "Chicago Fire Department Engine Company 129",
+    "opening_hours": "24/7",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "ref": "E129"
+   }
+  },
+  {
+   "type": "way",
+   "id": 209652928,
+   "center": {
+    "lat": 41.768649,
+    "lon": -87.6801297
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "2250",
+    "addr:postcode": "60636",
+    "addr:state": "IL",
+    "addr:street": "West 69th Street",
+    "addr:street:name": "69th",
+    "addr:street:prefix": "West",
+    "addr:street:type": "Street",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "1",
+    "chicago:building_id": "567522",
+    "ele": "187",
+    "gnis:feature_id": "2104985",
+    "name": "Chicago Fire Department Engine Company 101",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 209672515,
+   "center": {
+    "lat": 41.7851883,
+    "lon": -87.6639872
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "5955",
+    "addr:postcode": "60636",
+    "addr:state": "IL",
+    "addr:street": "South Ashland Avenue",
+    "addr:street:name": "Ashland",
+    "addr:street:prefix": "South",
+    "addr:street:type": "Avenue",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "1",
+    "chicago:building_id": "513210",
+    "ele": "181",
+    "gnis:feature_id": "2105019",
+    "name": "Chicago Fire Department Engine Company 116",
+    "opening_hours": "24/7",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 209700474,
+   "center": {
+    "lat": 41.8008946,
+    "lon": -87.6801401
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "2215",
+    "addr:postcode": "60609",
+    "addr:state": "IL",
+    "addr:street": "West 51st Street",
+    "addr:street:name": "51st",
+    "addr:street:prefix": "West",
+    "addr:street:type": "Street",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "2",
+    "chicago:building_id": "461801",
+    "ele": "183",
+    "gnis:feature_id": "2105022",
+    "name": "Chicago Fire Department Engine Company 123",
+    "opening_hours": "24/7",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 209708306,
+   "center": {
+    "lat": 41.8137592,
+    "lon": -87.6647051
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "4401",
+    "addr:postcode": "60609",
+    "addr:state": "IL",
+    "addr:street": "South Ashland Avenue",
+    "addr:street:name": "Ashland",
+    "addr:street:prefix": "South",
+    "addr:street:type": "Avenue",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "1",
+    "chicago:building_id": "435805",
+    "ele": "182",
+    "gnis:feature_id": "2100717",
+    "name": "Chicago Fire Department Engine Company 49",
+    "opening_hours": "24/7",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 209709735,
+   "center": {
+    "lat": 41.8218731,
+    "lon": -87.6717804
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "3950",
+    "addr:postcode": "60609",
+    "addr:state": "IL",
+    "addr:street": "South Honore Street",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "chicago:building_id": "427053",
+    "name": "Chicago Fire Department Special Operations Section",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department"
+   }
+  },
+  {
+   "type": "way",
+   "id": 209711089,
+   "center": {
+    "lat": 41.8334805,
+    "lon": -87.6663567
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "1618",
+    "addr:postcode": "60608",
+    "addr:state": "IL",
+    "addr:street": "West 33rd Place",
+    "addr:street:name": "33rd",
+    "addr:street:prefix": "West",
+    "addr:street:type": "Place",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "4",
+    "chicago:building_id": "414564",
+    "ele": "181",
+    "gnis:feature_id": "2100712",
+    "name": "Chicago Fire Department Engine Company 39",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 209730046,
+   "center": {
+    "lat": 41.9753672,
+    "lon": -87.6994118
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "5140",
+    "addr:postcode": "60625",
+    "addr:state": "IL",
+    "addr:street": "North California Avenue",
+    "amenity": "hospital",
+    "beds": "312",
+    "emergency": "yes",
+    "gnis:feature_id": "1836858",
+    "healthcare": "hospital",
+    "name": "Swedish Covenant Hospital",
+    "opening_hours": "24/7",
+    "operator": "NorthShore University HealthSystem",
+    "phone": "+1 773 878 8200",
+    "website": "https://swedishcovenant.org/",
+    "wikidata": "Q7654629",
+    "wikipedia": "en:Swedish Hospital"
+   }
+  },
+  {
+   "type": "way",
+   "id": 209782346,
+   "center": {
+    "lat": 41.855218,
+    "lon": -87.6756066
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "1915",
+    "addr:postcode": "60608",
+    "addr:state": "IL",
+    "addr:street": "South Damen Avenue",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "1",
+    "chicago:building_id": "382005",
+    "name": "Chicago Fire Department Engine Company",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "ref": "23",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 209828486,
+   "center": {
+    "lat": 41.8807265,
+    "lon": -87.6641394
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "25",
+    "addr:postcode": "60607",
+    "addr:state": "IL",
+    "addr:street": "South Laflin Street",
+    "addr:street:name": "Laflin",
+    "addr:street:prefix": "South",
+    "addr:street:type": "Street",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "2",
+    "chicago:building_id": "357955",
+    "ele": "182",
+    "gnis:feature_id": "2104986",
+    "name": "Chicago Fire Department Engine Company 103",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 209828487,
+   "center": {
+    "lat": 41.8815245,
+    "lon": -87.6818718
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "10",
+    "addr:postcode": "60612",
+    "addr:state": "IL",
+    "addr:street": "North Leavitt Street",
+    "addr:street:name": "Leavitt",
+    "addr:street:prefix": "North",
+    "addr:street:type": "Street",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "1",
+    "chicago:building_id": "357356",
+    "name": "Chicago Fire Department Engine Company 26",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department"
+   }
+  },
+  {
+   "type": "way",
+   "id": 209846174,
+   "center": {
+    "lat": 41.9023126,
+    "lon": -87.6671317
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "1125",
+    "addr:postcode": "60622",
+    "addr:state": "IL",
+    "addr:street": "North Ashland Avenue",
+    "addr:street:name": "Ashland",
+    "addr:street:prefix": "North",
+    "addr:street:type": "Avenue",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "2",
+    "chicago:building_id": "324200",
+    "ele": "181",
+    "gnis:feature_id": "2100707",
+    "name": "Chicago Fire Department Engine Company 30",
+    "opening_hours": "24/7",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 209863934,
+   "center": {
+    "lat": 41.916231,
+    "lon": -87.6772235
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "1901",
+    "addr:postcode": "60622",
+    "addr:state": "IL",
+    "addr:street": "North Damen Avenue",
+    "addr:street:name": "Damen",
+    "addr:street:prefix": "North",
+    "addr:street:type": "Avenue",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "1",
+    "chicago:building_id": "289548",
+    "ele": "183",
+    "gnis:feature_id": "2100710",
+    "name": "Chicago Fire Department  Engine Company 35",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 209950678,
+   "center": {
+    "lat": 41.9916096,
+    "lon": -87.6705501
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "6030",
+    "addr:postcode": "60660",
+    "addr:state": "IL",
+    "addr:street": "North Clark Street",
+    "addr:street:name": "Clark",
+    "addr:street:prefix": "North",
+    "addr:street:type": "Street",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "chicago:building_id": "886090",
+    "ele": "182",
+    "gnis:feature_id": "2104965",
+    "name": "Chicago Fire Department Engine Company 70",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 209956863,
+   "center": {
+    "lat": 42.0149657,
+    "lon": -87.6754007
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "7340",
+    "addr:postcode": "60626",
+    "addr:state": "IL",
+    "addr:street": "North Clark Street",
+    "addr:street:name": "Clark",
+    "addr:street:prefix": "North",
+    "addr:street:type": "Street",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "chicago:building_id": "886082",
+    "gnis:feature_id": "2099705",
+    "name": "Chicago Fire Department Engine Company 102",
+    "opening_hours": "24/7",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "wheelchair": "yes"
+   }
+  },
+  {
+   "type": "way",
+   "id": 210034527,
+   "center": {
+    "lat": 41.7047702,
+    "lon": -87.6570477
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "10400",
+    "addr:postcode": "60643",
+    "addr:state": "IL",
+    "addr:street": "South Vincennes Avenue",
+    "addr:street:name": "Vincennes",
+    "addr:street:prefix": "South",
+    "addr:street:type": "Avenue",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "2",
+    "chicago:building_id": "736906",
+    "ele": "189",
+    "gnis:feature_id": "2105002",
+    "name": "Chicago Fire Department Engine Company 24",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 210063056,
+   "center": {
+    "lat": 41.7368362,
+    "lon": -87.6427222
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "8630",
+    "addr:postcode": "60620",
+    "addr:state": "IL",
+    "addr:street": "South Emerald Avenue",
+    "addr:street:name": "Emerald",
+    "addr:street:prefix": "South",
+    "addr:street:type": "Avenue",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "2",
+    "chicago:building_id": "665877",
+    "gnis:feature_id": "2104968",
+    "name": "Chicago Fire Department Engine Company 73",
+    "opening_hours": "24/7",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "ref": "E73"
+   }
+  },
+  {
+   "type": "way",
+   "id": 210150842,
+   "center": {
+    "lat": 41.7858125,
+    "lon": -87.714739
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "3637",
+    "addr:postcode": "60629",
+    "addr:state": "IL",
+    "addr:street": "West 59th Street",
+    "addr:street:name": "59th",
+    "addr:street:prefix": "West",
+    "addr:street:type": "Street",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "1",
+    "chicago:building_id": "826107",
+    "ele": "186",
+    "gnis:feature_id": "2105014",
+    "name": "Chicago Fire Department Engine Company 88",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 210159117,
+   "center": {
+    "lat": 41.803264,
+    "lon": -87.6433023
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "5000",
+    "addr:postcode": "60609",
+    "addr:state": "IL",
+    "addr:street": "South Union Avenue",
+    "addr:street:name": "Union",
+    "addr:street:prefix": "South",
+    "addr:street:type": "Avenue",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "2",
+    "chicago:building_id": "456505",
+    "ele": "182",
+    "gnis:feature_id": "2100718",
+    "name": "Chicago Fire Department Engine Company 50",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 210167418,
+   "center": {
+    "lat": 41.8305264,
+    "lon": -87.6421555
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "3509",
+    "addr:postcode": "60609",
+    "addr:state": "IL",
+    "addr:street": "South Lowe Avenue",
+    "addr:street:name": "Lowe",
+    "addr:street:prefix": "South",
+    "addr:street:type": "Avenue",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "1",
+    "chicago:building_id": "417920",
+    "ele": "182",
+    "gnis:feature_id": "2100706",
+    "name": "Chicago Fire Department Engine Company 29",
+    "opening_hours": "24/7",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 210221626,
+   "center": {
+    "lat": 41.8455807,
+    "lon": -87.6563362
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "2534",
+    "addr:postcode": "60608",
+    "addr:state": "IL",
+    "addr:street": "South Throop Street",
+    "addr:street:name": "Throop",
+    "addr:street:prefix": "South",
+    "addr:street:type": "Street",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "2",
+    "chicago:building_id": "395290",
+    "ele": "181",
+    "gnis:feature_id": "2100705",
+    "name": "Chicago Fire Department Engine Company 28",
+    "opening_hours": "24/7",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 210257144,
+   "center": {
+    "lat": 41.8645088,
+    "lon": -87.6560346
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "1360",
+    "addr:postcode": "60608",
+    "addr:state": "IL",
+    "addr:street": "South Blue Island Avenue",
+    "addr:street:name": "Blue Island",
+    "addr:street:prefix": "South",
+    "addr:street:type": "Avenue",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "chicago:building_id": "885990",
+    "ele": "181",
+    "gnis:feature_id": "2100702",
+    "name": "Chicago Fire Department Engine Company 18",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 210257875,
+   "center": {
+    "lat": 41.8644296,
+    "lon": -87.6411388
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "1338",
+    "addr:postcode": "60607",
+    "addr:state": "IL",
+    "addr:street": "South Clinton Street",
+    "addr:street:name": "Clinton",
+    "addr:street:prefix": "South",
+    "addr:street:type": "Street",
+    "amenity": "fire_station",
+    "building": "public",
+    "building:levels": "1",
+    "chicago:building_id": "373175",
+    "name": "Chicago Fire Department EMS & Paramedic Office",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "http://cityinfo.cityofchicago.org/PhoneBook/PhoneBook?page=EmployeeSearchMult&subGroup=%27Fire%20-%20Emergency%20Medical%20Services%20(EMS)%20Training%27"
+   }
+  },
+  {
+   "type": "way",
+   "id": 210306940,
+   "center": {
+    "lat": 41.8959954,
+    "lon": -87.6562525
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "1129",
+    "addr:postcode": "60642",
+    "addr:state": "IL",
+    "addr:street": "West Chicago Avenue",
+    "addr:street:name": "Chicago",
+    "addr:street:prefix": "West",
+    "addr:street:type": "Avenue",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "2",
+    "chicago:building_id": "339367",
+    "ele": "180",
+    "gnis:feature_id": "2100700",
+    "name": "Chicago Fire Department Engine Company 14",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 210306941,
+   "center": {
+    "lat": 41.9039753,
+    "lon": -87.6429423
+   },
+   "tags": {
+    "addr:city": "Chicago",
+    "addr:housenumber": "548",
+    "addr:postcode": "60610",
+    "addr:state": "IL",
+    "addr:street": "West Division Street",
+    "addr:street:name": "Division",
+    "addr:street:prefix": "West",
+    "addr:street:type": "Street",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "building:levels": "2",
+    "chicago:building_id": "320668",
+    "name": "Chicago Fire Department Engine Company 4",
+    "operator": "Chicago Fire Department",
+    "operator:wikidata": "Q2963308",
+    "operator:wikipedia": "en:Chicago Fire Department"
+   }
+  }
+ ]
+}

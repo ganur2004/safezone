@@ -50,25 +50,62 @@ console.log("tools/list");
 const list = (await call("tools/list", {})) as {
   tools: { name: string; description?: string; annotations?: { readOnlyHint?: boolean } }[];
 };
-const fires = list.tools.find((tool) => tool.name === "get_fire_hotspots");
-check("get_fire_hotspots is listed", fires !== undefined);
-check("get_fire_hotspots is read-only", fires?.annotations?.readOnlyHint === true);
+const EXPECTED_TOOLS = [
+  "geocode",
+  "get_fire_hotspots",
+  "get_weather_alerts",
+  "get_earthquakes",
+  "get_air_quality",
+  "get_wind",
+  "find_safe_places",
+];
+for (const name of EXPECTED_TOOLS) {
+  const tool = list.tools.find((candidate) => candidate.name === name);
+  check(`${name} is listed and read-only`, tool?.annotations?.readOnlyHint === true);
+}
 
-console.log("tools/call get_fire_hotspots (Sacramento)");
-const result = (await call("tools/call", {
-  name: "get_fire_hotspots",
-  arguments: { lat: 38.5816, lon: -121.4944, radius_km: 50, days: 1 },
-})) as {
+interface ToolCallResult {
   isError?: boolean;
   content: { type: string; text: string }[];
-  structuredContent?: { summary?: string; map?: { layers: { id: string }[] }; demo?: boolean };
-};
-check("call succeeded", result.isError !== true);
-check("content[0] is spoken text", result.content[0]?.type === "text");
-check(
-  "structuredContent carries map layers",
-  (result.structuredContent?.map?.layers.length ?? 0) > 0,
-);
-console.log(`\nsummary: ${result.content[0]?.text}`);
-console.log(`demo data: ${result.structuredContent?.demo === true}`);
+  structuredContent?: {
+    summary?: string;
+    severity?: string;
+    map?: { layers: { id: string }[] };
+    demo?: boolean;
+  };
+}
+
+const sacramento = { lat: 38.5816, lon: -121.4944 };
+const CALLS: { name: string; args: Record<string, unknown>; expectLayers: boolean }[] = [
+  { name: "geocode", args: { query: "Sacramento" }, expectLayers: true },
+  {
+    name: "get_fire_hotspots",
+    args: { ...sacramento, radius_km: 50, days: 1 },
+    expectLayers: true,
+  },
+  // Alerts draw nothing when none are active, which is the normal case.
+  { name: "get_weather_alerts", args: sacramento, expectLayers: false },
+  { name: "get_earthquakes", args: sacramento, expectLayers: true },
+  { name: "get_air_quality", args: sacramento, expectLayers: true },
+  { name: "get_wind", args: sacramento, expectLayers: true },
+  { name: "find_safe_places", args: { ...sacramento, type: "hospital" }, expectLayers: true },
+];
+
+console.log("tools/call");
+for (const { name, args, expectLayers } of CALLS) {
+  const result = (await call("tools/call", { name, arguments: args })) as ToolCallResult;
+  check(`${name} succeeded`, result.isError !== true);
+  check(`${name} returned spoken text`, result.content[0]?.type === "text");
+  check(
+    `${name} returned structuredContent`,
+    typeof result.structuredContent?.summary === "string" &&
+      result.structuredContent.summary === result.content[0]?.text,
+  );
+  if (expectLayers) {
+    check(`${name} returned map layers`, (result.structuredContent?.map?.layers.length ?? 0) > 0);
+  }
+  const demo = result.structuredContent?.demo === true ? " [demo data]" : "";
+  console.log(`    ${name}: ${result.content[0]?.text}${demo}`);
+}
+
 console.log("\nSmoke test passed.");

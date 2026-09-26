@@ -1,0 +1,26 @@
+{
+ "results": [
+  {
+   "id": 5855927,
+   "name": "Hilo",
+   "latitude": 19.72991,
+   "longitude": -155.09073,
+   "elevation": 18,
+   "feature_code": "PPLA2",
+   "country_code": "US",
+   "admin1_id": 5855797,
+   "admin2_id": 5855765,
+   "timezone": "Pacific/Honolulu",
+   "population": 43263,
+   "postcodes": [
+    "96720",
+    "96721"
+   ],
+   "country_id": 6252001,
+   "country": "United States",
+   "admin1": "Hawaii",
+   "admin2": "Hawaii County"
+  }
+ ],
+ "generationtime_ms": 0.59998035
+}

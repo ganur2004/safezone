@@ -56,7 +56,8 @@ export function registerSafetyTool<Shape extends ZodRawShape>(
       } catch (error) {
         if (error instanceof ToolInputError) return toErrorResult(error.message);
         if (error instanceof SourceUnavailableError) {
-          return toErrorResult(`Sorry, ${error.message}. Please try again shortly.`);
+          const hint = error.retryable ? " Please try again shortly." : "";
+          return toErrorResult(`Sorry, ${error.message}.${hint}`);
         }
         console.error(`[${tool.name}] unexpected failure`, error);
         return toErrorResult(`Sorry, ${tool.name} failed unexpectedly.`);

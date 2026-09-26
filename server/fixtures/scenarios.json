@@ -1,26 +1,76 @@
 {
-  "note": "Demo scenarios for DEMO_MODE=true. Replace the fire CSVs with real recordings via `npm run record-fixtures` (needs FIRMS_MAP_KEY). See SPEC.md 5.5.",
+  "note": "Demo scenarios for DEMO_MODE=true. The alerts/quakes/air/wind/places payloads are real API responses recorded with `npm run record-fixtures`; the fire CSVs are placeholders until the script is run with a FIRMS_MAP_KEY. See SPEC.md 5.5.",
   "scenarios": [
     {
       "id": "sacramento-fires",
-      "label": "Sacramento, CA — active fire cluster north-east",
+      "label": "Sacramento, CA \u2014 active fire cluster north-east",
       "lat": 38.5816,
       "lon": -121.4944,
-      "fires": "fires/sacramento-fires.csv"
+      "fires": "fires/sacramento-fires.csv",
+      "alerts": "alerts/sacramento-fires.json",
+      "quakes": "quakes/sacramento-fires.json",
+      "air": "air/sacramento-fires.json",
+      "wind": "wind/sacramento-fires.json",
+      "places": "places/sacramento-fires.json",
+      "aliases": [
+        "Sacramento",
+        "Sacramento, CA",
+        "my home in Sacramento"
+      ],
+      "geocode": "geocode/sacramento-fires.json"
     },
     {
       "id": "los-angeles",
-      "label": "Los Angeles, CA — scattered hotspots",
+      "label": "Los Angeles, CA \u2014 scattered hotspots",
       "lat": 34.0522,
       "lon": -118.2437,
-      "fires": "fires/los-angeles.csv"
+      "fires": "fires/los-angeles.csv",
+      "alerts": "alerts/los-angeles.json",
+      "quakes": "quakes/los-angeles.json",
+      "air": "air/los-angeles.json",
+      "wind": "wind/los-angeles.json",
+      "places": "places/los-angeles.json",
+      "aliases": [
+        "Los Angeles",
+        "LA",
+        "Los Angeles, CA"
+      ],
+      "geocode": "geocode/los-angeles.json"
     },
     {
       "id": "calm",
-      "label": "Chicago, IL — nothing active nearby",
+      "label": "Chicago, IL \u2014 nothing active nearby",
       "lat": 41.8781,
       "lon": -87.6298,
-      "fires": "fires/calm.csv"
+      "fires": "fires/calm.csv",
+      "alerts": "alerts/calm.json",
+      "quakes": "quakes/calm.json",
+      "air": "air/calm.json",
+      "wind": "wind/calm.json",
+      "places": "places/calm.json",
+      "aliases": [
+        "Chicago",
+        "Chicago, IL"
+      ],
+      "geocode": "geocode/calm.json"
+    },
+    {
+      "id": "hilo-storm",
+      "label": "Hilo, HI \u2014 hurricane watch and tropical storm warning",
+      "lat": 19.707,
+      "lon": -155.0885,
+      "aliases": [
+        "Hilo",
+        "Hilo, HI",
+        "Big Island",
+        "Hawaii"
+      ],
+      "alerts": "alerts/hilo-storm.json",
+      "quakes": "quakes/hilo-storm.json",
+      "air": "air/hilo-storm.json",
+      "wind": "wind/hilo-storm.json",
+      "places": "places/hilo-storm.json",
+      "geocode": "geocode/hilo-storm.json"
     }
   ]
 }

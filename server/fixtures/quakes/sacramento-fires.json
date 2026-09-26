@@ -1,0 +1,101 @@
+{
+ "type": "FeatureCollection",
+ "metadata": {
+  "generated": 1790448035000,
+  "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&latitude=38.5816&longitude=-121.4944&maxradiuskm=200&starttime=2026-09-23T18:40:34.909Z&minmagnitude=2.5&orderby=time",
+  "title": "USGS Earthquakes",
+  "status": 200,
+  "api": "2.7.0",
+  "count": 2
+ },
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "mag": 2.74,
+    "place": "10 km W of Boonville, CA",
+    "time": 1790395327440,
+    "updated": 1790421792404,
+    "tz": null,
+    "url": "https://earthquake.usgs.gov/earthquakes/eventpage/nc75442217",
+    "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=nc75442217&format=geojson",
+    "felt": 17,
+    "cdi": 3.4,
+    "mmi": null,
+    "alert": null,
+    "status": "automatic",
+    "tsunami": 0,
+    "sig": 121,
+    "net": "nc",
+    "code": "75442217",
+    "ids": ",nc75442217,",
+    "sources": ",nc,",
+    "types": ",dyfi,focal-mechanism,nearby-cities,origin,phase-data,scitech-link,",
+    "nst": 29,
+    "dmin": 0.1079,
+    "rms": 0.09,
+    "gap": 63,
+    "magType": "md",
+    "type": "earthquake",
+    "title": "M 2.7 - 10 km W of Boonville, CA"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -123.483001708984,
+     39.013500213623,
+     3.46000003814697
+    ]
+   },
+   "id": "nc75442217"
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "mag": 3.74,
+    "place": "10 km W of Boonville, CA",
+    "time": 1790394169670,
+    "updated": 1790447618614,
+    "tz": null,
+    "url": "https://earthquake.usgs.gov/earthquakes/eventpage/nc75442207",
+    "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=nc75442207&format=geojson",
+    "felt": 132,
+    "cdi": 4.3,
+    "mmi": 4.229,
+    "alert": null,
+    "status": "reviewed",
+    "tsunami": 0,
+    "sig": 272,
+    "net": "nc",
+    "code": "75442207",
+    "ids": ",ew1790394170,nc75442207,us6000txr6,",
+    "sources": ",ew,nc,us,",
+    "types": ",dyfi,focal-mechanism,moment-tensor,nearby-cities,origin,phase-data,scitech-link,shake-alert,shakemap,",
+    "nst": 80,
+    "dmin": 0.1039,
+    "rms": 0.1,
+    "gap": 62,
+    "magType": "mw",
+    "type": "earthquake",
+    "title": "M 3.7 - 10 km W of Boonville, CA"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -123.477333333333,
+     39.0145,
+     4.78
+    ]
+   },
+   "id": "nc75442207"
+  }
+ ],
+ "bbox": [
+  -123.48300170898,
+  39.013500213623,
+  3.460000038147,
+  -123.47733333333,
+  39.0145,
+  4.78
+ ]
+}

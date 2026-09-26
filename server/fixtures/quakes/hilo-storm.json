@@ -1,0 +1,141 @@
+{
+ "type": "FeatureCollection",
+ "metadata": {
+  "generated": 1790448295000,
+  "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&latitude=19.707&longitude=-155.0885&maxradiuskm=200&starttime=2026-09-23T18:44:54.960Z&minmagnitude=2.5&orderby=time",
+  "title": "USGS Earthquakes",
+  "status": 200,
+  "api": "2.7.0",
+  "count": 3
+ },
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "mag": 3.11,
+    "place": "4 km SW of Laupāhoehoe, Hawaii",
+    "time": 1790423931760,
+    "updated": 1790447100404,
+    "tz": null,
+    "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75043917",
+    "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=hv75043917&format=geojson",
+    "felt": 10,
+    "cdi": 3.8,
+    "mmi": null,
+    "alert": null,
+    "status": "automatic",
+    "tsunami": 0,
+    "sig": 153,
+    "net": "hv",
+    "code": "75043917",
+    "ids": ",hv75043917,",
+    "sources": ",hv,",
+    "types": ",dyfi,origin,phase-data,",
+    "nst": 42,
+    "dmin": 0.03908,
+    "rms": 0.230000004,
+    "gap": 98,
+    "magType": "ml",
+    "type": "earthquake",
+    "title": "M 3.1 - 4 km SW of Laupāhoehoe, Hawaii"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -155.261505126953,
+     19.9551658630371,
+     14.210000038147
+    ]
+   },
+   "id": "hv75043917"
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "mag": 3.22,
+    "place": "2 km SW of Honaunau-Napoopoo, Hawaii",
+    "time": 1790358888830,
+    "updated": 1790372364202,
+    "tz": null,
+    "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75043722",
+    "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=hv75043722&format=geojson",
+    "felt": 24,
+    "cdi": 3.2,
+    "mmi": null,
+    "alert": null,
+    "status": "reviewed",
+    "tsunami": 0,
+    "sig": 167,
+    "net": "hv",
+    "code": "75043722",
+    "ids": ",hv75043722,us6000txmz,",
+    "sources": ",hv,us,",
+    "types": ",dyfi,origin,phase-data,",
+    "nst": 50,
+    "dmin": 0.05557,
+    "rms": 0.21,
+    "gap": 146,
+    "magType": "ml",
+    "type": "earthquake",
+    "title": "M 3.2 - 2 km SW of Honaunau-Napoopoo, Hawaii"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -155.880333333333,
+     19.4443333333333,
+     7.47
+    ]
+   },
+   "id": "hv75043722"
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "mag": 3.18,
+    "place": "Island of Hawaii, Hawaii",
+    "time": 1790208312310,
+    "updated": 1790245210548,
+    "tz": null,
+    "url": "https://earthquake.usgs.gov/earthquakes/eventpage/hv75042947",
+    "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=hv75042947&format=geojson",
+    "felt": 12,
+    "cdi": 2.2,
+    "mmi": null,
+    "alert": null,
+    "status": "reviewed",
+    "tsunami": 0,
+    "sig": 158,
+    "net": "hv",
+    "code": "75042947",
+    "ids": ",hv75042947,us6000tx78,",
+    "sources": ",hv,us,",
+    "types": ",dyfi,origin,phase-data,",
+    "nst": 46,
+    "dmin": 0.07731,
+    "rms": 0.25,
+    "gap": 176,
+    "magType": "ml",
+    "type": "earthquake",
+    "title": "M 3.2 - Island of Hawaii, Hawaii"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -155.827666666667,
+     19.3303333333333,
+     7.39
+    ]
+   },
+   "id": "hv75042947"
+  }
+ ],
+ "bbox": [
+  -155.88033333333,
+  19.330333333333,
+  7.39,
+  -155.26150512695,
+  19.955165863037,
+  14.210000038147
+ ]
+}

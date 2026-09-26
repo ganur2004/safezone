@@ -88,3 +88,26 @@ export function formatKmAndMiles(km: number): string {
 export function angleDiff(a: number, b: number): number {
   return Math.abs(((a - b + 540) % 360) - 180);
 }
+
+/** Words for the 16-point compass: a voice assistant reads "north-east", not "NE". */
+const SPOKEN_DIRECTIONS: Record<CardinalDirection, string> = {
+  N: "north",
+  NNE: "north-northeast",
+  NE: "north-east",
+  ENE: "east-northeast",
+  E: "east",
+  ESE: "east-southeast",
+  SE: "south-east",
+  SSE: "south-southeast",
+  S: "south",
+  SSW: "south-southwest",
+  SW: "south-west",
+  WSW: "west-southwest",
+  W: "west",
+  WNW: "west-northwest",
+  NW: "north-west",
+  NNW: "north-northwest",
+};
+
+export const spellDirection = (direction: CardinalDirection): string =>
+  SPOKEN_DIRECTIONS[direction];

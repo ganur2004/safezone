@@ -73,7 +73,8 @@ export async function fetchFirmsHotspots(query: FirmsQuery): Promise<FirmsHotspo
   if (!mapKey) {
     throw new SourceUnavailableError(
       FIRMS_SOURCE_NAME,
-      "fire data is not configured (missing FIRMS_MAP_KEY)",
+      "fire data is not configured on this server (no FIRMS map key)",
+      { retryable: false },
     );
   }
   const key = cacheKey("firms", {

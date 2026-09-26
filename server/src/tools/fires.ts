@@ -6,6 +6,7 @@ import {
   bearingDeg,
   formatKmAndMiles,
   haversineKm,
+  spellDirection,
   toCardinal,
   type CardinalDirection,
   type LatLon,
@@ -132,30 +133,6 @@ export function fireSummary(
   const plural = hotspots.length === 1 ? "hotspot" : "hotspots";
   return (
     `${hotspots.length} active fire ${plural}${clusterNote} within ${formatKmAndMiles(radiusKm)}. ` +
-    `The closest is ${formatKmAndMiles(closest.distanceKm)} ${spell(closest.direction)}.`
+    `The closest is ${formatKmAndMiles(closest.distanceKm)} ${spellDirection(closest.direction)}.`
   );
-}
-
-const DIRECTION_WORDS: Record<string, string> = {
-  N: "north",
-  NNE: "north-northeast",
-  NE: "north-east",
-  ENE: "east-northeast",
-  E: "east",
-  ESE: "east-southeast",
-  SE: "south-east",
-  SSE: "south-southeast",
-  S: "south",
-  SSW: "south-southwest",
-  SW: "south-west",
-  WSW: "west-southwest",
-  W: "west",
-  WNW: "west-northwest",
-  NW: "north-west",
-  NNW: "north-northwest",
-};
-
-/** Alexa reads "north-east" better than "NE". */
-export function spell(direction: CardinalDirection): string {
-  return DIRECTION_WORDS[direction] ?? direction;
 }

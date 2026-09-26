@@ -1,0 +1,23 @@
+{
+ "latitude": 38.600006,
+ "longitude": -121.5,
+ "generationtime_ms": 0.2409219741821289,
+ "utc_offset_seconds": 0,
+ "timezone": "GMT",
+ "timezone_abbreviation": "GMT",
+ "elevation": 22,
+ "current_units": {
+  "time": "iso8601",
+  "interval": "seconds",
+  "us_aqi": "USAQI",
+  "pm2_5": "μg/m³",
+  "pm10": "μg/m³"
+ },
+ "current": {
+  "time": "2026-09-26T18:00",
+  "interval": 3600,
+  "us_aqi": 25,
+  "pm2_5": 6.4,
+  "pm10": 8.6
+ }
+}

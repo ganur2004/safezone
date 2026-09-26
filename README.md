@@ -44,12 +44,33 @@ npm run inspector     # then connect to http://localhost:8787/mcp (Streamable HT
 
 ## Running with live data
 
-1. Get a free NASA FIRMS `MAP_KEY`: https://firms.modaps.eosdis.nasa.gov/api/map_key/
-2. `cp .env.example .env` and fill in `FIRMS_MAP_KEY`.
-3. `DEMO_MODE=false npm run dev`
+```bash
+cp .env.example .env
+DEMO_MODE=false npm run dev
+```
 
-Without a key the fire tool answers with a clear error instead of failing; with `DEMO_MODE=true`
-it reads recorded responses from `server/fixtures` and marks the result `demo: true`.
+Six of the seven tools work immediately — NWS, USGS, Open-Meteo and Overpass need no keys.
+Two optional keys add the rest:
+
+- `FIRMS_MAP_KEY` — free from https://firms.modaps.eosdis.nasa.gov/api/map_key/, enables
+  `get_fire_hotspots`. Without it that one tool answers with a clear error and the others are
+  unaffected.
+- `AMAZON_LOCATION_API_KEY` — makes `geocode` use Amazon Location Service instead of Open-Meteo.
+- `NWS_USER_AGENT` — the National Weather Service asks for a contact address in the User-Agent.
+
+Weather alerts cover US locations only; elsewhere the tool says so instead of failing.
+
+## Demo fixtures
+
+`server/fixtures` holds recorded API responses for four scenarios: Sacramento, Los Angeles,
+Chicago (nothing active) and Hilo, Hawaii (a real hurricane watch). Refresh them with:
+
+```bash
+npm run record-fixtures
+```
+
+Everything except the fire CSVs is recorded from the live keyless APIs; the fire CSVs are
+placeholders until the script runs with a `FIRMS_MAP_KEY`.
 
 ## Repository layout
 

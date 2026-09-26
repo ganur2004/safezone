@@ -1,5 +1,6 @@
 /** MCP tool `get_fire_hotspots` — active fire hotspots around a point (spec 5.3). */
 import { z } from "zod";
+import { spellDirection } from "@safezone/shared";
 import type { LatLon, MapLayer, SafetyToolResult, SourceRef } from "@safezone/shared";
 import { config } from "../config.js";
 import { bboxOfPoints, circleFeature, featureCollection, pointFeature } from "../lib/geojson.js";
@@ -14,7 +15,7 @@ import {
   type FirmsHotspot,
 } from "../sources/firms.js";
 import { loadFireFixture } from "../demo/fixtures.js";
-import { clusterHotspots, fireSummary, filterHotspots, spell } from "./fires.js";
+import { clusterHotspots, fireSummary, filterHotspots } from "./fires.js";
 import { defineTool } from "./registry.js";
 
 const inputSchema = {
@@ -113,7 +114,7 @@ export const getFireHotspotsTool = defineTool({
               distance_km: Math.round(closest.distanceKm * 10) / 10,
               bearing_deg: closest.bearingDeg,
               direction: closest.direction,
-              direction_spoken: spell(closest.direction),
+              direction_spoken: spellDirection(closest.direction),
               frp: closest.frp,
               acquired_at: closest.acquiredAt,
             }

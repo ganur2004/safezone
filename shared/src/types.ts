@@ -30,11 +30,18 @@ export const MAP_LAYER_KINDS = [
 ] as const;
 export type MapLayerKind = (typeof MAP_LAYER_KINDS)[number];
 
+/**
+ * Free-form object, spelled so the generated JSON Schema says
+ * `additionalProperties: true` rather than an empty `{}` — MCP clients validate
+ * the output schema, and a bare `{}` reads as "no constraint at all".
+ */
+const freeFormObject = z.object({}).passthrough();
+
 /** Minimal GeoJSON validation: the simulator only needs a FeatureCollection. */
 export const geoJsonFeatureCollectionSchema = z
   .object({
     type: z.literal("FeatureCollection"),
-    features: z.array(z.record(z.unknown())),
+    features: z.array(freeFormObject),
   })
   .passthrough();
 
@@ -69,7 +76,7 @@ export const safetyToolResultSchema = z.object({
       layers: z.array(mapLayerSchema),
     })
     .optional(),
-  data: z.record(z.unknown()),
+  data: freeFormObject,
   sources: z.array(sourceRefSchema),
   /** true when the answer came from recorded fixtures. */
   demo: z.boolean().optional(),

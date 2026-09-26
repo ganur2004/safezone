@@ -38,6 +38,18 @@ which is declared through the tool's `outputSchema`.
 shape deploys unchanged to Lambda. The only shared state is a 5-minute in-memory response cache,
 keyed by tool plus coordinates rounded to 0.01°.
 
+## The tools
+
+| Tool                 | Source                       | Notes                                             |
+| -------------------- | ---------------------------- | ------------------------------------------------- |
+| `geocode`            | Amazon Location / Open-Meteo | Amazon when a key is set, Open-Meteo otherwise    |
+| `get_fire_hotspots`  | NASA FIRMS VIIRS             | bbox query, real-distance filter, 2 km clustering |
+| `get_weather_alerts` | NOAA / NWS                   | US only; zone alerts carry no polygon             |
+| `get_earthquakes`    | USGS                         | already GeoJSON                                   |
+| `get_air_quality`    | Open-Meteo Air Quality       | US AQI mapped to EPA bands and colours            |
+| `get_wind`           | Open-Meteo Forecast          | reports both `from_deg` and `to_deg`              |
+| `find_safe_places`   | OpenStreetMap via Overpass   | `avoid` zones drop and down-rank places           |
+
 ## Layering inside the server
 
 - `sources/` — one client per external API. I/O, timeouts, cache; nothing else.
@@ -49,5 +61,12 @@ keyed by tool plus coordinates rounded to 0.01°.
 ## Failure behaviour
 
 A dead source raises `SourceUnavailableError` and becomes an MCP error result with a readable
-sentence — never a stack trace, never a URL containing a key. `assess_risk` will degrade to partial
-data rather than fail as a whole.
+sentence — never a stack trace, never a URL containing a key. Missing configuration is marked
+`retryable: false` so the message does not promise that retrying will help. `assess_risk` will
+degrade to partial data rather than fail as a whole.
+
+Two sources needed specific handling. The National Weather Service answers HTTP 400 "out of bounds"
+for points outside the US, which is an answer rather than a failure, so the HTTP layer can pass
+selected 4xx codes through to the caller. Public Overpass instances answer 406 for a User-Agent
+containing an email in parentheses and 504 whenever they are busy, so the client sends a plain token
+agent and walks a list of mirrors.

@@ -10,7 +10,7 @@ interface CacheEntry {
 const cache = new Map<string, CacheEntry>();
 
 /** Cache key: tool/source name plus coordinates rounded to 0.01° plus params (spec 5.6). */
-export function cacheKey(name: string, params: Record<string, unknown>): string {
+export function cacheKey(name: string, params: Readonly<Record<string, unknown>>): string {
   const normalized = Object.entries(params)
     .filter(([, value]) => value !== undefined)
     .map(([key, value]) => {
@@ -43,6 +43,11 @@ interface FetchOptions {
   sourceName: string;
   headers?: Record<string, string>;
   timeoutMs?: number;
+  /**
+   * Status codes to hand back instead of raising. Needed for sources that answer
+   * a valid question with 4xx — NWS replies 400 "out of bounds" outside the US.
+   */
+  acceptStatuses?: number[];
 }
 
 async function fetchWithTimeout(url: string, options: FetchOptions): Promise<Response> {
@@ -53,7 +58,7 @@ async function fetchWithTimeout(url: string, options: FetchOptions): Promise<Res
       signal: controller.signal,
       headers: { accept: "*/*", ...options.headers },
     });
-    if (!response.ok) {
+    if (!response.ok && !(options.acceptStatuses ?? []).includes(response.status)) {
       throw new SourceUnavailableError(
         options.sourceName,
         `${options.sourceName} returned HTTP ${response.status}`,
@@ -77,14 +82,59 @@ export async function fetchText(url: string, options: FetchOptions): Promise<str
 }
 
 export async function fetchJson<T>(url: string, options: FetchOptions): Promise<T> {
+  return (await fetchJsonWithStatus<T>(url, options)).data;
+}
+
+/** Like fetchJson, but also reports the status so callers can react to accepted 4xx. */
+export async function fetchJsonWithStatus<T>(
+  url: string,
+  options: FetchOptions,
+): Promise<{ status: number; data: T }> {
   const response = await fetchWithTimeout(url, options);
   try {
-    return (await response.json()) as T;
+    return { status: response.status, data: (await response.json()) as T };
   } catch (error) {
     throw new SourceUnavailableError(
       options.sourceName,
       `${options.sourceName} returned an unreadable response`,
       { cause: error },
     );
+  }
+}
+
+/** POST body variant, for Overpass QL. */
+export async function postForJson<T>(
+  url: string,
+  body: URLSearchParams | string,
+  options: FetchOptions & { contentType?: string },
+): Promise<T> {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), options.timeoutMs ?? config.fetchTimeoutMs);
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      signal: controller.signal,
+      headers: {
+        accept: "application/json",
+        "content-type": options.contentType ?? "application/x-www-form-urlencoded",
+        ...options.headers,
+      },
+      body,
+    });
+    if (!response.ok) {
+      throw new SourceUnavailableError(
+        options.sourceName,
+        `${options.sourceName} returned HTTP ${response.status}`,
+      );
+    }
+    return (await response.json()) as T;
+  } catch (error) {
+    if (error instanceof SourceUnavailableError) throw error;
+    const reason = controller.signal.aborted ? "timed out" : "is unreachable";
+    throw new SourceUnavailableError(options.sourceName, `${options.sourceName} ${reason}`, {
+      cause: error,
+    });
+  } finally {
+    clearTimeout(timeout);
   }
 }

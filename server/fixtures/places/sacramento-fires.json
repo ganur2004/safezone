@@ -1,0 +1,2125 @@
+{
+ "version": 0.6,
+ "generator": "Overpass API 0.7.62.11 87bfad18",
+ "osm3s": {
+  "timestamp_osm_base": "2026-09-26T18:39:06Z",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+ },
+ "elements": [
+  {
+   "type": "node",
+   "id": 275629033,
+   "lat": 38.5403662,
+   "lon": -121.757659,
+   "tags": {
+    "amenity": "fire_station",
+    "name": "UC Davis Fire Department"
+   }
+  },
+  {
+   "type": "node",
+   "id": 358852460,
+   "lat": 38.5529616,
+   "lon": -121.455231,
+   "tags": {
+    "addr:city": "Sacramento",
+    "addr:housenumber": "2425",
+    "addr:postcode": "95817",
+    "addr:street": "Stockton Boulevard",
+    "amenity": "hospital",
+    "emergency": "no",
+    "gnis:feature_id": "2061530",
+    "healthcare": "hospital",
+    "healthcare:speciality": "paediatrics",
+    "name": "Shriners Hospitals for Children — Northern California",
+    "operator": "Shriners Hospitals for Children",
+    "operator:type": "ngo",
+    "operator:wikidata": "Q7504109",
+    "operator:wikipedia": "en:Shriners Hospitals for Children",
+    "phone": "+1 916 453 2000",
+    "website": "https://www.shrinershospitalsforchildren.org/sacramento",
+    "wikidata": "Q50575530"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368167881,
+   "lat": 38.6551816,
+   "lon": -121.3499517,
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "fire_station",
+    "ele": "33",
+    "gnis:feature_id": "2061490",
+    "name": "Sacramento Metro Fire Station Number 24",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368167884,
+   "lat": 38.7010137,
+   "lon": -121.3313402,
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "fire_station",
+    "ele": "51",
+    "gnis:feature_id": "2061491",
+    "name": "Sacramento Metro Fire Station Number 25",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368167886,
+   "lat": 38.710458,
+   "lon": -121.2921725,
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "fire_station",
+    "ele": "46",
+    "gnis:feature_id": "2061493",
+    "name": "Sacramento Metro Fire Station Number 27",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368167888,
+   "lat": 38.6785144,
+   "lon": -121.2835611,
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "fire_station",
+    "ele": "51",
+    "gnis:feature_id": "2061487",
+    "name": "Sacramento Metro Fire Station Number 21",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368167889,
+   "lat": 38.6799034,
+   "lon": -121.2110592,
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "fire_station",
+    "ele": "75",
+    "gnis:feature_id": "2061488",
+    "name": "Sacramento Metro Fire Station Number 22",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368167892,
+   "lat": 38.6904583,
+   "lon": -121.4496766,
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "fire_station",
+    "ele": "16",
+    "gnis:feature_id": "2061483",
+    "name": "Sacramento Metro Fire Station Number 111",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368167893,
+   "lat": 38.6907361,
+   "lon": -121.38773,
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "fire_station",
+    "ele": "25",
+    "gnis:feature_id": "2061484",
+    "name": "Sacramento Metro Fire Station Number 112",
+    "operator": "Sacramento Metropolitan Fire District",
+    "operator:wikidata": "Q7396999",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368167895,
+   "lat": 38.7143465,
+   "lon": -121.4668993,
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "fire_station",
+    "ele": "14",
+    "gnis:feature_id": "2061485",
+    "name": "Sacramento Metro Fire Station Number 116",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368167896,
+   "lat": 38.6065716,
+   "lon": -121.3849524,
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "fire_station",
+    "ele": "17",
+    "gnis:feature_id": "2061478",
+    "name": "Sacramento Metro Fire Station Number 106",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368167897,
+   "lat": 38.5821278,
+   "lon": -121.3746743,
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "fire_station",
+    "ele": "22",
+    "gnis:feature_id": "2061479",
+    "name": "Sacramento Metro Fire Station Number 107",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368167898,
+   "lat": 38.6493484,
+   "lon": -121.308006,
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "fire_station",
+    "ele": "48",
+    "gnis:feature_id": "2061480",
+    "name": "Sacramento Metro Fire Station Number 108",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368167899,
+   "lat": 38.620738,
+   "lon": -121.3332844,
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "fire_station",
+    "ele": "36",
+    "gnis:feature_id": "2061481",
+    "name": "Sacramento Metro Fire Station Number 109",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368167900,
+   "lat": 38.6179603,
+   "lon": -121.3593962,
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "fire_station",
+    "ele": "27",
+    "gnis:feature_id": "2061475",
+    "name": "Sacramento Metro Fire Station Number 102",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368167901,
+   "lat": 38.6199045,
+   "lon": -121.401064,
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "fire_station",
+    "ele": "20",
+    "gnis:feature_id": "2061474",
+    "name": "Sacramento Metro Fire Station Number 101",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368167902,
+   "lat": 38.5818499,
+   "lon": -121.3993971,
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "fire_station",
+    "ele": "15",
+    "gnis:feature_id": "2061477",
+    "name": "Sacramento Metro Fire Station Number 105",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368167903,
+   "lat": 38.635182,
+   "lon": -121.3824524,
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "fire_station",
+    "ele": "25",
+    "gnis:feature_id": "2061476",
+    "name": "Sacramento Metro Fire Station Number 103",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368167905,
+   "lat": 38.548728,
+   "lon": -121.3927795,
+   "tags": {
+    "addr:housenumber": "3301",
+    "addr:postcode": "95826",
+    "addr:state": "CA",
+    "addr:street": "Julliard Drive",
+    "amenity": "fire_station",
+    "check_date": "2026-07-11",
+    "ele": "13",
+    "gnis:feature_id": "2061467",
+    "name": "Sacramento Fire Station Number 60",
+    "phone": "+1-916-808-1300",
+    "source": "USGS Geonames",
+    "website": "https://www.cityofsacramento.gov/fire"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368167906,
+   "lat": 38.5893497,
+   "lon": -121.4174532,
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "fire_station",
+    "ele": "13",
+    "gnis:feature_id": "2061473",
+    "name": "Sacramento Metro Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368167907,
+   "lat": 38.5676836,
+   "lon": -121.4277313,
+   "tags": {
+    "addr:housenumber": "5990",
+    "addr:postcode": "95819",
+    "addr:state": "CA",
+    "addr:street": "H Street",
+    "amenity": "fire_station",
+    "check_date": "2026-07-11",
+    "ele": "11",
+    "gnis:feature_id": "2061469",
+    "name": "Sacramento Fire Station Number 8",
+    "phone": "+1-916-808-1300",
+    "source": "USGS Geonames",
+    "website": "https://www.cityofsacramento.gov/fire"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368167909,
+   "lat": 38.5710166,
+   "lon": -121.4649544,
+   "tags": {
+    "addr:postcode": "95816",
+    "addr:state": "CA",
+    "amenity": "fire_station",
+    "check_date": "2026-07-11",
+    "ele": "8",
+    "gnis:feature_id": "2061463",
+    "name": "Sacramento Fire Station Number 4",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368167910,
+   "lat": 38.4854633,
+   "lon": -121.4538427,
+   "tags": {
+    "addr:housenumber": "7927",
+    "addr:postcode": "95823",
+    "addr:state": "CA",
+    "addr:street": "East Parkway",
+    "amenity": "fire_station",
+    "check_date": "2026-07-11",
+    "ele": "6",
+    "gnis:feature_id": "2061466",
+    "name": "Sacramento Fire Station Number 57",
+    "phone": "+1-916-808-1300",
+    "source": "USGS Geonames",
+    "website": "https://www.cityofsacramento.gov/fire"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368167911,
+   "lat": 38.509907,
+   "lon": -121.4657876,
+   "tags": {
+    "addr:housenumber": "3720",
+    "addr:postcode": "95822",
+    "addr:state": "CA",
+    "addr:street": "47th Avenue",
+    "amenity": "fire_station",
+    "check_date": "2026-07-11",
+    "ele": "8",
+    "gnis:feature_id": "2061465",
+    "name": "Sacramento Fire Station Number 56",
+    "phone": "+1-916-808-1300",
+    "source": "USGS Geonames",
+    "website": "https://www.cityofsacramento.gov/fire"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368167912,
+   "lat": 38.5960162,
+   "lon": -121.4274535,
+   "tags": {
+    "addr:housenumber": "1700",
+    "addr:postcode": "95815",
+    "addr:state": "CA",
+    "addr:street": "Challenge Way",
+    "amenity": "fire_station",
+    "check_date": "2026-07-11",
+    "ele": "10",
+    "gnis:feature_id": "2061460",
+    "name": "Sacramento Fire Station Number 19",
+    "phone": "+1-916-808-1300",
+    "source": "USGS Geonames",
+    "website": "https://www.cityofsacramento.gov/fire"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368167914,
+   "lat": 38.6471259,
+   "lon": -121.479955,
+   "tags": {
+    "addr:housenumber": "746",
+    "addr:postcode": "95834",
+    "addr:state": "CA",
+    "addr:street": "North Market Boulevard",
+    "amenity": "fire_station",
+    "check_date": "2026-07-11",
+    "ele": "9",
+    "gnis:feature_id": "2061459",
+    "name": "Sacramento Fire Station Number 18",
+    "phone": "+1-916-808-1300",
+    "source": "USGS Geonames",
+    "website": "https://www.cityofsacramento.gov/fire"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368167920,
+   "lat": 38.580629,
+   "lon": -121.4889453,
+   "tags": {
+    "addr:housenumber": "1229",
+    "addr:postcode": "95814",
+    "addr:state": "CA",
+    "addr:street": "I Street",
+    "amenity": "fire_station",
+    "check_date": "2026-07-11",
+    "ele": "8",
+    "gnis:feature_id": "2061461",
+    "name": "Sacramento Fire Station Number 2",
+    "phone": "+1-916-808-1300",
+    "source": "USGS Geonames",
+    "website": "https://www.cityofsacramento.gov/fire"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368167925,
+   "lat": 38.4907408,
+   "lon": -121.4799546,
+   "tags": {
+    "addr:housenumber": "7363",
+    "addr:postcode": "95822",
+    "addr:state": "CA",
+    "addr:street": "24th Street",
+    "amenity": "fire_station",
+    "check_date": "2026-07-11",
+    "ele": "4",
+    "gnis:feature_id": "2061457",
+    "name": "Sacramento Fire Station Number 16",
+    "phone": "+1-916-808-1300",
+    "source": "USGS Geonames",
+    "website": "https://www.cityofsacramento.gov/fire"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368167926,
+   "lat": 38.6476816,
+   "lon": -121.4355094,
+   "tags": {
+    "addr:housenumber": "1311",
+    "addr:postcode": "95838",
+    "addr:state": "CA",
+    "addr:street": "Bell Avenue",
+    "amenity": "fire_station",
+    "check_date": "2026-07-11",
+    "ele": "13",
+    "gnis:feature_id": "2061458",
+    "name": "Sacramento Fire Station Number 17",
+    "phone": "+1-916-808-1300",
+    "source": "USGS Geonames",
+    "website": "https://www.cityofsacramento.gov/fire"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368167929,
+   "lat": 38.5337953,
+   "lon": -121.4835659,
+   "tags": {
+    "addr:housenumber": "4500",
+    "addr:postcode": "95822",
+    "addr:state": "CA",
+    "addr:street": "24th Street",
+    "amenity": "fire_station",
+    "check_date": "2026-07-11",
+    "ele": "8",
+    "gnis:feature_id": "2061453",
+    "name": "Sacramento Fire Station Number 12",
+    "phone": "+1-916-808-1300",
+    "source": "USGS Geonames",
+    "website": "https://www.cityofsacramento.gov/fire"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368167930,
+   "lat": 38.5165734,
+   "lon": -121.518289,
+   "tags": {
+    "addr:housenumber": "1100",
+    "addr:postcode": "95822",
+    "addr:state": "CA",
+    "addr:street": "43rd Avenue",
+    "amenity": "fire_station",
+    "check_date": "2026-07-11",
+    "ele": "3",
+    "gnis:feature_id": "2061454",
+    "name": "Sacramento Fire Station Number 13",
+    "phone": "+1-916-808-1300",
+    "source": "USGS Geonames",
+    "website": "https://www.cityofsacramento.gov/fire"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368167932,
+   "lat": 38.4977989,
+   "lon": -121.5311642,
+   "tags": {
+    "addr:housenumber": "785",
+    "addr:postcode": "95831",
+    "addr:state": "CA",
+    "addr:street": "Florin Road",
+    "amenity": "fire_station",
+    "check_date": "2026-07-11",
+    "ele": "2",
+    "gnis:feature_id": "2061452",
+    "name": "Sacramento Fire Station Number 11",
+    "phone": "+1-916-808-1300",
+    "source": "USGS Geonames",
+    "website": "https://www.cityofsacramento.gov/fire"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368167933,
+   "lat": 38.521851,
+   "lon": -121.4988441,
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "fire_station",
+    "ele": "7",
+    "gnis:feature_id": "2061449",
+    "name": "Sacramento Fire Department",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368167934,
+   "lat": 38.5735165,
+   "lon": -121.5013443,
+   "tags": {
+    "addr:housenumber": "624",
+    "addr:postcode": "95811",
+    "addr:state": "CA",
+    "addr:street": "Q Street",
+    "amenity": "fire_station",
+    "check_date": "2026-07-11",
+    "ele": "6",
+    "gnis:feature_id": "2061450",
+    "name": "Sacramento Fire Station Number 1",
+    "phone": "+1-916-808-1300",
+    "source": "USGS Geonames",
+    "website": "https://www.cityofsacramento.gov/fire"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368167946,
+   "lat": 38.6965697,
+   "lon": -121.1841142,
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "fire_station",
+    "ele": "93",
+    "gnis:feature_id": "2061326",
+    "name": "Folsom Fire Station Number 36",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368167950,
+   "lat": 38.5104632,
+   "lon": -121.3316174,
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "fire_station",
+    "ele": "21",
+    "gnis:feature_id": "2061321",
+    "name": "Florin Fire Station",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368167962,
+   "lat": 38.4243544,
+   "lon": -121.338839,
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "fire_station",
+    "ele": "18",
+    "gnis:feature_id": "2061308",
+    "name": "Cosumnes Fire Station Number 73",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368167963,
+   "lat": 38.3771332,
+   "lon": -121.4566197,
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "fire_station",
+    "ele": "6",
+    "gnis:feature_id": "2061307",
+    "name": "Elk Grove Fire Station Number 72",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368167964,
+   "lat": 38.4085215,
+   "lon": -121.378006,
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "fire_station",
+    "ele": "11",
+    "gnis:feature_id": "2061306",
+    "name": "Cosumnes Fire Station Number 71",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368167965,
+   "lat": 38.328801,
+   "lon": -121.5702327,
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "fire_station",
+    "ele": "3",
+    "gnis:feature_id": "2061285",
+    "name": "Courtland Fire Station Number 91",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368168031,
+   "lat": 38.4012999,
+   "lon": -121.2577261,
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "fire_station",
+    "ele": "25",
+    "gnis:feature_id": "2061566",
+    "name": "Wilton Fire Station",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368168039,
+   "lat": 38.6290714,
+   "lon": -121.2168925,
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "fire_station",
+    "ele": "44",
+    "gnis:feature_id": "2061512",
+    "name": "Sacramento Metro Fire Station Number 63",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368168040,
+   "lat": 38.5635172,
+   "lon": -121.3588405,
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "fire_station",
+    "ele": "16",
+    "gnis:feature_id": "2061513",
+    "name": "Sacramento Metro Fire Station Number 64",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368168041,
+   "lat": 38.5930783,
+   "lon": -121.2954501,
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "fire_station",
+    "ele": "29",
+    "gnis:feature_id": "2061510",
+    "name": "Sacramento Metro Fire Station Number 61",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368168043,
+   "lat": 38.5590731,
+   "lon": -121.3066169,
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "fire_station",
+    "ele": "25",
+    "gnis:feature_id": "2061516",
+    "name": "Sacramento Metro Fire Station Number 67",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368168045,
+   "lat": 38.6190716,
+   "lon": -121.2657826,
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "fire_station",
+    "ele": "35",
+    "gnis:feature_id": "2061514",
+    "name": "Sacramento Metro Fire Station Number 65",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368168046,
+   "lat": 38.5874058,
+   "lon": -121.2710605,
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "fire_station",
+    "ele": "35",
+    "gnis:feature_id": "2061515",
+    "name": "Sacramento Metro Fire Station Number 66",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368168048,
+   "lat": 38.4595478,
+   "lon": -121.4036361,
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "fire_station",
+    "ele": "10",
+    "gnis:feature_id": "2061504",
+    "name": "Sacramento Metro Fire Station Number 51",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368168051,
+   "lat": 38.4812971,
+   "lon": -121.3738406,
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "fire_station",
+    "ele": "14",
+    "gnis:feature_id": "2061503",
+    "name": "Sacramento Metro Fire Station Number 50",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368168055,
+   "lat": 38.4754643,
+   "lon": -121.298283,
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "fire_station",
+    "ele": "32",
+    "gnis:feature_id": "2061507",
+    "name": "Sacramento Metro Fire Station Number 55",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368168056,
+   "lat": 38.5457398,
+   "lon": -121.3718963,
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "fire_station",
+    "ele": "17",
+    "gnis:feature_id": "2061506",
+    "name": "Sacramento Metro Fire Station Number 54",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "node",
+   "id": 368168057,
+   "lat": 38.6565707,
+   "lon": -121.2260595,
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "fire_station",
+    "ele": "80",
+    "gnis:feature_id": "2061497",
+    "name": "Sacramento Metro Fire Station Number 32",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "node",
+   "id": 1249320813,
+   "lat": 38.8242358,
+   "lon": -121.5034146,
+   "tags": {
+    "amenity": "fire_station",
+    "building": "office",
+    "name": "Pleasant Grove Fire Dept"
+   }
+  },
+  {
+   "type": "node",
+   "id": 1373553279,
+   "lat": 38.7514986,
+   "lon": -121.2890088,
+   "tags": {
+    "addr:city": "Roseville",
+    "addr:housenumber": "201",
+    "addr:postcode": "95678",
+    "addr:state": "CA",
+    "addr:street": "Berkeley Avenue",
+    "amenity": "social_facility",
+    "name": "The Gathering Inn",
+    "social_facility": "shelter",
+    "website": "https://www.thegatheringinn.com/index.html"
+   }
+  },
+  {
+   "type": "node",
+   "id": 2015394213,
+   "lat": 38.644792,
+   "lon": -121.5403831,
+   "tags": {
+    "addr:housenumber": "4201",
+    "addr:postcode": "95834",
+    "addr:street": "El Centro Road",
+    "amenity": "fire_station",
+    "check_date": "2026-07-11",
+    "name": "Fire Station 43",
+    "phone": "+1-916-808-1300",
+    "website": "https://www.cityofsacramento.gov/fire"
+   }
+  },
+  {
+   "type": "node",
+   "id": 2045389385,
+   "lat": 38.3927806,
+   "lon": -121.437467,
+   "tags": {
+    "amenity": "fire_station",
+    "name": "Consumnes Fire Station Number 72"
+   }
+  },
+  {
+   "type": "node",
+   "id": 2356895719,
+   "lat": 38.6495288,
+   "lon": -121.6012299,
+   "tags": {
+    "amenity": "fire_station",
+    "operator": "Elkhorn Fire District"
+   }
+  },
+  {
+   "type": "node",
+   "id": 2878842488,
+   "lat": 38.679242,
+   "lon": -121.7825034,
+   "tags": {
+    "addr:housenumber": "101",
+    "addr:street": "Court Street",
+    "amenity": "fire_station",
+    "name": "Woodland Fire Station No 1"
+   }
+  },
+  {
+   "type": "node",
+   "id": 4586526959,
+   "lat": 38.5915625,
+   "lon": -121.3641764,
+   "tags": {
+    "addr:city": "Sacramento",
+    "addr:housenumber": "1432",
+    "addr:state": "CA",
+    "addr:street": "Eastern Avenue",
+    "amenity": "fire_station",
+    "name": "Sacramento Metro Fire District Station 110",
+    "website": "https://metrofire.ca.gov/index.php/serving-you/fire-stations/141-station-110"
+   }
+  },
+  {
+   "type": "node",
+   "id": 4785477140,
+   "lat": 38.4692333,
+   "lon": -121.4237154,
+   "tags": {
+    "addr:city": "Sacramento",
+    "addr:housenumber": "6600",
+    "addr:postcode": "95823",
+    "addr:state": "CA",
+    "addr:street": "Bruceville Road",
+    "amenity": "hospital",
+    "emergency": "no",
+    "healthcare": "hospital",
+    "healthcare:speciality": "surgery",
+    "name": "Kaiser Ambulatory Surgery Center",
+    "operator": "Kaiser Permanente",
+    "operator:short": "KP",
+    "operator:website": "https://healthy.kaiserpermanente.org/",
+    "operator:wikidata": "Q1721601",
+    "operator:wikipedia": "en:Kaiser Permanente"
+   }
+  },
+  {
+   "type": "node",
+   "id": 5309751260,
+   "lat": 38.6133621,
+   "lon": -121.4475569,
+   "tags": {
+    "addr:housenumber": "2512",
+    "addr:postcode": "95815",
+    "addr:street": "Rio Linda Boulevard",
+    "amenity": "fire_station",
+    "check_date": "2026-07-11",
+    "name": "Fire Station no. 20",
+    "phone": "+1-916-808-1300",
+    "website": "https://www.cityofsacramento.gov/fire"
+   }
+  },
+  {
+   "type": "node",
+   "id": 6709187265,
+   "lat": 38.669576,
+   "lon": -121.3141295,
+   "tags": {
+    "amenity": "hospital",
+    "healthcare": "hospital"
+   }
+  },
+  {
+   "type": "node",
+   "id": 10866259068,
+   "lat": 38.6334945,
+   "lon": -121.3545544,
+   "tags": {
+    "addr:city": "Carmichael",
+    "addr:housenumber": "4741",
+    "addr:postcode": "95608",
+    "addr:state": "CA",
+    "addr:street": "Engle Road",
+    "amenity": "hospital",
+    "beds": "16",
+    "healthcare": "hospital",
+    "healthcare:speciality": "psychiatry",
+    "name": "Crestwood Psychiatric Health Facility - Carmichael",
+    "website": "https://www.crestwoodbehavioralhealth.com"
+   }
+  },
+  {
+   "type": "node",
+   "id": 10866472839,
+   "lat": 38.5499259,
+   "lon": -121.4146168,
+   "tags": {
+    "addr:city": "Sacramento",
+    "addr:housenumber": "7700",
+    "addr:postcode": "95826-2608",
+    "addr:state": "CA",
+    "addr:street": "Folsom Boulevard",
+    "amenity": "hospital",
+    "beds": "73",
+    "healthcare": "hospital",
+    "healthcare:speciality": "psychiatry",
+    "name": "Sutter Center For Psychiatry",
+    "phone": "+1 916 386 3000",
+    "website": "https://www.sutterhealth.org/find-location/facility/sutter-center-for-psychiatry"
+   }
+  },
+  {
+   "type": "node",
+   "id": 11105727480,
+   "lat": 38.6988455,
+   "lon": -121.335527,
+   "tags": {
+    "addr:city": "Sacramento",
+    "addr:housenumber": "7307",
+    "addr:postcode": "95842",
+    "addr:state": "CA",
+    "addr:street": "Roseville Road",
+    "addr:unit": "9",
+    "amenity": "fire_station",
+    "name": "Golden State Fire"
+   }
+  },
+  {
+   "type": "node",
+   "id": 12840935170,
+   "lat": 38.5712651,
+   "lon": -121.5260019,
+   "tags": {
+    "amenity": "fire_station",
+    "name": "West Sacramento Firestation 41"
+   }
+  },
+  {
+   "type": "node",
+   "id": 14106621827,
+   "lat": 38.4091538,
+   "lon": -121.3638052,
+   "tags": {
+    "addr:city": "Elk Grove",
+    "addr:housenumber": "9075",
+    "addr:postcode": "95624",
+    "addr:state": "CA",
+    "addr:street": "Elk Grove Blvd",
+    "addr:unit": "Suite 220A",
+    "amenity": "hospital",
+    "email": "info@egfaac.com",
+    "healthcare": "hospital",
+    "healthcare:speciality": "podiatry",
+    "image": "https://static.wixstatic.com/media/b982a0_b3dab9f2576b46b5a612fb4ef9b847a1~mv2.png/v1/fill/w_149,h_45,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/small_EGFAAC_logo.png",
+    "name": "Elk Grove Foot and Ankle Clinic",
+    "operator": "Dr. Christina Garvin",
+    "operator:type": "private",
+    "phone": "+1-916-520-9125",
+    "website": "https://www.elkgrovefootandankleclinic.com/"
+   }
+  },
+  {
+   "type": "way",
+   "id": 32476139,
+   "center": {
+    "lat": 38.5408529,
+    "lon": -121.7283438
+   },
+   "tags": {
+    "addr:city": "Davis",
+    "addr:housenumber": "1955",
+    "addr:postcode": "95618",
+    "addr:street": "Cowell Boulevard",
+    "amenity": "hospital",
+    "building": "hospital",
+    "emergency": "no",
+    "healthcare": "hospital",
+    "name": "Kaiser Permanente",
+    "operator": "Kaiser Permanente",
+    "operator:short": "KP",
+    "operator:website": "https://healthy.kaiserpermanente.org/",
+    "operator:wikidata": "Q1721601",
+    "operator:wikipedia": "en:Kaiser Permanente"
+   }
+  },
+  {
+   "type": "way",
+   "id": 34400520,
+   "center": {
+    "lat": 38.5554253,
+    "lon": -121.7866827
+   },
+   "tags": {
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "name": "Station 32"
+   }
+  },
+  {
+   "type": "way",
+   "id": 34400558,
+   "center": {
+    "lat": 38.5467781,
+    "lon": -121.7424266
+   },
+   "tags": {
+    "addr:housenumber": "530",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "name": "Station 31"
+   }
+  },
+  {
+   "type": "way",
+   "id": 34400617,
+   "center": {
+    "lat": 38.5492255,
+    "lon": -121.6948397
+   },
+   "tags": {
+    "amenity": "fire_station",
+    "building": "yes",
+    "name": "Station 33"
+   }
+  },
+  {
+   "type": "way",
+   "id": 50265707,
+   "center": {
+    "lat": 38.7595106,
+    "lon": -121.3129957
+   },
+   "tags": {
+    "addr:housenumber": "1398",
+    "addr:state": "CA",
+    "addr:street": "Junction Boulevard",
+    "amenity": "fire_station",
+    "building": "yes",
+    "name": "Peter E. Jenson Memorial Fire Station",
+    "operator": "City of Roseville",
+    "ref": "#2"
+   }
+  },
+  {
+   "type": "way",
+   "id": 86093913,
+   "center": {
+    "lat": 38.7292247,
+    "lon": -121.2698958
+   },
+   "tags": {
+    "amenity": "fire_station",
+    "building": "yes",
+    "name": "Gabrielli Memorial Fire Station",
+    "ref": "3"
+   }
+  },
+  {
+   "type": "way",
+   "id": 95512108,
+   "center": {
+    "lat": 38.7290845,
+    "lon": -121.2137791
+   },
+   "tags": {
+    "amenity": "fire_station",
+    "building": "yes"
+   }
+  },
+  {
+   "type": "way",
+   "id": 114788042,
+   "center": {
+    "lat": 38.7667697,
+    "lon": -121.3349295
+   },
+   "tags": {
+    "addr:housenumber": "1565",
+    "addr:state": "CA",
+    "addr:street": "Pleasant Grove Boulevard",
+    "amenity": "fire_station",
+    "building": "yes",
+    "name": "Fire Station #5",
+    "operator": "City of Roseville",
+    "ref": "5"
+   }
+  },
+  {
+   "type": "way",
+   "id": 120650296,
+   "center": {
+    "lat": 38.7463051,
+    "lon": -121.2500598
+   },
+   "tags": {
+    "addr:city": "Roseville",
+    "addr:housenumber": "1600",
+    "addr:postcode": "95661",
+    "addr:state": "CA",
+    "addr:street": "Eureka Road",
+    "amenity": "hospital",
+    "attribution": "City of Roseville GIS",
+    "emergency": "yes",
+    "healthcare": "hospital",
+    "name": "Kaiser Permanente Roseville Medical Center",
+    "opening_hours": "24/7",
+    "operator": "Kaiser Permanente",
+    "operator:short": "KP",
+    "operator:type": "private",
+    "operator:website": "https://healthy.kaiserpermanente.org/",
+    "operator:wikidata": "Q1721601",
+    "operator:wikipedia": "en:Kaiser Permanente",
+    "phone": "+1 916 784 4000",
+    "source": "http://www.roseville.ca.us/services/maps_n_data/data_clearinghouse.asp",
+    "website": "https://thrive.kaiserpermanente.org/care-near-you/northern-california/northvalley/locations/roseville-medical-center/"
+   }
+  },
+  {
+   "type": "way",
+   "id": 120650308,
+   "center": {
+    "lat": 38.7654433,
+    "lon": -121.2481887
+   },
+   "tags": {
+    "addr:housenumber": "1",
+    "addr:postcode": "95661",
+    "addr:state": "CA",
+    "addr:street": "Medical Plaza Drive",
+    "amenity": "hospital",
+    "attribution": "City of Roseville GIS",
+    "emergency": "yes",
+    "healthcare": "hospital",
+    "landuse": "civic",
+    "name": "Sutter Roseville Medical Center",
+    "old_name": "Roseville Hospital",
+    "opening_hours": "24/7",
+    "operator": "Sutter Health",
+    "operator:type": "private",
+    "operator:website": "https://www.sutterhealth.org/",
+    "operator:wikidata": "Q7650154",
+    "operator:wikipedia": "en:Sutter Health",
+    "phone": "+1 916 781 1000",
+    "source": "http://www.roseville.ca.us/services/maps_n_data/data_clearinghouse.asp",
+    "website": "https://www.sutterhealth.org/find-location/facility/sutter-roseville-medical-center-1043247063"
+   }
+  },
+  {
+   "type": "way",
+   "id": 120653353,
+   "center": {
+    "lat": 38.5523799,
+    "lon": -121.5353851
+   },
+   "tags": {
+    "addr:city": "West Sacramento",
+    "addr:housenumber": "2040",
+    "addr:postcode": "95691",
+    "addr:state": "CA",
+    "addr:street": "Lake Washington Boulevard",
+    "amenity": "fire_station",
+    "building": "industrial",
+    "source": "City of West Sacramento GIS"
+   }
+  },
+  {
+   "type": "way",
+   "id": 122103857,
+   "center": {
+    "lat": 38.7462567,
+    "lon": -121.3373781
+   },
+   "tags": {
+    "addr:housenumber": "8350",
+    "addr:state": "CA",
+    "addr:street": "Cook Riolo Road",
+    "alt_name": "Dry Creek Fire Station",
+    "amenity": "fire_station",
+    "building": "yes",
+    "name": "Cal Fire Placer County Fire Department Dry Creek Station 100",
+    "operator": "California Department of Forestry and Fire Protection",
+    "operator:short": "Cal Fire",
+    "operator:wikidata": "Q5020422",
+    "ref": "100"
+   }
+  },
+  {
+   "type": "way",
+   "id": 133624589,
+   "center": {
+    "lat": 38.3717542,
+    "lon": -121.3560572
+   },
+   "tags": {
+    "addr:city": "Elk Grove",
+    "addr:housenumber": "10573",
+    "addr:state": "CA",
+    "amenity": "fire_station",
+    "building": "yes",
+    "name": "Cosumnes Fire Department Headquarters"
+   }
+  },
+  {
+   "type": "way",
+   "id": 133624599,
+   "center": {
+    "lat": 38.3722832,
+    "lon": -121.3567357
+   },
+   "tags": {
+    "addr:city": "Elk Grove",
+    "addr:housenumber": "10551",
+    "addr:state": "CA",
+    "addr:street": "East Stockton Boulevard",
+    "amenity": "fire_station",
+    "building": "yes",
+    "name": "Cosumnes Fire Department Logistics"
+   }
+  },
+  {
+   "type": "way",
+   "id": 134988798,
+   "center": {
+    "lat": 38.7388456,
+    "lon": -121.2424347
+   },
+   "tags": {
+    "amenity": "fire_station",
+    "building": "yes",
+    "name": "Fire Station #4",
+    "operator": "City of Roseville",
+    "ref": "4"
+   }
+  },
+  {
+   "type": "way",
+   "id": 134988799,
+   "center": {
+    "lat": 38.7613544,
+    "lon": -121.2480347
+   },
+   "tags": {
+    "amenity": "fire_station",
+    "building": "yes",
+    "name": "Fire Station #6",
+    "operator": "City of Roseville",
+    "ref": "6"
+   }
+  },
+  {
+   "type": "way",
+   "id": 138216459,
+   "center": {
+    "lat": 38.7829283,
+    "lon": -121.2842349
+   },
+   "tags": {
+    "addr:housenumber": "911",
+    "addr:state": "CA",
+    "addr:street": "Highland Pointe Drive",
+    "amenity": "fire_station",
+    "building": "industrial",
+    "name": "Vincent L. Kelley Jr. Memorial Fire Station",
+    "operator": "City of Roseville",
+    "ref": "7"
+   }
+  },
+  {
+   "type": "way",
+   "id": 143919210,
+   "center": {
+    "lat": 38.6060004,
+    "lon": -121.4578722
+   },
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "fire_station",
+    "building": "yes",
+    "ele": "10",
+    "gnis:feature_id": "2061462",
+    "name": "Sacramento Fire Station Number 20",
+    "source": "USGS Geonames;USGS Ortho"
+   }
+  },
+  {
+   "type": "way",
+   "id": 167139754,
+   "center": {
+    "lat": 38.555364,
+    "lon": -121.6774185
+   },
+   "tags": {
+    "amenity": "fire_station",
+    "industrial": "depot",
+    "landuse": "industrial",
+    "name": "CAL FIRE Mobile Equipment Facility",
+    "operator": "California Department of Forestry and Fire Protection",
+    "operator:short": "Cal Fire",
+    "operator:wikidata": "Q5020422"
+   }
+  },
+  {
+   "type": "way",
+   "id": 186485362,
+   "center": {
+    "lat": 38.4186301,
+    "lon": -121.428585
+   },
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "fire_station",
+    "ele": "9",
+    "gnis:feature_id": "2061309",
+    "name": "Cosumnes Fire Station number 74",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 198423575,
+   "center": {
+    "lat": 38.5710572,
+    "lon": -121.4649155
+   },
+   "tags": {
+    "addr:city": "Sacramento",
+    "addr:housename": "Alhambra Station",
+    "addr:housenumber": "3145",
+    "addr:postcode": "95816",
+    "addr:street": "Granada Way",
+    "amenity": "fire_station",
+    "building": "yes",
+    "check_date": "2026-07-11",
+    "name": "Sacramento Fire Station #4",
+    "phone": "+1-916-808-1300",
+    "website": "https://www.cityofsacramento.gov/fire"
+   }
+  },
+  {
+   "type": "way",
+   "id": 204331586,
+   "center": {
+    "lat": 38.4681116,
+    "lon": -121.4267904
+   },
+   "tags": {
+    "addr:city": "Sacramento",
+    "addr:housenumber": "6500",
+    "addr:postcode": "95823",
+    "addr:state": "CA",
+    "addr:street": "Wyndham Drive",
+    "amenity": "fire_station",
+    "building": "yes",
+    "check_date": "2026-07-11",
+    "ele": "7",
+    "gnis:feature_id": "2061468",
+    "name": "Sacramento Fire Station Number 7",
+    "phone": "+1-916-808-1300",
+    "source": "esri/Sacramento_County_CA_Addresses;USGS Geonames",
+    "website": "https://www.cityofsacramento.gov/fire"
+   }
+  },
+  {
+   "type": "way",
+   "id": 207402863,
+   "center": {
+    "lat": 38.6711473,
+    "lon": -121.503577
+   },
+   "tags": {
+    "addr:housenumber": "1901",
+    "addr:postcode": "95835",
+    "addr:street": "Club Center Drive",
+    "amenity": "fire_station",
+    "building": "yes",
+    "check_date": "2026-07-11",
+    "name": "Sacramento City Fire Station 30",
+    "phone": "+1-916-808-1300",
+    "website": "https://www.cityofsacramento.gov/fire"
+   }
+  },
+  {
+   "type": "way",
+   "id": 384867357,
+   "center": {
+    "lat": 38.5628328,
+    "lon": -121.7710453
+   },
+   "tags": {
+    "addr:city": "Davis",
+    "addr:country": "US",
+    "addr:housenumber": "2000",
+    "addr:postcode": "95616",
+    "addr:state": "CA",
+    "addr:street": "Sutter Place",
+    "amenity": "hospital",
+    "beds": "48",
+    "contact:website": "https://www.sutterhealth.org/find-location/facility/sutter-davis-hospital-1043246737",
+    "emergency": "yes",
+    "healthcare": "hospital",
+    "name": "Sutter Davis Hospital",
+    "operator": "Sutter Health",
+    "operator:type": "private",
+    "operator:wikidata": "Q7650154",
+    "phone": "+1-530-756-6440",
+    "website": "https://www.sutterhealth.org/find-location/facility/sutter-davis-hospital-1043246737",
+    "wheelchair": "yes",
+    "wikidata": "Q50037038"
+   }
+  },
+  {
+   "type": "way",
+   "id": 389317015,
+   "center": {
+    "lat": 38.6649293,
+    "lon": -121.7922063
+   },
+   "tags": {
+    "addr:city": "Woodland",
+    "addr:housenumber": "1325",
+    "addr:postcode": "95695",
+    "addr:state": "CA",
+    "addr:street": "Cottonwood Street",
+    "amenity": "hospital",
+    "emergency": "yes",
+    "healthcare": "hospital",
+    "name": "Woodland Healthcare",
+    "opening_hours": "24/7",
+    "operator": "Diginity Health",
+    "phone": "+1 530 662 3961",
+    "website": "https://www.dignityhealth.org/sacramento/locations/woodland-memorial-hospital"
+   }
+  },
+  {
+   "type": "way",
+   "id": 405350101,
+   "center": {
+    "lat": 38.552257,
+    "lon": -121.4520941
+   },
+   "tags": {
+    "addr:city": "Sacramento",
+    "addr:housenumber": "2315",
+    "addr:postcode": "95817",
+    "addr:street": "Stockton Boulevard",
+    "amenity": "hospital",
+    "beds": "627",
+    "emergency": "yes",
+    "healthcare": "hospital",
+    "name": "University of California, Davis Medical Center",
+    "opening_hours": "24/7",
+    "operator": "UC Davis Health System",
+    "operator:wikidata": "Q30281092",
+    "phone": "+1 916 734 2011",
+    "website": "http://www.ucdmc.ucdavis.edu/medicalcenter/",
+    "wikidata": "Q7864160",
+    "wikipedia": "en:UC Davis Medical Center"
+   }
+  },
+  {
+   "type": "way",
+   "id": 424703090,
+   "center": {
+    "lat": 38.6701115,
+    "lon": -121.3823144
+   },
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "fire_station",
+    "building": "yes",
+    "ele": "27",
+    "gnis:feature_id": "2061500",
+    "name": "Sacramento Metro Fire Station Number 42",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 440159296,
+   "center": {
+    "lat": 38.7133082,
+    "lon": -121.3584897
+   },
+   "tags": {
+    "addr:city": "Antelope",
+    "addr:housenumber": "8000",
+    "addr:postcode": "95843",
+    "addr:state": "CA",
+    "addr:street": "Palmerson Drive",
+    "amenity": "fire_station",
+    "building": "civic",
+    "ele": "40",
+    "gnis:feature_id": "2061492",
+    "name": "Sacramento Metro Fire Station Number 26",
+    "phone": "+1-916-859-4300",
+    "source": "USGS Geonames",
+    "website": "https://metrofire.ca.gov"
+   }
+  },
+  {
+   "type": "way",
+   "id": 468565594,
+   "center": {
+    "lat": 38.5565655,
+    "lon": -121.2256684
+   },
+   "tags": {
+    "addr:city": "Rancho Cordova",
+    "addr:housenumber": "12065",
+    "addr:postcode": "95742",
+    "addr:state": "CA",
+    "addr:street": "Cobble Brook Drive",
+    "amenity": "fire_station",
+    "building": "yes",
+    "name": "Station 68",
+    "operator": "Metro Fire",
+    "website": "https://metrofire.ca.gov/index.php"
+   }
+  },
+  {
+   "type": "way",
+   "id": 476389846,
+   "center": {
+    "lat": 38.5715937,
+    "lon": -121.4687625
+   },
+   "tags": {
+    "addr:city": "Sacramento",
+    "addr:housenumber": "2825",
+    "addr:postcode": "95816",
+    "addr:state": "CA",
+    "addr:street": "Capitol Avenue",
+    "amenity": "hospital",
+    "emergency": "yes",
+    "gnis:feature_id": "1659930",
+    "healthcare": "hospital",
+    "name": "Sutter Medical Center, Sacramento",
+    "opening_hours": "24/7",
+    "operator": "Sutter Health",
+    "operator:type": "private",
+    "operator:website": "https://www.sutterhealth.org/",
+    "operator:wikidata": "Q7650154",
+    "operator:wikipedia": "en:Sutter Health",
+    "phone": "+1 916 887 0000",
+    "website": "http://www.suttermedicalcenter.org/",
+    "wikidata": "Q7650153",
+    "wikipedia": "en:Sutter General Hospital"
+   }
+  },
+  {
+   "type": "way",
+   "id": 493363795,
+   "center": {
+    "lat": 38.6153935,
+    "lon": -121.4975006
+   },
+   "tags": {
+    "amenity": "fire_station",
+    "building": "yes",
+    "description": "Previous location for Sacramento Fire Station #15. This location is now boarded up and disused.",
+    "disused:amenity": "fire_station",
+    "name": "Sacramento Fire Station Number 15"
+   }
+  },
+  {
+   "type": "way",
+   "id": 494760178,
+   "center": {
+    "lat": 38.6694634,
+    "lon": -121.3131281
+   },
+   "tags": {
+    "addr:city": "Carmichael",
+    "addr:housenumber": "6501",
+    "addr:postcode": "95608",
+    "addr:state": "CA",
+    "addr:street": "Coyle Avenue",
+    "amenity": "hospital",
+    "emergency": "yes",
+    "healthcare": "hospital",
+    "name": "Mercy San Juan Medical Center",
+    "opening_hours": "24/7",
+    "operator": "Dignity Health",
+    "operator:wikidata": "Q5276334",
+    "operator:wikipedia": "en:Dignity Health",
+    "phone": "+1 916 537 5000",
+    "website": "https://www.dignityhealth.org/sacramento/locations/mercy-san-juan-medical-center",
+    "wikidata": "Q6818797",
+    "wikipedia": "en:Mercy San Juan Medical Center"
+   }
+  },
+  {
+   "type": "way",
+   "id": 552619197,
+   "center": {
+    "lat": 38.6785703,
+    "lon": -121.3154723
+   },
+   "tags": {
+    "amenity": "fire_station",
+    "building": "yes",
+    "name": "Sacramento Metro Fire Station Number 23"
+   }
+  },
+  {
+   "type": "way",
+   "id": 552966544,
+   "center": {
+    "lat": 38.6417987,
+    "lon": -121.2712252
+   },
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "fire_station",
+    "building": "fire_station",
+    "ele": "59",
+    "gnis:feature_id": "2061496",
+    "name": "Sacramento Metro Fire Station Number 31",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 577879059,
+   "center": {
+    "lat": 38.5726584,
+    "lon": -121.2949177
+   },
+   "tags": {
+    "addr:city": "Mather",
+    "addr:housenumber": "10535",
+    "addr:postcode": "95655",
+    "addr:state": "CA",
+    "addr:street": "Hospital Way",
+    "amenity": "hospital",
+    "beds": "60",
+    "emergency": "yes",
+    "healthcare": "hospital",
+    "healthcare:for": "veterans",
+    "name": "Sacramento VA Medical Center",
+    "opening_hours": "24/7",
+    "operator": "Veterans Health Administration",
+    "operator:short": "VA",
+    "operator:wikidata": "Q6580225",
+    "operator:wikipedia": "en:Veterans Health Administration",
+    "phone": "+1 916 843 7000",
+    "short_name": "VA",
+    "website": "https://www.northerncalifornia.va.gov/"
+   }
+  },
+  {
+   "type": "way",
+   "id": 577887505,
+   "center": {
+    "lat": 38.6432338,
+    "lon": -121.3650348
+   },
+   "tags": {
+    "addr:city": "Sacramento",
+    "addr:housenumber": "4250",
+    "addr:postcode": "95841",
+    "addr:state": "CA",
+    "addr:street": "Auburn Boulevard",
+    "amenity": "hospital",
+    "beds": "125",
+    "emergency": "no",
+    "healthcare": "hospital",
+    "healthcare:speciality": "psychiatry",
+    "name": "Heritage Oaks Hospital",
+    "phone": "+1 916 489 3336",
+    "website": "https://heritageoakshospital.com/"
+   }
+  },
+  {
+   "type": "way",
+   "id": 577890444,
+   "center": {
+    "lat": 38.601612,
+    "lon": -121.3946397
+   },
+   "tags": {
+    "addr:city": "Sacramento",
+    "addr:housenumber": "2025",
+    "addr:postcode": "95825",
+    "addr:state": "CA",
+    "addr:street": "Morse Avenue",
+    "amenity": "hospital",
+    "emergency": "yes",
+    "gnis:feature_id": "1658880",
+    "healthcare": "hospital",
+    "name": "Kaiser Permanente Sacramento Medical Center",
+    "opening_hours": "24/7",
+    "operator": "Kaiser Permanente",
+    "operator:short": "KP",
+    "operator:type": "private",
+    "operator:website": "https://healthy.kaiserpermanente.org/",
+    "operator:wikidata": "Q1721601",
+    "operator:wikipedia": "en:Kaiser Permanente",
+    "phone": "+1 916 973 5000",
+    "website": "https://thrive.kaiserpermanente.org/care-near-you/northern-california/northvalley/locations/sacramento-medical-center/"
+   }
+  },
+  {
+   "type": "way",
+   "id": 577895513,
+   "center": {
+    "lat": 38.5706169,
+    "lon": -121.452869
+   },
+   "tags": {
+    "addr:city": "Sacramento",
+    "addr:housenumber": "4001",
+    "addr:postcode": "95819",
+    "addr:street": "J Street",
+    "amenity": "hospital",
+    "emergency": "yes",
+    "gnis:feature_id": "1659111",
+    "healthcare": "hospital",
+    "name": "Mercy General Hospital",
+    "opening_hours": "24/7",
+    "operator": "Dignity Health",
+    "operator:wikidata": "Q5276334",
+    "operator:wikipedia": "en:Dignity Health",
+    "phone": "+1 916 453 4545",
+    "website": "https://www.dignityhealth.org/sacramento/locations/mercy-general-hospital",
+    "wikidata": "Q6818732",
+    "wikipedia": "en:Mercy General Hospital"
+   }
+  },
+  {
+   "type": "way",
+   "id": 578100530,
+   "center": {
+    "lat": 38.4694707,
+    "lon": -121.4225856
+   },
+   "tags": {
+    "addr:city": "Sacramento",
+    "addr:housenumber": "6600",
+    "addr:postcode": "95823",
+    "addr:state": "CA",
+    "addr:street": "Bruceville Road",
+    "amenity": "hospital",
+    "beds": "209",
+    "check_date": "2025-11-24",
+    "emergency": "yes",
+    "gnis:feature_id": "1827095",
+    "healthcare": "hospital",
+    "level": "2",
+    "name": "Kaiser Permanente South Sacramento Medical Center",
+    "opening_hours": "24/7",
+    "operator": "Kaiser Permanente",
+    "operator:short": "KP",
+    "operator:type": "private",
+    "operator:website": "https://healthy.kaiserpermanente.org/",
+    "operator:wikidata": "Q1721601",
+    "operator:wikipedia": "en:Kaiser Permanente",
+    "phone": "+1 916 688 2000",
+    "website": "https://thrive.kaiserpermanente.org/care-near-you/northern-california/southsacramento/locations/south-sacramento-medical-center/"
+   }
+  },
+  {
+   "type": "way",
+   "id": 578107842,
+   "center": {
+    "lat": 38.4628879,
+    "lon": -121.4163698
+   },
+   "tags": {
+    "addr:city": "Sacramento",
+    "addr:housenumber": "7500",
+    "addr:postcode": "95823",
+    "addr:state": "CA",
+    "addr:street": "Hospital Drive",
+    "amenity": "hospital",
+    "beds": "329",
+    "emergency": "yes",
+    "gnis:feature_id": "1827100",
+    "healthcare": "hospital",
+    "name": "Methodist Hospital of Sacramento",
+    "opening_hours": "24/7",
+    "operator": "Dignity Health",
+    "operator:type": "private",
+    "operator:wikidata": "Q5276334",
+    "operator:wikipedia": "en:Dignity Health",
+    "phone": "+1 916 423 3000",
+    "website": "https://www.dignityhealth.org/sacramento/locations/methodist-hospital-of-sacramento",
+    "wikidata": "Q6823834",
+    "wikipedia": "en:Methodist Hospital of Sacramento"
+   }
+  },
+  {
+   "type": "way",
+   "id": 594951511,
+   "center": {
+    "lat": 38.7007691,
+    "lon": -121.2583293
+   },
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "fire_station",
+    "building": "yes",
+    "ele": "59",
+    "gnis:feature_id": "2061494",
+    "name": "Sacramento Metro Fire Station Number 28",
+    "source": "USGS Geonames"
+   }
+  },
+  {
+   "type": "way",
+   "id": 598208478,
+   "center": {
+    "lat": 38.7493473,
+    "lon": -121.2814488
+   },
+   "tags": {
+    "addr:city": "Roseville",
+    "addr:housenumber": "80",
+    "addr:state": "CA",
+    "addr:street": "Lincoln Street",
+    "alt_name": "Fire House #1",
+    "amenity": "fire_station",
+    "building": "yes",
+    "building:levels": "1",
+    "height": "0",
+    "name": "Carl J. Green Memorial Fire Station",
+    "operator": "City of Roseville",
+    "ref": "1"
+   }
+  },
+  {
+   "type": "way",
+   "id": 619486275,
+   "center": {
+    "lat": 38.5442015,
+    "lon": -121.4643225
+   },
+   "tags": {
+    "addr:housenumber": "3301",
+    "addr:postcode": "95817",
+    "addr:street": "Martin Luther King Junior Boulevard",
+    "amenity": "fire_station",
+    "building": "yes",
+    "check_date": "2026-07-11",
+    "name": "Sacramento Fire Station #6",
+    "phone": "+1-916-808-1300",
+    "website": "https://www.cityofsacramento.gov/fire"
+   }
+  },
+  {
+   "type": "way",
+   "id": 620744926,
+   "center": {
+    "lat": 38.5649298,
+    "lon": -121.5035837
+   },
+   "tags": {
+    "addr:housenumber": "731",
+    "addr:postcode": "95818",
+    "addr:state": "CA",
+    "addr:street": "Broadway",
+    "amenity": "fire_station",
+    "building": "yes",
+    "check_date": "2026-07-11",
+    "ele": "6",
+    "gnis:feature_id": "2061464",
+    "name": "Sacramento Fire Station Number 5",
+    "phone": "+1-916-808-1300",
+    "ref": "5",
+    "source": "USGS Geonames",
+    "website": "https://www.cityofsacramento.gov/fire"
+   }
+  },
+  {
+   "type": "way",
+   "id": 722140296,
+   "center": {
+    "lat": 38.7892579,
+    "lon": -121.3716585
+   },
+   "tags": {
+    "addr:housenumber": "2451",
+    "addr:state": "CA",
+    "addr:street": "Hayden Parkway",
+    "amenity": "fire_station",
+    "name": "Fire Station 9",
+    "operator": "City of Roseville",
+    "ref": "9",
+    "start_date": "2013-05-01"
+   }
+  },
+  {
+   "type": "way",
+   "id": 746525986,
+   "center": {
+    "lat": 38.6790841,
+    "lon": -121.237024
+   },
+   "tags": {
+    "amenity": "fire_station",
+    "building": "yes",
+    "name": "Sacramento Metro Fire Station 29"
+   }
+  },
+  {
+   "type": "way",
+   "id": 785881143,
+   "center": {
+    "lat": 38.6122239,
+    "lon": -121.5003487
+   },
+   "tags": {
+    "addr:housenumber": "1640",
+    "addr:postcode": "95833",
+    "addr:street": "West El Camino Avenue",
+    "amenity": "fire_station",
+    "building": "yes",
+    "check_date": "2026-07-11",
+    "name": "Sacramento Fire Station #15",
+    "phone": "+1-916-808-1300",
+    "website": "https://www.cityofsacramento.gov/fire"
+   }
+  },
+  {
+   "type": "way",
+   "id": 826590701,
+   "center": {
+    "lat": 38.3845506,
+    "lon": -121.3713364
+   },
+   "tags": {
+    "addr:city": "Elk Grove",
+    "addr:housenumber": "10305",
+    "addr:postcode": "95757",
+    "addr:state": "CA",
+    "addr:street": "Promenade Parkway",
+    "amenity": "hospital",
+    "building": "yes",
+    "emergency": "no",
+    "healthcare": "hospital",
+    "name": "Kaiser Permanente Medical Offices",
+    "operator": "Kaiser Permanente",
+    "operator:short": "KP",
+    "operator:type": "private",
+    "operator:website": "https://healthy.kaiserpermanente.org/",
+    "operator:wikidata": "Q1721601",
+    "operator:wikipedia": "en:Kaiser Permanente"
+   }
+  },
+  {
+   "type": "way",
+   "id": 909134361,
+   "center": {
+    "lat": 38.5871362,
+    "lon": -121.4878401
+   },
+   "tags": {
+    "addr:city": "Sacramento",
+    "addr:housenumber": "300",
+    "addr:postcode": "95814",
+    "addr:state": "CA",
+    "addr:street": "Chinatown Alley",
+    "amenity": "social_facility",
+    "shelter_type": "tent",
+    "social_facility": "shelter",
+    "social_facility:for": "homeless"
+   }
+  },
+  {
+   "type": "way",
+   "id": 928086363,
+   "center": {
+    "lat": 38.6736709,
+    "lon": -121.7487919
+   },
+   "tags": {
+    "amenity": "fire_station",
+    "building": "yes"
+   }
+  },
+  {
+   "type": "way",
+   "id": 931241904,
+   "center": {
+    "lat": 38.4671577,
+    "lon": -121.4170711
+   },
+   "tags": {
+    "addr:city": "Sacramento",
+    "addr:housenumber": "8001",
+    "addr:postcode": "95823",
+    "addr:state": "CA",
+    "addr:street": "BRUCEVILLE ROAD",
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "healthcare:speciality": "psychiatry",
+    "name": "Sierra Vista Hospital",
+    "phone": "+1-916-288-0300",
+    "website": "https://sierravistahospital.com/about-us/licensing-and-accreditation/"
+   }
+  },
+  {
+   "type": "way",
+   "id": 1040753822,
+   "center": {
+    "lat": 38.6493428,
+    "lon": -121.3079848
+   },
+   "tags": {
+    "amenity": "fire_station",
+    "building": "yes"
+   }
+  },
+  {
+   "type": "way",
+   "id": 1075000638,
+   "center": {
+    "lat": 38.6732615,
+    "lon": -121.3965855
+   },
+   "tags": {
+    "addr:state": "CA",
+    "amenity": "fire_station",
+    "building": "yes",
+    "ele": "23",
+    "gnis:feature_id": "2061519",
+    "name": "Sacramento Metro Fire Station Number 114",
+    "source": "USGS Geonames;microsoft/BuildingFootprints"
+   }
+  }
+ ]
+}

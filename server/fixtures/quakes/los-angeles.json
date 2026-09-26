@@ -1,0 +1,101 @@
+{
+ "type": "FeatureCollection",
+ "metadata": {
+  "generated": 1790448055000,
+  "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&latitude=34.0522&longitude=-118.2437&maxradiuskm=200&starttime=2026-09-23T18:40:54.953Z&minmagnitude=2.5&orderby=time",
+  "title": "USGS Earthquakes",
+  "status": 200,
+  "api": "2.7.0",
+  "count": 2
+ },
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "mag": 2.62,
+    "place": "17 km WSW of Johannesburg, CA",
+    "time": 1790219502650,
+    "updated": 1790287555217,
+    "tz": null,
+    "url": "https://earthquake.usgs.gov/earthquakes/eventpage/ci41338223",
+    "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=ci41338223&format=geojson",
+    "felt": 1,
+    "cdi": 2,
+    "mmi": null,
+    "alert": null,
+    "status": "reviewed",
+    "tsunami": 0,
+    "sig": 106,
+    "net": "ci",
+    "code": "41338223",
+    "ids": ",ci41338223,us6000tx8n,",
+    "sources": ",ci,us,",
+    "types": ",dyfi,focal-mechanism,nearby-cities,origin,phase-data,scitech-link,",
+    "nst": 53,
+    "dmin": 0.05664,
+    "rms": 0.15,
+    "gap": 33,
+    "magType": "ml",
+    "type": "earthquake",
+    "title": "M 2.6 - 17 km WSW of Johannesburg, CA"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -117.804,
+     35.3126666666667,
+     7.18
+    ]
+   },
+   "id": "ci41338223"
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "mag": 2.96,
+    "place": "17 km WSW of Johannesburg, CA",
+    "time": 1790196276440,
+    "updated": 1790441583040,
+    "tz": null,
+    "url": "https://earthquake.usgs.gov/earthquakes/eventpage/ci41337999",
+    "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=ci41337999&format=geojson",
+    "felt": null,
+    "cdi": null,
+    "mmi": null,
+    "alert": null,
+    "status": "reviewed",
+    "tsunami": 0,
+    "sig": 135,
+    "net": "ci",
+    "code": "41337999",
+    "ids": ",ci41337999,us6000tx67,",
+    "sources": ",ci,us,",
+    "types": ",focal-mechanism,nearby-cities,origin,phase-data,scitech-link,",
+    "nst": 54,
+    "dmin": 0.05365,
+    "rms": 0.15,
+    "gap": 32,
+    "magType": "ml",
+    "type": "earthquake",
+    "title": "M 3.0 - 17 km WSW of Johannesburg, CA"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -117.8055,
+     35.3098333333333,
+     7.23
+    ]
+   },
+   "id": "ci41337999"
+  }
+ ],
+ "bbox": [
+  -117.8055,
+  35.309833333333,
+  7.18,
+  -117.804,
+  35.312666666667,
+  7.23
+ ]
+}

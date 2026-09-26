@@ -12,6 +12,8 @@ export interface Config {
   port: number;
   demoMode: boolean;
   firmsMapKey: string | undefined;
+  amazonLocationApiKey: string | undefined;
+  awsRegion: string;
   nwsUserAgent: string;
   allowedOrigins: string[];
   /** External request timeout in milliseconds (spec 5.6). */
@@ -25,6 +27,8 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): Config {
     port: asNumber(env.PORT, 8787),
     demoMode: asBoolean(env.DEMO_MODE),
     firmsMapKey: env.FIRMS_MAP_KEY?.trim() || undefined,
+    amazonLocationApiKey: env.AMAZON_LOCATION_API_KEY?.trim() || undefined,
+    awsRegion: env.AWS_REGION?.trim() || "us-east-1",
     nwsUserAgent: env.NWS_USER_AGENT?.trim() || "SafeZone (safezone-hackathon@example.com)",
     allowedOrigins: (env.ALLOWED_ORIGINS ?? "http://localhost:5173")
       .split(",")
