@@ -1,0 +1,26 @@
+{
+  "note": "Demo scenarios for DEMO_MODE=true. Replace the fire CSVs with real recordings via `npm run record-fixtures` (needs FIRMS_MAP_KEY). See SPEC.md 5.5.",
+  "scenarios": [
+    {
+      "id": "sacramento-fires",
+      "label": "Sacramento, CA — active fire cluster north-east",
+      "lat": 38.5816,
+      "lon": -121.4944,
+      "fires": "fires/sacramento-fires.csv"
+    },
+    {
+      "id": "los-angeles",
+      "label": "Los Angeles, CA — scattered hotspots",
+      "lat": 34.0522,
+      "lon": -118.2437,
+      "fires": "fires/los-angeles.csv"
+    },
+    {
+      "id": "calm",
+      "label": "Chicago, IL — nothing active nearby",
+      "lat": 41.8781,
+      "lon": -87.6298,
+      "fires": "fires/calm.csv"
+    }
+  ]
+}

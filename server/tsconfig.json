@@ -1,0 +1,13 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist",
+    "types": ["node"],
+    // The MCP SDK types are not written for exactOptionalPropertyTypes
+    // (e.g. `sessionIdGenerator: undefined` for stateless mode).
+    "exactOptionalPropertyTypes": false
+  },
+  "include": ["src/**/*.ts"],
+  "references": [{ "path": "../shared" }]
+}
