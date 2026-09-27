@@ -12,7 +12,8 @@
     "shared",
     "server",
     "agent",
-    "web"
+    "web",
+    "infra"
   ],
   "scripts": {
     "build": "npm run build --workspaces --if-present",
@@ -28,7 +29,9 @@
     "demo": "node --experimental-strip-types scripts/demo.ts",
     "dev:web": "npm run dev --workspace web",
     "dev:server": "npm run dev --workspace server",
-    "dev:agent": "npm run dev --workspace agent"
+    "dev:agent": "npm run dev --workspace agent",
+    "synth": "npm run build --workspace web && npm run synth --workspace infra",
+    "deploy": "npm run build && npm run deploy --workspace infra"
   },
   "devDependencies": {
     "@eslint/js": "^9.37.0",

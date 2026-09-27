@@ -1,0 +1,22 @@
+{
+  "name": "@safezone/infra",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "safezone": "bin/safezone.js"
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "synth": "cdk synth",
+    "deploy": "cdk deploy --require-approval broadening",
+    "diff": "cdk diff",
+    "destroy": "cdk destroy"
+  },
+  "devDependencies": {
+    "aws-cdk": "^2.1143.0",
+    "aws-cdk-lib": "^2.271.0",
+    "constructs": "^10.8.1",
+    "esbuild": "^0.28.2"
+  }
+}

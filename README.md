@@ -13,14 +13,16 @@ assistant cannot show: the map.
 
 ## Status
 
-Milestones **M1**–**M5** are complete: eight MCP tools including `assess_risk`, an agent service that
-runs the tool loop, a simulator that listens and answers out loud, and recorded fixtures so the whole
-thing runs with no API keys. The AWS deployment follows in M6. See `SPEC.md` section 12 for the
+Milestones **M1**–**M6** are complete: eight MCP tools including `assess_risk`, an agent service that
+runs the tool loop, a simulator that listens and answers out loud, recorded fixtures so the whole
+thing runs with no API keys, and the AWS infrastructure as CDK code. See `SPEC.md` section 12 for the
 roadmap.
 
-**Not yet verified against AWS.** The Amazon Bedrock and Amazon Polly paths are written and
-unit-tested against fakes, but have not been run with real credentials. The default configuration
-uses the scripted agent and the browser voice, which is what the demo below runs.
+**Not deployed yet.** `infra/` synthesizes and both Lambda bundles have been invoked locally with
+Function URL payloads, but nobody has run `cdk deploy` against a real account — there are no AWS
+credentials on the development machines. The same goes for the Amazon Bedrock and Amazon Polly
+paths, which are written and unit-tested against fakes. The default configuration uses the scripted
+agent and the browser voice, which is what the demo below runs. See `docs/DEPLOY.md`.
 
 | Tool                 | Source                                     | State   |
 | -------------------- | ------------------------------------------ | ------- |
@@ -138,6 +140,19 @@ npm run record-fixtures
 Everything except the fire CSVs is recorded from the live keyless APIs; the fire CSVs are
 placeholders until the script runs with a `FIRMS_MAP_KEY`.
 
+## Deploying to AWS
+
+The whole stack is AWS CDK in `infra/`: CloudFront and S3 for the simulator, a Lambda Function URL
+each for the agent and the MCP server, log groups, and an optional budget alert.
+
+```bash
+npm install
+npm run deploy
+```
+
+`docs/DEPLOY.md` has the runbook: bootstrapping, the NASA FIRMS key in Secrets Manager, Bedrock
+model access, every context flag, and how to tear it all down.
+
 ## Repository layout
 
 ```
@@ -145,8 +160,9 @@ shared/   the SafetyToolResult contract and geo helpers, used by every package
 server/   the MCP server: tools, source clients, demo fixtures
 agent/    the agent service: Bedrock tool loop, scripted fallback, Polly
 web/      the simulator: map, risk panel, voice
+infra/    the AWS CDK stack
 scripts/  demo runner, smoke test, fixture recorder
-docs/     architecture notes, friction log, Devpost draft
+docs/     architecture notes, deployment runbook, friction log, Devpost draft
 ```
 
 ## Development

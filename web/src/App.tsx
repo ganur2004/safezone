@@ -12,16 +12,17 @@ import {
   type AgentHealth,
   type ChatMessage,
 } from "./agent/client.js";
+import { resolveAgentUrl } from "./agent/config.js";
 import { speak, stopSpeaking } from "./voice/speech.js";
 import { MapCanvas } from "./map/MapCanvas.js";
 import { ChatBar, type AssistantState, type Message } from "./components/ChatBar.js";
 import { Legend } from "./components/Legend.js";
 import { RiskPanel } from "./components/RiskPanel.js";
 
-const AGENT_URL = (import.meta.env.VITE_AGENT_URL as string | undefined) ?? "http://localhost:8788";
-
 export function App(): React.JSX.Element {
-  const client = useMemo(() => new AgentClient(AGENT_URL), []);
+  // The URL is only known at runtime once deployed, so the client is swapped in
+  // after /config.json is read; until then calls would have nowhere to go.
+  const [client, setClient] = useState<AgentClient | undefined>();
   /** The conversation as the agent sees it; the agent itself is stateless. */
   const history = useRef<ChatMessage[]>([]);
 
@@ -38,16 +39,36 @@ export function App(): React.JSX.Element {
   const [collapsed, setCollapsed] = useState(false);
 
   useEffect(() => {
-    client
-      .health()
-      .then(setHealth)
-      .catch(() => setHealth(undefined));
-  }, [client]);
+    let cancelled = false;
+    void resolveAgentUrl().then((url) => {
+      if (cancelled) return;
+      const agent = new AgentClient(url);
+      setClient(agent);
+      agent
+        .health()
+        .then((info) => {
+          if (!cancelled) setHealth(info);
+        })
+        .catch(() => {
+          if (!cancelled) setHealth(undefined);
+        });
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   useEffect(() => stopSpeaking, []);
 
   const onAsk = useCallback(
     async (question: string) => {
+      if (!client) {
+        setMessages((previous) => [
+          ...previous,
+          { role: "assistant", text: "Still connecting to the agent, one moment.", error: true },
+        ]);
+        return;
+      }
       stopSpeaking();
       setMessages((previous) => [...previous, { role: "user", text: question }]);
       history.current = [...history.current, { role: "user", content: question }];

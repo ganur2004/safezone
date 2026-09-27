@@ -2,7 +2,7 @@
 
 Full spec: SPEC.md. Read the relevant section before changing code.
 
-- TypeScript strict, npm workspaces: shared, server, agent, web
+- TypeScript strict, npm workspaces: shared, server, agent, web, infra
 - All tool results must match SafetyToolResult in shared/src/types.ts
 - Wind direction from APIs is where wind comes FROM (see SPEC 6.2)
 - Never commit secrets; config via .env (see .env.example)
@@ -24,6 +24,7 @@ Full spec: SPEC.md. Read the relevant section before changing code.
 - `web/src/agent/client.ts` — the only place the browser talks to the agent
 - `web/src/voice/speech.ts` — Web Speech input, Polly output with a browser fallback
 - `web/src/map/layers.ts` — one entry per MapLayer kind; add a kind there, not in the component
+- `infra/lib/safezone-stack.ts` — the whole AWS stack; `docs/DEPLOY.md` is the runbook
 
 ## Source quirks worth remembering
 
@@ -35,6 +36,11 @@ Full spec: SPEC.md. Read the relevant section before changing code.
 - The upwind rule compares the bearing TO the fire against the wind's FROM direction (SPEC 6.2);
   if you touch it, the integration test in assessRisk.test.ts must still pass both ways
 - MapLibre must stay out of Vite's dependency pre-bundling, or its worker fails to load
+- On Lambda the adapter leaves `rawHeaders` empty and the MCP transport reads exactly that, so
+  `server/src/lambda.ts` rebuilds it — without that every call is a 415
+- The Lambda bundle is one file at `/var/task`, so fixtures are found through `FIXTURES_DIR`
+- esbuild emits ESM but some dependencies `require` at runtime; the stack injects a `createRequire`
+  shim as a banner
 
 ## Conventions
 
@@ -63,3 +69,4 @@ Full spec: SPEC.md. Read the relevant section before changing code.
 - `npm run smoke` — initialize + tools/list + tools/call against a running server
 - `npm run inspector` — MCP Inspector, then connect to http://localhost:8787/mcp
 - `npm run record-fixtures` — refresh demo fixtures from the live APIs
+- `npm run synth` / `npm run deploy` — CDK; synth works with no AWS credentials

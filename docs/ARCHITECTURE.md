@@ -104,6 +104,23 @@ The upwind rule is the one with a trap in it. Weather APIs report where wind com
 fire in that direction is the one whose smoke arrives. It is covered both as a rule and through the
 whole tool, with a north-easterly and a south-westerly wind over the same recorded fire.
 
+## Running on AWS
+
+`infra/` describes the whole deployment in CDK (see `docs/DEPLOY.md`). Both services are stateless
+Express apps, which is the reason the hosting is as boring as it is: a buffered Lambda Function URL
+each, no API Gateway, no VPC, no session affinity. The simulator is a static bundle in a private S3
+bucket behind CloudFront.
+
+The two are wired together at deploy time rather than at build time: the stack writes a
+`config.json` next to the bundle containing the agent's Function URL, and the simulator reads it on
+startup. One deployment, no rebuild, no circular dependency between the bucket and the Lambda.
+
+Two things about Lambda are not obvious from the local setup. The adapter hands Express a request
+whose `rawHeaders` is empty, and the MCP transport builds its Web `Request` from exactly that, so
+`server/src/lambda.ts` rebuilds the array — otherwise every call returns 415. And the bundle is a
+single file at the task root, so the recorded fixtures are located through `FIXTURES_DIR` rather
+than by walking up from the module path.
+
 ## Failure behaviour
 
 A dead source raises `SourceUnavailableError` and becomes an MCP error result with a readable

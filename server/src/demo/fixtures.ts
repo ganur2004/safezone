@@ -10,8 +10,16 @@ import { haversineKm, type LatLon } from "@safezone/shared";
 import { parseFirmsCsv, type FirmsHotspot } from "../sources/firms.js";
 
 const here = dirname(fileURLToPath(import.meta.url));
-// src/demo (tsx) and dist/demo (built) both sit one level under the package root.
-export const FIXTURES_DIR = resolve(here, "../../fixtures");
+
+/**
+ * src/demo (tsx) and dist/demo (built) both sit one level under the package
+ * root. On Lambda the whole service is bundled into a single file at the task
+ * root and the fixtures are copied next to it, so that layout is passed in
+ * explicitly through FIXTURES_DIR (see infra/lib/safezone-stack.ts).
+ */
+export const FIXTURES_DIR = process.env.FIXTURES_DIR
+  ? resolve(process.env.FIXTURES_DIR)
+  : resolve(here, "../../fixtures");
 
 /** One recorded location. Each field points at the raw response for that source. */
 export interface Scenario {

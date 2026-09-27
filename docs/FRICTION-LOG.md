@@ -38,3 +38,20 @@ building SafeZone. Our own bugs do not belong here.
 - **Time lost:** ~15 minutes.
 - **What would have helped:** a TypeScript snippet in the Converse tool-use documentation that
   builds `toolConfig` from a list, rather than one hand-written literal.
+
+### 2026-09-27 — Lambda adapter and the MCP SDK disagree about headers
+
+- **What we did:** put the MCP server behind a Lambda Function URL with an Express adapter.
+- **What we expected:** the same server that works locally to work on Lambda.
+- **What happened:** every `POST /mcp` came back `415 Unsupported Media Type: Content-Type must be
+application/json`, even though the header was plainly there. The adapter fills `req.headers` but
+  leaves `req.rawHeaders` empty, and the SDK's Node transport converts the request to a Web
+  standard `Request` using `rawHeaders`. `GET /health` worked the whole time, which made it look
+  like a routing problem rather than a header one.
+- **Time lost:** ~40 minutes, and it would have been much worse if we had found it after deploying
+  instead of by invoking the bundle locally.
+- **What would have helped:** a note in the MCP TypeScript SDK's docs that the Node transport reads
+  `rawHeaders`, since that is what decides whether an adapter works with it.
+- **Also:** esbuild emitting ESM plus a CommonJS dependency that calls `require` at runtime fails
+  only at invocation time, with "Dynamic require of http is not supported". A `createRequire` banner
+  fixes it; nothing warns at build time.
