@@ -26,3 +26,15 @@ building SafeZone. Our own bugs do not belong here.
 - **Time lost:** ~20 minutes.
 - **What would have helped:** a short "geocode a place name" snippet in the Places API docs that
   names the SDK command and shows API-key auth.
+
+### 2026-09-27 — Bedrock Converse: `Tool` is awkward to build in TypeScript
+
+- **What we did:** built a `toolConfig` from the MCP tool list for `ConverseCommand`.
+- **What we expected:** an object literal to type-check against `Tool`.
+- **What happened:** `Tool` is a tagged union whose members each include a `$unknown` variant, so a
+  plain literal fails with "Property '$unknown' is missing". The fix is an explicit return type
+  annotation on the map callback. Separately, the JSON Schema for a tool has to be cast to
+  `DocumentType`, which is re-exported from `@smithy/types` rather than from the Bedrock package.
+- **Time lost:** ~15 minutes.
+- **What would have helped:** a TypeScript snippet in the Converse tool-use documentation that
+  builds `toolConfig` from a list, rather than one hand-written literal.

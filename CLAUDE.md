@@ -2,7 +2,7 @@
 
 Full spec: SPEC.md. Read the relevant section before changing code.
 
-- TypeScript strict, npm workspaces: shared, server, web (agent lands in M4)
+- TypeScript strict, npm workspaces: shared, server, agent, web
 - All tool results must match SafetyToolResult in shared/src/types.ts
 - Wind direction from APIs is where wind comes FROM (see SPEC 6.2)
 - Never commit secrets; config via .env (see .env.example)
@@ -17,7 +17,10 @@ Full spec: SPEC.md. Read the relevant section before changing code.
 - `server/src/tools/*` — one file per MCP tool (`getWind.ts`) plus its pure logic (`wind.ts`)
 - `server/src/demo/fixtures.ts` — DEMO_MODE scenario lookup
 - `server/fixtures/scenarios.json` — demo scenarios (Sacramento, Los Angeles, Chicago, Hilo)
-- `web/src/mcp/router.ts` — temporary keyword router standing in for the agent until M4
+- `agent/src/bedrock.ts` — the Converse tool loop; Bedrock is injected so tests can fake it
+- `agent/src/scripted.ts` — the no-AWS fallback (SPEC 7.4); it must stay stateless
+- `web/src/agent/client.ts` — the only place the browser talks to the agent
+- `web/src/voice/speech.ts` — Web Speech input, Polly output with a browser fallback
 - `web/src/map/layers.ts` — one entry per MapLayer kind; add a kind there, not in the component
 
 ## Source quirks worth remembering
@@ -40,10 +43,14 @@ Full spec: SPEC.md. Read the relevant section before changing code.
   from the other in the browser, or a popup will disagree with the spoken summary
 - Keep `/mcp` stateless: no per-session state outside the in-memory cache
 - The map keys sources by `MapLayer.id`: the same id replaces data, a new id adds a source
+- `/api/chat` is stateless: the browser sends the whole history, the agent re-derives context
+- Pair results with tools through `resultTools`, never by zipping `toolsUsed` (a failed tool
+  appears there but produces no result)
+- No AWS credentials on the dev machines: anything touching Bedrock or Polly needs a fake in tests
 
 ## Commands
 
-- `npm run demo` — server with recorded data plus the simulator, no keys needed
+- `npm run demo` — server, agent and simulator with recorded data, no keys needed
 - `npm run dev:server` / `npm run dev:web` — one at a time
 - `npm test`, `npm run lint`, `npm run typecheck`
 - `npm run smoke` — initialize + tools/list + tools/call against a running server

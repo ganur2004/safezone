@@ -58,6 +58,25 @@ keyed by tool plus coordinates rounded to 0.01°.
 - `demo/` — scenario lookup for `DEMO_MODE`; picks the nearest recorded scenario.
 - `risk/` — the rule set behind `assess_risk` (milestone M5).
 
+## The agent service
+
+`agent/` is the part Alexa+ plays for a real device: it decides which tools to call. `POST /api/chat`
+takes the whole conversation and returns a spoken reply plus every tool result, so the service holds
+no session state.
+
+With `BEDROCK_ENABLED=true` it runs a Converse tool-use loop: list the MCP tools, hand them to the
+model as `toolConfig`, run whatever the model asks for, feed the results back, and stop at five
+iterations. The Bedrock client is injected rather than constructed inside the loop, which is what
+lets the loop be tested without AWS credentials.
+
+With `BEDROCK_ENABLED=false` the scripted fallback from SPEC 7.4 picks tools with keyword rules.
+Because the endpoint is stateless it re-derives context from the history: the place comes from the
+most recent message that names one, and "away from the fire" fetches the fire clusters on the spot
+to fill the `avoid` parameter. This is the path the keyless demo runs.
+
+`POST /api/tts` returns Polly audio, or 503 when Polly is not configured — the simulator reads that
+as "use the browser voice".
+
 ## The simulator
 
 `web/` is a Vite + React app with a single MapLibre instance. It holds no hazard logic of its own:
@@ -65,9 +84,9 @@ it renders whatever layers a `SafetyToolResult` carries, keyed by `MapLayer.id`,
 source's data when the id repeats and adding a source when it does not. `web/src/map/layers.ts` maps
 each layer kind to its MapLibre layers, so adding a hazard type is a change in one file.
 
-Two things are deliberately temporary. `web/src/mcp/router.ts` picks tools from keywords and
-accumulates factors per place — in M4 the agent service does this with Bedrock, and the browser
-posts to `/api/chat` instead. The microphone button is rendered but disabled until then.
+Voice in is the browser's Web Speech API, voice out is Polly with a `speechSynthesis` fallback, so
+the demo speaks even with no AWS account. Factors accumulate per tool and reset when the place
+changes, so a follow-up about the wind does not drop the fire that is still burning.
 
 ## Failure behaviour
 

@@ -1,7 +1,7 @@
 /** The side panel: risk level, factors, recommendations, sources (SPEC 8.1). */
 import type { SafetyToolResult, Severity } from "@safezone/shared";
 import { SEVERITY_COLORS } from "../map/layers.js";
-import { isPlacementOnly } from "../mcp/router.js";
+import { isPlacementOnly } from "../agent/client.js";
 
 export interface RiskPanelProps {
   severity: Severity;

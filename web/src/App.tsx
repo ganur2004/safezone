@@ -1,71 +1,95 @@
 /**
- * The simulator shell (SPEC 8): a full-screen map, the risk panel, and the chat
- * bar. Until M4 the browser talks to the MCP server directly through a small
- * keyword router (see mcp/router.ts).
+ * The simulator shell (SPEC 8). Since M4 the browser holds no tool logic: it
+ * posts the conversation to the agent service and draws whatever comes back.
  */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import type { MapLayer, MapView, SafetyToolResult } from "@safezone/shared";
-import { McpClient, McpError } from "./mcp/client.js";
-import { PRESETS, ask, worstSeverity, type RouterState } from "./mcp/router.js";
+import type { MapLayer, MapView, SafetyToolResult, Severity } from "@safezone/shared";
+import { SEVERITY_ORDER } from "@safezone/shared";
+import {
+  AgentClient,
+  AgentError,
+  PRESETS,
+  type AgentHealth,
+  type ChatMessage,
+} from "./agent/client.js";
+import { speak, stopSpeaking } from "./voice/speech.js";
 import { MapCanvas } from "./map/MapCanvas.js";
 import { ChatBar, type AssistantState, type Message } from "./components/ChatBar.js";
 import { Legend } from "./components/Legend.js";
 import { RiskPanel } from "./components/RiskPanel.js";
 
-const MCP_URL = (import.meta.env.VITE_MCP_URL as string | undefined) ?? "http://localhost:8787/mcp";
+const AGENT_URL = (import.meta.env.VITE_AGENT_URL as string | undefined) ?? "http://localhost:8788";
 
 export function App(): React.JSX.Element {
-  const client = useMemo(() => new McpClient(MCP_URL), []);
-  const router = useRef<RouterState>({ fireClusters: [] });
+  const client = useMemo(() => new AgentClient(AGENT_URL), []);
+  /** The conversation as the agent sees it; the agent itself is stateless. */
+  const history = useRef<ChatMessage[]>([]);
 
   const [messages, setMessages] = useState<Message[]>([]);
   const [state, setState] = useState<AssistantState>("idle");
   const [layers, setLayers] = useState<MapLayer[]>([]);
   const [view, setView] = useState<MapView | undefined>();
-  // Factors accumulate per place, keyed by the tool that produced them: a
-  // follow-up about the wind must not wipe the fire that is still burning.
+  // Factors accumulate per tool: a follow-up about the wind must not wipe the
+  // fire that is still burning.
   const [factors, setFactors] = useState<Map<string, SafetyToolResult>>(new Map());
   const [place, setPlace] = useState<string | undefined>();
   const [demo, setDemo] = useState(false);
-  const [connection, setConnection] = useState<string | undefined>();
+  const [health, setHealth] = useState<AgentHealth | undefined>();
   const [collapsed, setCollapsed] = useState(false);
 
   useEffect(() => {
     client
-      .initialize()
-      .then((info) => setConnection(`${info.serverInfo.name} · MCP ${info.protocolVersion}`))
-      .catch(() => setConnection(undefined));
+      .health()
+      .then(setHealth)
+      .catch(() => setHealth(undefined));
   }, [client]);
+
+  useEffect(() => stopSpeaking, []);
 
   const onAsk = useCallback(
     async (question: string) => {
+      stopSpeaking();
       setMessages((previous) => [...previous, { role: "user", text: question }]);
+      history.current = [...history.current, { role: "user", content: question }];
       setState("thinking");
       try {
-        const { turn, state: nextRouterState } = await ask(client, question, router.current);
-        router.current = nextRouterState;
-        const results = turn.outcomes.map((outcome) => outcome.result);
+        const reply = await client.chat(history.current);
+        history.current = [...history.current, { role: "assistant", content: reply.reply }];
 
-        // Replace layers with the same id, keep the rest, so the map accumulates
-        // context across a conversation (SPEC 8.3).
-        const incoming = results.flatMap((result) => result.map?.layers ?? []);
-        setLayers((previous) => mergeLayers(turn.placeChanged ? [] : previous, incoming));
-        const lastView = [...results].reverse().find((result) => result.map?.view)?.map?.view;
+        // Same layer id replaces, everything else stays, so the map keeps the
+        // context of the conversation (SPEC 8.3).
+        const incoming = reply.toolResults.flatMap((result) => result.map?.layers ?? []);
+        const home = reply.toolResults.find((result) =>
+          result.map?.layers.some((layer) => layer.kind === "home"),
+        );
+        const movedTo = home?.data.label === undefined ? undefined : String(home.data.label);
+        const placeChanged = movedTo !== undefined && movedTo !== place;
+
+        setLayers((previous) => mergeLayers(placeChanged ? [] : previous, incoming));
+        const lastView = [...reply.toolResults].reverse().find((result) => result.map?.view)
+          ?.map?.view;
         if (lastView) setView(lastView);
 
         setFactors((previous) => {
-          const merged = turn.placeChanged
-            ? new Map<string, SafetyToolResult>()
-            : new Map(previous);
-          for (const outcome of turn.outcomes) merged.set(outcome.tool, outcome.result);
+          const merged = placeChanged ? new Map<string, SafetyToolResult>() : new Map(previous);
+          reply.toolResults.forEach((result, index) => {
+            merged.set(reply.resultTools[index] ?? `result-${index}`, result);
+          });
           return merged;
         });
-        setPlace(turn.place?.label);
-        setDemo(results.some((result) => result.demo === true));
-        setMessages((previous) => [...previous, { role: "assistant", text: turn.reply }]);
+        if (movedTo) setPlace(movedTo);
+        setDemo(reply.toolResults.some((result) => result.demo === true));
+        setMessages((previous) => [...previous, { role: "assistant", text: reply.reply }]);
+
+        // Speak the answer: Polly when the agent offers it, the browser voice otherwise.
+        if (reply.reply) {
+          setState("speaking");
+          const audio = await client.speech(reply.reply).catch(() => undefined);
+          await speak(reply.reply, audio);
+        }
       } catch (error) {
         const text =
-          error instanceof McpError || error instanceof Error
+          error instanceof AgentError || error instanceof Error
             ? error.message
             : "Something went wrong.";
         setMessages((previous) => [...previous, { role: "assistant", text, error: true }]);
@@ -73,7 +97,7 @@ export function App(): React.JSX.Element {
         setState("idle");
       }
     },
-    [client],
+    [client, place],
   );
 
   const results = useMemo(() => [...factors.values()], [factors]);
@@ -88,8 +112,8 @@ export function App(): React.JSX.Element {
         <span className="tagline">voice safety assistant · simulator</span>
         <span className="badges">
           {demo ? <span className="badge demo">DEMO DATA</span> : null}
-          <span className={`badge ${connection ? "online" : "offline"}`}>
-            {connection ?? "server offline"}
+          <span className={`badge ${health ? "online" : "offline"}`}>
+            {health ? `agent · ${health.mode} · ${health.tts} voice` : "agent offline"}
           </span>
         </span>
       </header>
@@ -106,9 +130,22 @@ export function App(): React.JSX.Element {
         />
       </main>
 
-      <ChatBar messages={messages} state={state} presets={PRESETS} onAsk={onAsk} />
+      <ChatBar
+        messages={messages}
+        state={state}
+        presets={PRESETS}
+        onAsk={onAsk}
+        onStateChange={setState}
+      />
     </div>
   );
+}
+
+function worstSeverity(results: SafetyToolResult[]): Severity {
+  return results.reduce<Severity>((worst, result) => {
+    const severity = result.severity ?? "none";
+    return SEVERITY_ORDER[severity] > SEVERITY_ORDER[worst] ? severity : worst;
+  }, "none");
 }
 
 /** Same id replaces, everything else is kept in place. */

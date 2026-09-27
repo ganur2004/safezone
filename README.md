@@ -1,8 +1,8 @@
 # SafeZone
 
-**A voice safety assistant with a map.** Ask whether a place is safe, and SafeZone pulls live
-hazard data from several open sources, reasons about the risk, answers in one or two spoken
-sentences, and draws everything on a map.
+**A voice safety assistant with a map.** Ask whether a place is safe, and SafeZone pulls live hazard
+data from several open sources, reasons about the risk, answers in one or two spoken sentences, and
+draws everything on a map.
 
 SafeZone is built as a **self-hosted MCP server** (spec revision `2025-11-25`, Streamable HTTP), so
 the same tools serve Alexa+ and our own web simulator. The simulator adds what a voice-only
@@ -13,14 +13,28 @@ assistant cannot show: the map.
 
 ## Status
 
-Milestone **M1 (skeleton)** is complete: the monorepo, the shared result contract, and the MCP
-server with `get_fire_hotspots` backed by NASA FIRMS. See `SPEC.md` section 12 for the roadmap.
+Milestones **M1**–**M4** are complete: the MCP server exposes seven tools, an agent service runs the
+tool loop, and the simulator listens, answers out loud and draws the result. `assess_risk` and the
+AWS deployment follow in M5 and M6. See `SPEC.md` section 12 for the roadmap.
 
-| Tool                                                                                                  | Source                                      | State   |
-| ----------------------------------------------------------------------------------------------------- | ------------------------------------------- | ------- |
-| `get_fire_hotspots`                                                                                   | NASA FIRMS                                  | ✅ done |
-| `geocode`, `get_weather_alerts`, `get_earthquakes`, `get_air_quality`, `get_wind`, `find_safe_places` | Amazon Location, NWS, USGS, Open-Meteo, OSM | M2      |
-| `assess_risk`                                                                                         | all of the above                            | M5      |
+**Not yet verified against AWS.** The Amazon Bedrock and Amazon Polly paths are written and
+unit-tested against fakes, but have not been run with real credentials. The default configuration
+uses the scripted agent and the browser voice, which is what the demo below runs.
+
+| Tool                 | Source                                     | State   |
+| -------------------- | ------------------------------------------ | ------- |
+| `geocode`            | Amazon Location, Open-Meteo as fallback    | ✅ done |
+| `get_fire_hotspots`  | NASA FIRMS (VIIRS)                         | ✅ done |
+| `get_weather_alerts` | NOAA / National Weather Service            | ✅ done |
+| `get_earthquakes`    | USGS                                       | ✅ done |
+| `get_air_quality`    | Open-Meteo Air Quality (US AQI, EPA bands) | ✅ done |
+| `get_wind`           | Open-Meteo Forecast                        | ✅ done |
+| `find_safe_places`   | OpenStreetMap via Overpass                 | ✅ done |
+| `assess_risk`        | all of the above                           | M5      |
+| `get_route`          | Amazon Location Routes                     | M7 (P2) |
+
+Only NASA FIRMS needs an API key. Everything else works with no credentials at all, and
+`DEMO_MODE=true` serves recorded responses for every tool.
 
 ## Quick start (no API keys)
 
@@ -30,50 +44,74 @@ npm run build
 npm run demo
 ```
 
-That starts the MCP server with recorded data and the simulator together. Open
-http://localhost:5173 and try one of the three suggested questions.
+That starts the MCP server with recorded data, the agent in scripted mode, and the simulator. Open
+http://localhost:5173 and try one of the three suggested questions, by voice or by typing.
 
 Other useful commands:
 
 ```bash
 npm run smoke         # initialize + tools/list + tools/call against a running server
 npm run inspector     # MCP Inspector; connect to http://localhost:8787/mcp (Streamable HTTP)
-npm run dev:server    # just the MCP server
-npm run dev:web       # just the simulator
+npm run dev:server    # the MCP server on :8787
+npm run dev:agent     # the agent on :8788
+npm run dev:web       # the simulator on :5173
 ```
 
-## The simulator
+## How a question is answered
 
-A full-screen dark map with a risk panel and a chat bar (`web/`, Vite + React + MapLibre). Every
-tool answer carries map layers, so an answer both speaks and draws: fire hotspots sized by radiative
-power, alert polygons coloured by severity, an arrow showing where the wind is blowing, hospitals
-with the recommended one highlighted. Clicking a feature opens a popup with its details and source.
+```
+you speak  →  web simulator  →  POST /api/chat  →  agent  →  MCP tools  →  open data
+                    ↑                                  ↓
+              map + spoken reply  ←────────────  SafetyToolResult
+```
 
-Until the agent service lands in M4 the browser calls the MCP server directly and picks tools with a
-small keyword router (`web/src/mcp/router.ts`); the microphone button is present but disabled.
+Every tool returns one `SafetyToolResult`: a short spoken summary, the map layers to draw, the
+numbers behind it, and where they came from. Alexa+ reads the summary; the simulator also draws the
+layers. The browser holds no hazard logic of its own.
+
+The agent picks the tools — with Amazon Bedrock when `BEDROCK_ENABLED=true`, otherwise with the
+scripted fallback from SPEC 7.4, so the whole flow runs without an AWS account.
+
+## Voice
+
+Input uses the browser's Web Speech API (Chrome and Safari; elsewhere the text box is the way in).
+Hold the microphone button and speak. Output prefers Amazon Polly through `POST /api/tts`; when
+Polly is not configured the agent answers 503 and the simulator falls back to the browser's own
+voice, so the demo always talks.
+
+## The map
+
+A full-screen dark map with a risk panel (`web/`, Vite + React + MapLibre). Fire hotspots are sized
+by radiative power, alert polygons coloured by severity, an arrow shows where the wind is blowing,
+and the recommended hospital is highlighted. Clicking a feature opens a popup with its details and
+its source.
 
 ## Running with live data
 
 ```bash
 cp .env.example .env
-DEMO_MODE=false npm run dev
+DEMO_MODE=false npm run demo
 ```
 
-Six of the seven tools work immediately — NWS, USGS, Open-Meteo and Overpass need no keys.
-Two optional keys add the rest:
+Six of the seven tools work immediately — NWS, USGS, Open-Meteo and Overpass need no keys. These
+optional settings add the rest:
 
 - `FIRMS_MAP_KEY` — free from https://firms.modaps.eosdis.nasa.gov/api/map_key/, enables
   `get_fire_hotspots`. Without it that one tool answers with a clear error and the others are
   unaffected.
 - `AMAZON_LOCATION_API_KEY` — makes `geocode` use Amazon Location Service instead of Open-Meteo.
 - `NWS_USER_AGENT` — the National Weather Service asks for a contact address in the User-Agent.
+- `BEDROCK_ENABLED=true` — the agent picks tools with a Bedrock model instead of the scripted
+  fallback. The model in `BEDROCK_MODEL_ID` must be enabled in your region under Bedrock "Model
+  access", and the service needs `bedrock:InvokeModel`.
+- `POLLY_ENABLED=true` — replies are spoken by Amazon Polly instead of the browser voice.
 
 Weather alerts cover US locations only; elsewhere the tool says so instead of failing.
 
 ## Demo fixtures
 
-`server/fixtures` holds recorded API responses for four scenarios: Sacramento, Los Angeles,
-Chicago (nothing active) and Hilo, Hawaii (a real hurricane watch). Refresh them with:
+`server/fixtures` holds recorded API responses for four scenarios: Sacramento, Los Angeles, Chicago
+(nothing active) and Hilo, Hawaii (a real hurricane watch). Refresh them with:
 
 ```bash
 npm run record-fixtures
@@ -87,14 +125,16 @@ placeholders until the script runs with a `FIRMS_MAP_KEY`.
 ```
 shared/   the SafetyToolResult contract and geo helpers, used by every package
 server/   the MCP server: tools, source clients, demo fixtures
-scripts/  smoke test and fixture recorder
+agent/    the agent service: Bedrock tool loop, scripted fallback, Polly
+web/      the simulator: map, risk panel, voice
+scripts/  demo runner, smoke test, fixture recorder
 docs/     architecture notes, friction log, Devpost draft
 ```
 
 ## Development
 
 ```bash
-npm test         # vitest: parsing, clustering, contract and protocol tests
+npm test         # vitest: parsing, risk logic, contracts, the agent loop, the browser client
 npm run lint     # eslint + prettier
 npm run typecheck
 ```

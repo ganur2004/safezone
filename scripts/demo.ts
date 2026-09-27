@@ -5,6 +5,7 @@
 import { spawn, type ChildProcess } from "node:child_process";
 
 const SERVER_PORT = process.env.PORT ?? "8787";
+const AGENT_PORT = process.env.AGENT_PORT ?? "8788";
 const WEB_PORT = "5173";
 
 const children: ChildProcess[] = [];
@@ -56,8 +57,16 @@ start("server", "\u001b[36m", "npm", ["run", "dev", "--workspace", "server"], {
   ALLOWED_ORIGINS: `http://localhost:${WEB_PORT}`,
 });
 
+start("agent", "\u001b[33m", "npm", ["run", "dev", "--workspace", "agent"], {
+  AGENT_PORT,
+  MCP_SERVER_URL: `http://localhost:${SERVER_PORT}/mcp`,
+  // Scripted mode: the demo must run with no AWS account (SPEC 7.4).
+  BEDROCK_ENABLED: process.env.BEDROCK_ENABLED ?? "false",
+  ALLOWED_ORIGINS: `http://localhost:${WEB_PORT}`,
+});
+
 start("web", "\u001b[35m", "npm", ["run", "dev", "--workspace", "web"], {
-  VITE_MCP_URL: `http://localhost:${SERVER_PORT}/mcp`,
+  VITE_AGENT_URL: `http://localhost:${AGENT_PORT}`,
 });
 
 console.log(`\nOpen http://localhost:${WEB_PORT} once Vite is ready.\n`);
