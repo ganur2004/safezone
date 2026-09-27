@@ -13,16 +13,20 @@ assistant cannot show: the map.
 
 ## Status
 
-Milestones **M1**–**M6** are complete: eight MCP tools including `assess_risk`, an agent service that
-runs the tool loop, a simulator that listens and answers out loud, recorded fixtures so the whole
-thing runs with no API keys, and the AWS infrastructure as CDK code. See `SPEC.md` section 12 for the
-roadmap.
+Milestones **M1**–**M7** are complete: nine MCP tools including `assess_risk` and `get_route`, an
+agent service that runs the tool loop, a simulator that listens, answers out loud and draws the
+result, recorded fixtures so the whole thing runs with no API keys, and the AWS infrastructure as
+CDK code. What is left is M8, the submission itself. See `SPEC.md` section 12 for the roadmap.
 
 **Not deployed yet.** `infra/` synthesizes and both Lambda bundles have been invoked locally with
 Function URL payloads, but nobody has run `cdk deploy` against a real account — there are no AWS
 credentials on the development machines. The same goes for the Amazon Bedrock and Amazon Polly
 paths, which are written and unit-tested against fakes. The default configuration uses the scripted
 agent and the browser voice, which is what the demo below runs. See `docs/DEPLOY.md`.
+
+**Alexa+ is not connected.** The MCP server is what the Alexa+ track asks for and it is ready to
+register, but the developer preview is not available to us, so the simulator is the demo. The rules
+allow that.
 
 | Tool                 | Source                                     | State   |
 | -------------------- | ------------------------------------------ | ------- |
@@ -34,7 +38,7 @@ agent and the browser voice, which is what the demo below runs. See `docs/DEPLOY
 | `get_wind`           | Open-Meteo Forecast                        | ✅ done |
 | `find_safe_places`   | OpenStreetMap via Overpass                 | ✅ done |
 | `assess_risk`        | all of the above                           | ✅ done |
-| `get_route`          | Amazon Location Routes                     | M7 (P2) |
+| `get_route`          | Amazon Location Routes, OSRM as fallback   | ✅ done |
 
 Only NASA FIRMS needs an API key. Everything else works with no credentials at all, and
 `DEMO_MODE=true` serves recorded responses for every tool.
@@ -102,9 +106,14 @@ voice, so the demo always talks.
 ## The map
 
 A full-screen dark map with a risk panel (`web/`, Vite + React + MapLibre). Fire hotspots are sized
-by radiative power, alert polygons coloured by severity, an arrow shows where the wind is blowing,
-and the recommended hospital is highlighted. Clicking a feature opens a popup with its details and
-its source.
+by radiative power, alert polygons coloured by severity, the wind arrow flows in the direction the
+smoke is going, the recommended hospital is highlighted, and the route to it is drawn as a road
+line. Your location pulses like a device that is listening.
+
+Clicking a feature opens a popup with its details and its source, one at a time. The legend lists
+only the layers actually on the map, and each entry switches its layer off — with five hazards drawn
+at once, hiding the fires to see the alert polygon underneath is the difference between a map and a
+mess. Every animation stops for `prefers-reduced-motion`.
 
 ## Running with live data
 

@@ -126,5 +126,8 @@ Secrets Manager secret you created by hand.
 - **Not deployed yet.** See the note at the top.
 - The MCP Function URL is public and unauthenticated, which is what the Alexa+ MCP toolkit expects
   for a demo. For anything beyond a hackathon, put it behind an authorizer.
-- `get_route` (SPEC 5.3, priority P2) is not implemented, so no Amazon Location Routes permissions
-  are granted.
+- `get_route` uses Amazon Location Routes through an API key, the same one as geocoding, so it needs
+  no extra IAM permissions. Without a key it falls back to the public OSRM demo server, which is fine
+  for a demo but carries no availability guarantee.
+- Alexa+ is not connected: the developer preview is not available to us. `McpEndpoint` is the address
+  to register once it is.

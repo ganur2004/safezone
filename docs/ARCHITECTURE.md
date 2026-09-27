@@ -40,15 +40,17 @@ keyed by tool plus coordinates rounded to 0.01°.
 
 ## The tools
 
-| Tool                 | Source                       | Notes                                             |
-| -------------------- | ---------------------------- | ------------------------------------------------- |
-| `geocode`            | Amazon Location / Open-Meteo | Amazon when a key is set, Open-Meteo otherwise    |
-| `get_fire_hotspots`  | NASA FIRMS VIIRS             | bbox query, real-distance filter, 2 km clustering |
-| `get_weather_alerts` | NOAA / NWS                   | US only; zone alerts carry no polygon             |
-| `get_earthquakes`    | USGS                         | already GeoJSON                                   |
-| `get_air_quality`    | Open-Meteo Air Quality       | US AQI mapped to EPA bands and colours            |
-| `get_wind`           | Open-Meteo Forecast          | reports both `from_deg` and `to_deg`              |
-| `find_safe_places`   | OpenStreetMap via Overpass   | `avoid` zones drop and down-rank places           |
+| Tool                 | Source                        | Notes                                             |
+| -------------------- | ----------------------------- | ------------------------------------------------- |
+| `geocode`            | Amazon Location / Open-Meteo  | Amazon when a key is set, Open-Meteo otherwise    |
+| `get_fire_hotspots`  | NASA FIRMS VIIRS              | bbox query, real-distance filter, 2 km clustering |
+| `get_weather_alerts` | NOAA / NWS                    | US only; zone alerts carry no polygon             |
+| `get_earthquakes`    | USGS                          | already GeoJSON                                   |
+| `get_air_quality`    | Open-Meteo Air Quality        | US AQI mapped to EPA bands and colours            |
+| `get_wind`           | Open-Meteo Forecast           | reports both `from_deg` and `to_deg`              |
+| `find_safe_places`   | OpenStreetMap via Overpass    | `avoid` zones drop and down-rank places           |
+| `get_route`          | Amazon Location Routes / OSRM | road line to a place, keyless fallback            |
+| `assess_risk`        | all of the above              | the rule set in SPEC 6                            |
 
 ## Layering inside the server
 

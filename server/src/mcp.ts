@@ -6,6 +6,7 @@ import { geocodeTool } from "./tools/geocode.js";
 import { getAirQualityTool } from "./tools/getAirQuality.js";
 import { getEarthquakesTool } from "./tools/getEarthquakes.js";
 import { getFireHotspotsTool } from "./tools/getFireHotspots.js";
+import { getRouteTool } from "./tools/getRoute.js";
 import { getWeatherAlertsTool } from "./tools/getWeatherAlerts.js";
 import { getWindTool } from "./tools/getWind.js";
 import { registerSafetyTool } from "./tools/registry.js";
@@ -37,6 +38,7 @@ export function createMcpServer(): McpServer {
   registerSafetyTool(server, getAirQualityTool);
   registerSafetyTool(server, getWindTool);
   registerSafetyTool(server, findSafePlacesTool);
+  registerSafetyTool(server, getRouteTool);
 
   return server;
 }

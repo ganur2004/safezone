@@ -178,6 +178,18 @@ body {
 .risk strong {
   font-size: 20px;
   letter-spacing: 0.04em;
+  transition: color 0.3s ease;
+}
+
+/* An extreme level should catch the eye without becoming a strobe. */
+.risk-extreme {
+  animation: alarm 2s ease-in-out infinite;
+}
+
+@keyframes alarm {
+  50% {
+    box-shadow: 0 0 18px rgba(255, 59, 92, 0.35);
+  }
 }
 
 .risk-place {
@@ -207,6 +219,36 @@ body {
   gap: 8px;
   align-items: start;
   font-size: 13px;
+  animation: rise 0.35s ease both;
+}
+
+.recommendations li,
+.sources li {
+  animation: rise 0.35s ease both;
+}
+
+/* Each item arrives just after the one above it, which reads as one list
+   settling rather than five things appearing at once. */
+.factors li:nth-child(2),
+.recommendations li:nth-child(2) {
+  animation-delay: 0.05s;
+}
+
+.factors li:nth-child(3),
+.recommendations li:nth-child(3) {
+  animation-delay: 0.1s;
+}
+
+.factors li:nth-child(n + 4),
+.recommendations li:nth-child(n + 4) {
+  animation-delay: 0.15s;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
 }
 
 .dot {
@@ -276,12 +318,38 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  padding: 2px 4px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  transition:
+    color 0.15s ease,
+    opacity 0.15s ease;
+}
+
+.legend-item:hover {
+  color: var(--text);
+}
+
+.legend-item:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+/* A layer switched off keeps its place, so the map does not jump around. */
+.legend-off {
+  opacity: 0.4;
+  text-decoration: line-through;
 }
 
 .legend-item i {
   width: 10px;
   height: 10px;
   border-radius: 3px;
+  flex: none;
 }
 
 /* ----------------------------------------------------------------- chatbar */
@@ -482,7 +550,8 @@ body {
 @media (max-width: 820px) {
   .panel {
     top: auto;
-    bottom: 12px;
+    /* Clear of the basemap attribution, which has to stay readable. */
+    bottom: 26px;
     left: 12px;
     right: 12px;
     width: auto;
@@ -501,8 +570,17 @@ body {
     cursor: pointer;
   }
 
+  .panel-collapsed {
+    max-height: none;
+  }
+
   .panel-collapsed .panel-body {
     display: none;
+  }
+
+  /* Collapsed, the sheet is just a bar naming the level, so the map is visible. */
+  .panel-toggle {
+    letter-spacing: 0.04em;
   }
 
   .legend {
@@ -539,7 +617,15 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .mic-listening {
+  .mic-listening,
+  .risk-extreme,
+  .factors li,
+  .recommendations li,
+  .sources li {
     animation: none;
+  }
+
+  * {
+    transition-duration: 0.01ms !important;
   }
 }

@@ -31,6 +31,7 @@ describe("safezone MCP server", () => {
       "get_air_quality",
       "get_earthquakes",
       "get_fire_hotspots",
+      "get_route",
       "get_weather_alerts",
       "get_wind",
     ]);

@@ -54,6 +54,7 @@ const EXPECTED_TOOLS = [
   "assess_risk",
   "geocode",
   "get_fire_hotspots",
+  "get_route",
   "get_weather_alerts",
   "get_earthquakes",
   "get_air_quality",
@@ -91,6 +92,11 @@ const CALLS: { name: string; args: Record<string, unknown>; expectLayers: boolea
   { name: "get_air_quality", args: sacramento, expectLayers: true },
   { name: "get_wind", args: sacramento, expectLayers: true },
   { name: "find_safe_places", args: { ...sacramento, type: "hospital" }, expectLayers: true },
+  {
+    name: "get_route",
+    args: { from: sacramento, to: { lat: 38.5729, lon: -121.461 }, label: "Sutter Medical Center" },
+    expectLayers: true,
+  },
 ];
 
 console.log("tools/call");

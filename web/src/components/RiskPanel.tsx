@@ -47,11 +47,14 @@ export function RiskPanel({
   return (
     <aside className={`panel${collapsed ? " panel-collapsed" : ""}`}>
       <button className="panel-toggle" onClick={onToggle} aria-expanded={!collapsed}>
-        {collapsed ? "Details ▲" : "Hide ▼"}
+        {collapsed ? `${SEVERITY_LABELS[severity]} · details ▲` : "Hide ▼"}
       </button>
 
       <div className="panel-body">
-        <div className="risk" style={{ borderColor: SEVERITY_COLORS[severity] }}>
+        <div
+          className={`risk${severity === "extreme" ? " risk-extreme" : ""}`}
+          style={{ borderColor: SEVERITY_COLORS[severity] }}
+        >
           <span className="risk-label">Risk</span>
           <strong style={{ color: SEVERITY_COLORS[severity] }}>{SEVERITY_LABELS[severity]}</strong>
           {place ? <span className="risk-place">{place}</span> : null}

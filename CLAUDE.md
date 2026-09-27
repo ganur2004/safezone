@@ -24,6 +24,7 @@ Full spec: SPEC.md. Read the relevant section before changing code.
 - `web/src/agent/client.ts` — the only place the browser talks to the agent
 - `web/src/voice/speech.ts` — Web Speech input, Polly output with a browser fallback
 - `web/src/map/layers.ts` — one entry per MapLayer kind; add a kind there, not in the component
+- `web/src/map/animate.ts` — one rAF loop for every map animation; it honours reduced motion
 - `infra/lib/safezone-stack.ts` — the whole AWS stack; `docs/DEPLOY.md` is the runbook
 
 ## Source quirks worth remembering
@@ -51,6 +52,9 @@ Full spec: SPEC.md. Read the relevant section before changing code.
 - `data` keys are snake_case, matching the input schema; internal types stay camelCase
 - A new hazard source means a rule in `risk/rules.ts`, a mapping in `risk/inputs.ts` and a call in
   `assessRisk.ts` — a tool that only `assess_risk` forgets to call contributes nothing
+- A new tool also goes in `server/test/mcp.test.ts` and `scripts/smoke.ts`, which both list them
+- AWS-backed sources follow the geocode pattern: the Amazon service when a key is set, a keyless
+  fallback otherwise, so the demo never depends on an account
 - `assess_risk` must never fail because one source did: gather with allSettled and name the gaps
 - Distances ship as `distance_km` **and** `distance_mi` (`distanceProperties`); never re-derive one
   from the other in the browser, or a popup will disagree with the spoken summary
@@ -60,6 +64,9 @@ Full spec: SPEC.md. Read the relevant section before changing code.
 - Pair results with tools through `resultTools`, never by zipping `toolsUsed` (a failed tool
   appears there but produces no result)
 - No AWS credentials on the dev machines: anything touching Bedrock or Polly needs a fake in tests
+- A test that sets `process.env.DEMO_MODE` must import server modules **lazily**: static imports are
+  hoisted above the assignment and the config is read at import time, so the tool would quietly
+  call the real API instead
 
 ## Commands
 

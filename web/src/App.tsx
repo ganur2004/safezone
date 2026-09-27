@@ -36,7 +36,11 @@ export function App(): React.JSX.Element {
   const [place, setPlace] = useState<string | undefined>();
   const [demo, setDemo] = useState(false);
   const [health, setHealth] = useState<AgentHealth | undefined>();
-  const [collapsed, setCollapsed] = useState(false);
+  // On a phone the panel is a sheet over the map, so it starts out of the way.
+  const [collapsed, setCollapsed] = useState(
+    () => window.matchMedia?.("(max-width: 820px)").matches ?? false,
+  );
+  const [hiddenLayers, setHiddenLayers] = useState<ReadonlySet<string>>(new Set());
 
   useEffect(() => {
     let cancelled = false;
@@ -143,8 +147,19 @@ export function App(): React.JSX.Element {
       </header>
 
       <main className="stage">
-        <MapCanvas layers={layers} view={view} />
-        <Legend layers={layers} />
+        <MapCanvas layers={layers} view={view} hidden={hiddenLayers} />
+        <Legend
+          layers={layers}
+          hidden={hiddenLayers}
+          onToggle={(layerId) =>
+            setHiddenLayers((previous) => {
+              const next = new Set(previous);
+              if (next.has(layerId)) next.delete(layerId);
+              else next.add(layerId);
+              return next;
+            })
+          }
+        />
         <RiskPanel
           severity={severity}
           entries={entries}

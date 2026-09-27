@@ -21,6 +21,7 @@ const FIRE_STATION_WORDS = /\b(fire station|fire department)\b/i;
 const SHELTER_WORDS = /\b(shelter|shelters|evacuation|assembly point)\b/i;
 const PLACE_WORDS =
   /\b(hospital|hospitals|shelter|shelters|fire station|safe place|where should i go|where can i go|nearest)\b/i;
+const ROUTE_WORDS = /\b(how do i get|how far|drive|driving|route|directions|take me)\b/i;
 const AWAY_WORDS = /\b(away from|avoid|avoiding|not towards|safe from)\b/i;
 
 /** Pulls a place out of "… in Sacramento?" or "… around Los Angeles". */
@@ -118,12 +119,24 @@ export async function runScripted(
         }));
       }
     }
-    await call("find_safe_places", {
+    const places = await call("find_safe_places", {
       ...point,
       type,
       radius_km: 25,
       ...(avoid.length > 0 ? { avoid } : {}),
     });
+
+    // "How do I get to the nearest hospital?" — route to whatever we just picked.
+    if (ROUTE_WORDS.test(question)) {
+      const best = (places?.data.places as { lat: number; lon: number; name: string }[])?.[0];
+      if (best) {
+        await call("get_route", {
+          from: point,
+          to: { lat: best.lat, lon: best.lon },
+          label: best.name,
+        });
+      }
+    }
   } else {
     const narrow: { tool: string; args: Record<string, unknown> }[] = [];
     if (FIRE_WORDS.test(question)) {
