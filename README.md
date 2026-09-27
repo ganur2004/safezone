@@ -11,12 +11,23 @@ assistant cannot show: the map.
 > ⚠️ SafeZone is a demonstration project. It does not replace official emergency services.
 > In an emergency, call 911 and follow the instructions of local authorities.
 
+![The SafeZone simulator answering "Is it safe around my home in Sacramento?" — a dark map of
+Sacramento with a cluster of fire hotspots north-east of the city, and a panel listing the risk
+level, the factors behind it and the data sources](docs/images/simulator.png)
+
+_"Is it safe around my home in Sacramento?" — the answer is spoken, and drawn._
+
 ## Status
 
-Milestones **M1**–**M7** are complete: nine MCP tools including `assess_risk` and `get_route`, an
-agent service that runs the tool loop, a simulator that listens, answers out loud and draws the
-result, recorded fixtures so the whole thing runs with no API keys, and the AWS infrastructure as
-CDK code. What is left is M8, the submission itself. See `SPEC.md` section 12 for the roadmap.
+Milestones **M1**–**M8** are complete as far as they can be from inside the repository: nine MCP
+tools including `assess_risk` and `get_route`, an agent service that runs the tool loop, a simulator
+that listens, answers out loud and draws the result, recorded fixtures so the whole thing runs with
+no API keys, the AWS infrastructure as CDK code, and the submission material.
+
+Three things are left, and none of them can be done from here: **deploying** (needs AWS
+credentials), **recording the video** (`docs/VIDEO-SCRIPT.md` has the shot list and narration), and
+**submitting on Devpost** (`docs/DEVPOST.md` is written, ready to paste). `docs/SUBMISSION.md`
+tracks all of it.
 
 **Not deployed yet.** `infra/` synthesizes and both Lambda bundles have been invoked locally with
 Function URL payloads, but nobody has run `cdk deploy` against a real account — there are no AWS
@@ -84,9 +95,25 @@ A source that fails is left out and named in the answer rather than failing the 
 ## How a question is answered
 
 ```
-you speak  →  web simulator  →  POST /api/chat  →  agent  →  MCP tools  →  open data
-                    ↑                                  ↓
-              map + spoken reply  ←────────────  SafetyToolResult
+   ┌───────────────────────┐          ┌────────────────────┐
+   │  web simulator        │          │  Alexa+ (optional) │
+   │  voice · chat · map   │          │  its own agent     │
+   └───────────┬───────────┘          └─────────┬──────────┘
+               │ POST /api/chat                 │ MCP, Streamable HTTP
+               ▼                                │
+   ┌───────────────────────┐                    │
+   │  agent service        │                    │
+   │  Bedrock tool loop    │── MCP client ──────┤
+   │  Polly (speech)       │                    │
+   └───────────────────────┘                    ▼
+                              ┌─────────────────────────────────┐
+                              │  MCP server "safezone"          │
+                              │  geocode · fires · alerts ·     │
+                              │  quakes · air · wind · places · │
+                              │  route · assess_risk            │
+                              └────────────────┬────────────────┘
+                                               ▼
+        NASA FIRMS · NOAA/NWS · USGS · Open-Meteo · OpenStreetMap · Amazon Location
 ```
 
 Every tool returns one `SafetyToolResult`: a short spoken summary, the map layers to draw, the
@@ -114,6 +141,17 @@ Clicking a feature opens a popup with its details and its source, one at a time.
 only the layers actually on the map, and each entry switches its layer off — with five hazards drawn
 at once, hiding the fires to see the alert polygon underneath is the difference between a map and a
 mess. Every animation stops for `prefers-reduced-motion`.
+
+### Following up
+
+![The same map after "How do I get to the nearest hospital away from the fire?" — hospitals marked,
+the recommended one highlighted, and a route drawn to it](docs/images/route.png)
+
+The conversation carries. The fire clusters found a moment ago are passed back in as zones to
+avoid, so the hospital it picks is not the one in the direction of the fire.
+
+<img src="docs/images/mobile.png" alt="SafeZone on a phone: the map fills the screen and the risk
+panel is collapsed to a bar reading MODERATE" width="300">
 
 ## Running with live data
 
@@ -171,8 +209,18 @@ agent/    the agent service: Bedrock tool loop, scripted fallback, Polly
 web/      the simulator: map, risk panel, voice
 infra/    the AWS CDK stack
 scripts/  demo runner, smoke test, fixture recorder
-docs/     architecture notes, deployment runbook, friction log, Devpost draft
+docs/     architecture, deployment runbook, submission material
 ```
+
+| Document                        | What it is                                         |
+| ------------------------------- | -------------------------------------------------- |
+| `docs/ARCHITECTURE.md`          | why the pieces are shaped the way they are         |
+| `docs/DEPLOY.md`                | the AWS runbook, including tear-down               |
+| `docs/SUBMISSION.md`            | the submission checklist and what is still blocked |
+| `docs/DEVPOST.md`               | the Devpost text, ready to paste                   |
+| `docs/VIDEO-SCRIPT.md`          | shot list, narration and timings for the video     |
+| `docs/AMAZON-TOOLS-FEEDBACK.md` | our review of the Amazon tools                     |
+| `docs/FRICTION-LOG.md`          | every problem we hit with Amazon tooling           |
 
 ## Development
 

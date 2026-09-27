@@ -44,6 +44,27 @@ describe("withArrowHeads", () => {
     expect(ring[2]![0]).toBeLessThan(end[0]);
   });
 
+  it("keeps the head proportional to the shaft, at every zoom", () => {
+    const head = (lon: number): number => {
+      const result = withArrowHeads(
+        line([
+          [-121.49, 38.58],
+          [lon, 38.58],
+        ]),
+      );
+      const ring = (result.features[1]!.geometry as { coordinates: [number, number][][] })
+        .coordinates[0]!;
+      // Width of the head in degrees of longitude, as drawn.
+      return Math.abs(ring[1]![0] - ring[0]![0]);
+    };
+    const short = head(-121.46); // ~2.6 km shaft
+    const long = head(-121.2); // ~25 km shaft
+    // A long arrow gets a bigger head, but the head never runs away with the map.
+    expect(long).toBeGreaterThan(short);
+    expect(short / 0.03).toBeLessThan(0.2);
+    expect(long).toBeLessThan(0.03);
+  });
+
   it("leaves collections without a line untouched", () => {
     const points: FeatureCollection = {
       type: "FeatureCollection",

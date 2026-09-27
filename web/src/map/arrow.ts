@@ -61,8 +61,13 @@ export function withArrowHeads(collection: FeatureCollection): FeatureCollection
     if (!tip || !previous) continue;
 
     const heading = bearing(previous, tip);
-    // A head about a fifth of the shaft, clamped so it stays visible but not silly.
-    const size = Math.min(6, Math.max(1.5, distanceKm(previous, tip) * 0.25));
+    /*
+     * The head is measured in kilometres like the shaft, so it has to stay
+     * proportional to it: a fixed minimum looked fine over a whole county and
+     * covered half a city when the map flew in close. 15% of the shaft reads as
+     * an arrowhead at every zoom the simulator uses.
+     */
+    const size = Math.min(2, distanceKm(previous, tip) * 0.15);
     heads.push({
       type: "Feature",
       geometry: {
