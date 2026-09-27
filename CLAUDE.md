@@ -15,6 +15,8 @@ Full spec: SPEC.md. Read the relevant section before changing code.
 - `shared/src/types.ts` — the contract; `shared/src/geo.ts` — distance, bearing, units, direction words
 - `server/src/sources/*` — external API clients, I/O only: firms, nws, usgs, openMeteo, overpass, amazonLocation
 - `server/src/tools/*` — one file per MCP tool (`getWind.ts`) plus its pure logic (`wind.ts`)
+- `server/src/risk/rules.ts` — the assess_risk rule set (SPEC 6); pure, and the tests are the spec
+- `server/src/risk/inputs.ts` — maps tool `data` onto the rules' typed inputs
 - `server/src/demo/fixtures.ts` — DEMO_MODE scenario lookup
 - `server/fixtures/scenarios.json` — demo scenarios (Sacramento, Los Angeles, Chicago, Hilo)
 - `agent/src/bedrock.ts` — the Converse tool loop; Bedrock is injected so tests can fake it
@@ -30,6 +32,8 @@ Full spec: SPEC.md. Read the relevant section before changing code.
 - Overpass: 406 on a User-Agent containing an email in parentheses; send `SafeZone/0.1`. Busy
   instances answer 504, so `overpass.ts` tries mirrors in turn
 - Open-Meteo wind: `wind_direction_10m` is where the wind comes FROM
+- The upwind rule compares the bearing TO the fire against the wind's FROM direction (SPEC 6.2);
+  if you touch it, the integration test in assessRisk.test.ts must still pass both ways
 - MapLibre must stay out of Vite's dependency pre-bundling, or its worker fails to load
 
 ## Conventions
@@ -39,6 +43,9 @@ Full spec: SPEC.md. Read the relevant section before changing code.
 - Input errors → `ToolInputError`; a dead source → `SourceUnavailableError` (`retryable: false` for
   missing configuration); tools never throw raw
 - `data` keys are snake_case, matching the input schema; internal types stay camelCase
+- A new hazard source means a rule in `risk/rules.ts`, a mapping in `risk/inputs.ts` and a call in
+  `assessRisk.ts` — a tool that only `assess_risk` forgets to call contributes nothing
+- `assess_risk` must never fail because one source did: gather with allSettled and name the gaps
 - Distances ship as `distance_km` **and** `distance_mi` (`distanceProperties`); never re-derive one
   from the other in the browser, or a popup will disagree with the spoken summary
 - Keep `/mcp` stateless: no per-session state outside the in-memory cache

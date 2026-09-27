@@ -88,6 +88,22 @@ Voice in is the browser's Web Speech API, voice out is Polly with a `speechSynth
 the demo speaks even with no AWS account. Factors accumulate per tool and reset when the place
 changes, so a follow-up about the wind does not drop the fire that is still burning.
 
+## Deciding the risk level
+
+`assess_risk` calls the narrow tools in parallel and hands their `data` to a pure rule set in
+`server/src/risk/rules.ts`. Each rule emits a factor with its own level, a title and a
+recommendation; the overall level is the worst factor, and two high factors from different sources
+compound to extreme (SPEC 6.1). Nothing is averaged, so every level can be explained in a sentence —
+which is what the spoken summary and the simulator's panel both do.
+
+The rules are pure functions over typed inputs, and `server/src/risk/inputs.ts` is the only thing
+that knows how to read a tool's `data`. That boundary is deliberate: a change to a tool's output
+shape breaks the adapter loudly instead of silently downgrading a hazard to "none".
+
+The upwind rule is the one with a trap in it. Weather APIs report where wind comes **from**, so a
+fire in that direction is the one whose smoke arrives. It is covered both as a rule and through the
+whole tool, with a north-easterly and a south-westerly wind over the same recorded fire.
+
 ## Failure behaviour
 
 A dead source raises `SourceUnavailableError` and becomes an MCP error result with a readable

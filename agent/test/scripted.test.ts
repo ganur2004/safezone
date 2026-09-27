@@ -103,20 +103,16 @@ describe("isPlacementOnly", () => {
 });
 
 describe("runScripted", () => {
-  it("geocodes and asks every source for a general safety question", async () => {
+  it("geocodes then uses assess_risk for a general safety question", async () => {
     const mcp = fakeMcp();
     const reply = await runScripted(mcp, [
       { role: "user", content: "Is it safe around my home in Sacramento?" },
     ]);
-    expect(mcp.calls.map((call) => call.name)).toEqual([
-      "geocode",
-      "get_fire_hotspots",
-      "get_weather_alerts",
-      "get_air_quality",
-      "get_wind",
-    ]);
+    // One call instead of four: assess_risk gathers the sources server-side.
+    expect(mcp.calls.map((call) => call.name)).toEqual(["geocode", "assess_risk"]);
+    expect(mcp.calls[1]?.args).toEqual({ lat: 38.58, lon: -121.49, radius_km: 50 });
     expect(reply.scripted).toBe(true);
-    expect(reply.toolResults).toHaveLength(5);
+    expect(reply.toolResults).toHaveLength(2);
     // The geocode line is dropped from the spoken reply when there is real news.
     expect(reply.reply).not.toMatch(/location I will use/);
   });
@@ -162,13 +158,15 @@ describe("runScripted", () => {
     expect(mcp.calls[1]?.args).not.toHaveProperty("avoid");
   });
 
-  it("keeps answering when one source fails", async () => {
+  it("keeps answering when a narrow tool fails", async () => {
     const mcp = fakeMcp({
       get_fire_hotspots: async () => {
         throw new Error("FIRMS is down");
       },
     });
-    const reply = await runScripted(mcp, [{ role: "user", content: "Is it safe in Sacramento?" }]);
+    const reply = await runScripted(mcp, [
+      { role: "user", content: "Are there fires or wind in Sacramento?" },
+    ]);
     expect(reply.toolsUsed).toContain("get_fire_hotspots");
     expect(reply.reply).toContain("get_wind ok");
   });

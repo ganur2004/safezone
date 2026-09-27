@@ -25,6 +25,7 @@ describe("safezone MCP server", () => {
     const { client } = await connect();
     const { tools } = await client.listTools();
     expect(tools.map((tool) => tool.name).sort()).toEqual([
+      "assess_risk",
       "find_safe_places",
       "geocode",
       "get_air_quality",
@@ -56,6 +57,15 @@ describe("safezone MCP server", () => {
     const parsed = safetyToolResultSchema.parse(result.structuredContent);
     expect(content[0]?.text).toBe(parsed.summary);
     expect(parsed.map?.layers.length).toBe(2);
+  });
+
+  it("tells the model to reach for assess_risk first (SPEC 5.4)", async () => {
+    const { client } = await connect();
+    const { tools } = await client.listTools();
+    const assess = tools.find((tool) => tool.name === "assess_risk");
+    expect(assess?.description).toMatch(/Use this first/i);
+    // Coordinates are optional because a place name is enough.
+    expect(assess?.inputSchema.required ?? []).toEqual([]);
   });
 
   it("answers each location tool over the protocol", async () => {

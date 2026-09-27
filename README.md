@@ -13,9 +13,10 @@ assistant cannot show: the map.
 
 ## Status
 
-Milestones **M1**–**M4** are complete: the MCP server exposes seven tools, an agent service runs the
-tool loop, and the simulator listens, answers out loud and draws the result. `assess_risk` and the
-AWS deployment follow in M5 and M6. See `SPEC.md` section 12 for the roadmap.
+Milestones **M1**–**M5** are complete: eight MCP tools including `assess_risk`, an agent service that
+runs the tool loop, a simulator that listens and answers out loud, and recorded fixtures so the whole
+thing runs with no API keys. The AWS deployment follows in M6. See `SPEC.md` section 12 for the
+roadmap.
 
 **Not yet verified against AWS.** The Amazon Bedrock and Amazon Polly paths are written and
 unit-tested against fakes, but have not been run with real credentials. The default configuration
@@ -30,7 +31,7 @@ uses the scripted agent and the browser voice, which is what the demo below runs
 | `get_air_quality`    | Open-Meteo Air Quality (US AQI, EPA bands) | ✅ done |
 | `get_wind`           | Open-Meteo Forecast                        | ✅ done |
 | `find_safe_places`   | OpenStreetMap via Overpass                 | ✅ done |
-| `assess_risk`        | all of the above                           | M5      |
+| `assess_risk`        | all of the above                           | ✅ done |
 | `get_route`          | Amazon Location Routes                     | M7 (P2) |
 
 Only NASA FIRMS needs an API key. Everything else works with no credentials at all, and
@@ -56,6 +57,23 @@ npm run dev:server    # the MCP server on :8787
 npm run dev:agent     # the agent on :8788
 npm run dev:web       # the simulator on :5173
 ```
+
+## How the risk level is decided
+
+`assess_risk` is the tool that matters. It calls the others in parallel and applies an explicit rule
+set (SPEC 6) rather than averaging anything, so every level can be explained:
+
+- a hotspot within 10 km, or within 30 km and **upwind** in a wind of 15 km/h or more → **high**
+- an official alert carries its own severity through; AQI above 100 raises the level in EPA bands;
+  a magnitude 5 quake within 100 km in the last day is moderate, magnitude 6 is high
+- two high factors from **different** sources compound to **extreme**
+
+"Upwind" is the part worth reading twice: weather APIs report the direction the wind comes **from**,
+so a fire sitting in that direction is the one whose smoke reaches you. Getting it backwards would
+invert the most important judgement the product makes, so it is tested both at the rule level and
+through the whole tool.
+
+A source that fails is left out and named in the answer rather than failing the assessment.
 
 ## How a question is answered
 

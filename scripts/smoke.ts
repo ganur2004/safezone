@@ -51,6 +51,7 @@ const list = (await call("tools/list", {})) as {
   tools: { name: string; description?: string; annotations?: { readOnlyHint?: boolean } }[];
 };
 const EXPECTED_TOOLS = [
+  "assess_risk",
   "geocode",
   "get_fire_hotspots",
   "get_weather_alerts",
@@ -77,6 +78,7 @@ interface ToolCallResult {
 
 const sacramento = { lat: 38.5816, lon: -121.4944 };
 const CALLS: { name: string; args: Record<string, unknown>; expectLayers: boolean }[] = [
+  { name: "assess_risk", args: { place: "Sacramento" }, expectLayers: true },
   { name: "geocode", args: { query: "Sacramento" }, expectLayers: true },
   {
     name: "get_fire_hotspots",

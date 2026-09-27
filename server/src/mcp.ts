@@ -1,5 +1,6 @@
 /** Builds the "safezone" MCP server instance (spec 5.1). */
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { assessRiskTool } from "./tools/assessRisk.js";
 import { findSafePlacesTool } from "./tools/findSafePlaces.js";
 import { geocodeTool } from "./tools/geocode.js";
 import { getAirQualityTool } from "./tools/getAirQuality.js";
@@ -27,6 +28,8 @@ export function createMcpServer(): McpServer {
     },
   );
 
+  // assess_risk first: the model should reach for it before the narrow tools.
+  registerSafetyTool(server, assessRiskTool);
   registerSafetyTool(server, geocodeTool);
   registerSafetyTool(server, getFireHotspotsTool);
   registerSafetyTool(server, getWeatherAlertsTool);

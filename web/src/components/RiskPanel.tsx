@@ -3,9 +3,15 @@ import type { SafetyToolResult, Severity } from "@safezone/shared";
 import { SEVERITY_COLORS } from "../map/layers.js";
 import { isPlacementOnly } from "../agent/client.js";
 
+/** One tool answer, with the tool that produced it. */
+export interface PanelEntry {
+  tool: string;
+  result: SafetyToolResult;
+}
+
 export interface RiskPanelProps {
   severity: Severity;
-  results: SafetyToolResult[];
+  entries: PanelEntry[];
   place: string | undefined;
   collapsed: boolean;
   onToggle: () => void;
@@ -21,17 +27,21 @@ const SEVERITY_LABELS: Record<Severity, string> = {
 
 export function RiskPanel({
   severity,
-  results,
+  entries,
   place,
   collapsed,
   onToggle,
 }: RiskPanelProps): React.JSX.Element {
-  // The geocode answer is shown as the place under the risk level, not as a factor.
-  const factors = results.filter((result) => !isPlacementOnly(result));
-  const recommendations = results.flatMap((result) => {
-    const list = result.data.recommendations;
-    return Array.isArray(list) ? list.map(String) : [];
-  });
+  const results = entries.map((entry) => entry.result);
+  const factors = collectFactors(entries);
+  const recommendations = [
+    ...new Set(
+      results.flatMap((result) => {
+        const list = result.data.recommendations;
+        return Array.isArray(list) ? list.map(String) : [];
+      }),
+    ),
+  ];
   const sources = dedupeSources(results);
 
   return (
@@ -58,14 +68,14 @@ export function RiskPanel({
           <section>
             <h3>Factors</h3>
             <ul className="factors">
-              {factors.map((result, index) => (
-                <li key={`${result.summary}-${index}`}>
+              {factors.map((factor, index) => (
+                <li key={`${factor.title}-${index}`}>
                   <span
                     className="dot"
-                    style={{ background: SEVERITY_COLORS[result.severity ?? "none"] }}
+                    style={{ background: SEVERITY_COLORS[factor.severity] }}
                     aria-hidden="true"
                   />
-                  <span>{result.summary}</span>
+                  <span>{factor.title}</span>
                 </li>
               ))}
             </ul>
@@ -105,6 +115,57 @@ export function RiskPanel({
       </div>
     </aside>
   );
+}
+
+interface PanelFactor {
+  title: string;
+  severity: Severity;
+}
+
+/** Which risk source a narrow tool speaks for, so assess_risk can supersede it. */
+const TOOL_SOURCE: Record<string, string> = {
+  get_fire_hotspots: "fire",
+  get_weather_alerts: "alert",
+  get_air_quality: "air",
+  get_earthquakes: "quake",
+};
+
+/**
+ * assess_risk already reasoned about the hazards, so its factor list leads. A
+ * narrow tool adds its own summary only when assess_risk did not already report
+ * that source — otherwise the same fire would be listed twice, once as a
+ * reasoned factor and once as the raw tool answer.
+ */
+function collectFactors(entries: PanelEntry[]): PanelFactor[] {
+  const factors: PanelFactor[] = [];
+  const seen = new Set<string>();
+  const coveredSources = new Set<string>();
+  const add = (title: string, severity: Severity): void => {
+    if (seen.has(title)) return;
+    seen.add(title);
+    factors.push({ title, severity });
+  };
+
+  const assessments = entries.filter((entry) => Array.isArray(entry.result.data.factors));
+  for (const { result } of assessments) {
+    for (const candidate of result.data.factors as unknown[]) {
+      const factor = candidate as { title?: unknown; severity?: unknown; source?: unknown };
+      if (typeof factor.title !== "string") continue;
+      add(factor.title, (factor.severity as Severity) ?? "none");
+      if (typeof factor.source === "string") coveredSources.add(factor.source);
+    }
+  }
+
+  for (const { tool, result } of entries) {
+    // The geocode answer is shown as the place under the risk level, not as a factor.
+    if (isPlacementOnly(result)) continue;
+    // An assessment's own summary is already represented by its factors.
+    if (Array.isArray(result.data.factors)) continue;
+    const source = TOOL_SOURCE[tool];
+    if (source && coveredSources.has(source)) continue;
+    add(result.summary, result.severity ?? "none");
+  }
+  return factors;
 }
 
 function dedupeSources(results: SafetyToolResult[]): { name: string; url: string }[] {

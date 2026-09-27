@@ -134,16 +134,13 @@ export async function runScripted(
     if (QUAKE_WORDS.test(question)) narrow.push({ tool: "get_earthquakes", args: point });
     if (ALERT_WORDS.test(question)) narrow.push({ tool: "get_weather_alerts", args: point });
 
+    // A general "is it safe" question is exactly what assess_risk is for: one
+    // call, every source, and a reasoned level instead of four summaries.
     const wanted =
       narrow.length > 0
         ? narrow
         : SAFETY_WORDS.test(question) || messages.length <= 1
-          ? [
-              { tool: "get_fire_hotspots", args: { ...point, radius_km: 50, days: 1 } },
-              { tool: "get_weather_alerts", args: point },
-              { tool: "get_air_quality", args: point },
-              { tool: "get_wind", args: point },
-            ]
+          ? [{ tool: "assess_risk", args: { ...point, radius_km: 50 } }]
           : [];
 
     // One dead source must not sink the whole answer (SPEC 5.6).

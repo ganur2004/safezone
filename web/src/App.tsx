@@ -100,8 +100,11 @@ export function App(): React.JSX.Element {
     [client, place],
   );
 
-  const results = useMemo(() => [...factors.values()], [factors]);
-  const severity = useMemo(() => worstSeverity(results), [results]);
+  const entries = useMemo(
+    () => [...factors.entries()].map(([tool, result]) => ({ tool, result })),
+    [factors],
+  );
+  const severity = useMemo(() => worstSeverity(entries.map((entry) => entry.result)), [entries]);
 
   return (
     <div className="app">
@@ -123,7 +126,7 @@ export function App(): React.JSX.Element {
         <Legend layers={layers} />
         <RiskPanel
           severity={severity}
-          results={results}
+          entries={entries}
           place={place}
           collapsed={collapsed}
           onToggle={() => setCollapsed((value) => !value)}
