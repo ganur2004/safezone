@@ -1,5 +1,6 @@
 /** MCP tool `get_earthquakes` — recent quakes near a point (spec 5.3). */
 import { z } from "zod";
+import { distanceProperties } from "@safezone/shared";
 import type { LatLon, SafetyToolResult } from "@safezone/shared";
 import { config } from "../config.js";
 import { bboxOfPoints, featureCollection, pointFeature } from "../lib/geojson.js";
@@ -69,7 +70,7 @@ export const getEarthquakesTool = defineTool({
                   place: quake.place,
                   depth_km: Math.round(quake.depthKm * 10) / 10,
                   time: new Date(quake.time).toISOString(),
-                  distance_km: Math.round(quake.distanceKm * 10) / 10,
+                  ...distanceProperties(quake.distanceKm),
                   url: quake.url,
                   source: USGS_SOURCE_NAME,
                 }),

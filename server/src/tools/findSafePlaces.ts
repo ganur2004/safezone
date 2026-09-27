@@ -1,5 +1,6 @@
 /** MCP tool `find_safe_places` — nearest hospitals, fire stations, shelters (spec 5.3). */
 import { z } from "zod";
+import { distanceProperties } from "@safezone/shared";
 import type { LatLon, MapLayer, SafetyToolResult } from "@safezone/shared";
 import { config } from "../config.js";
 import { circleFeature, featureCollection, pointFeature } from "../lib/geojson.js";
@@ -70,7 +71,7 @@ export const findSafePlacesTool = defineTool({
             pointFeature(place, {
               name: place.name,
               type: place.type,
-              distance_km: Math.round(place.distanceKm * 10) / 10,
+              ...distanceProperties(place.distanceKm),
               direction: place.direction,
               towards_danger: place.towardsDanger,
               // The first entry is the recommendation; the map highlights it.

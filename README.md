@@ -27,20 +27,30 @@ server with `get_fire_hotspots` backed by NASA FIRMS. See `SPEC.md` section 12 f
 ```bash
 npm install
 npm run build
-npm run demo          # MCP server on http://localhost:8787/mcp with recorded data
+npm run demo
 ```
 
-In another terminal:
+That starts the MCP server with recorded data and the simulator together. Open
+http://localhost:5173 and try one of the three suggested questions.
+
+Other useful commands:
 
 ```bash
-npm run smoke         # initialize + tools/list + tools/call against the running server
+npm run smoke         # initialize + tools/list + tools/call against a running server
+npm run inspector     # MCP Inspector; connect to http://localhost:8787/mcp (Streamable HTTP)
+npm run dev:server    # just the MCP server
+npm run dev:web       # just the simulator
 ```
 
-Or explore the tools interactively with the official inspector:
+## The simulator
 
-```bash
-npm run inspector     # then connect to http://localhost:8787/mcp (Streamable HTTP)
-```
+A full-screen dark map with a risk panel and a chat bar (`web/`, Vite + React + MapLibre). Every
+tool answer carries map layers, so an answer both speaks and draws: fire hotspots sized by radiative
+power, alert polygons coloured by severity, an arrow showing where the wind is blowing, hospitals
+with the recommended one highlighted. Clicking a feature opens a popup with its details and source.
+
+Until the agent service lands in M4 the browser calls the MCP server directly and picks tools with a
+small keyword router (`web/src/mcp/router.ts`); the microphone button is present but disabled.
 
 ## Running with live data
 

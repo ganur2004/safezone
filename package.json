@@ -2,7 +2,7 @@
   "name": "safezone",
   "private": true,
   "version": "0.1.0",
-  "description": "SafeZone \u2014 voice safety assistant with a map, built on an MCP server",
+  "description": "SafeZone — voice safety assistant with a map, built on an MCP server",
   "license": "MIT",
   "type": "module",
   "engines": {
@@ -10,7 +10,8 @@
   },
   "workspaces": [
     "shared",
-    "server"
+    "server",
+    "web"
   ],
   "scripts": {
     "build": "npm run build --workspaces --if-present",
@@ -23,11 +24,14 @@
     "inspector": "npx -y @modelcontextprotocol/inspector",
     "smoke": "node --experimental-strip-types scripts/smoke.ts",
     "record-fixtures": "node --experimental-strip-types scripts/record-fixtures.ts",
-    "demo": "DEMO_MODE=true npm run dev"
+    "demo": "node --experimental-strip-types scripts/demo.ts",
+    "dev:web": "npm run dev --workspace web",
+    "dev:server": "npm run dev --workspace server"
   },
   "devDependencies": {
     "@eslint/js": "^9.37.0",
     "eslint": "^9.37.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
     "prettier": "^3.6.2",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.46.0",

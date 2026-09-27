@@ -4,6 +4,7 @@ import {
   bboxAround,
   bearingDeg,
   destination,
+  distanceProperties,
   formatKmAndMiles,
   haversineKm,
   toCardinal,
@@ -72,5 +73,13 @@ describe("formatKmAndMiles", () => {
   it("gives both units, as the judges are in the US", () => {
     expect(formatKmAndMiles(18)).toBe("18 km (11 mi)");
     expect(formatKmAndMiles(0.42)).toBe("0.4 km (0.3 mi)");
+  });
+});
+
+describe("distanceProperties", () => {
+  it("rounds both units from the same source value, so a popup cannot disagree", () => {
+    // 2.4853 km is 1.544 mi: rounding the kilometres first would give 1.6.
+    expect(distanceProperties(2.4853)).toEqual({ distance_km: 2.5, distance_mi: 1.5 });
+    expect(distanceProperties(18)).toEqual({ distance_km: 18, distance_mi: 11 });
   });
 });

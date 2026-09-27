@@ -2,7 +2,7 @@
 
 Full spec: SPEC.md. Read the relevant section before changing code.
 
-- TypeScript strict, npm workspaces: shared, server, agent, web
+- TypeScript strict, npm workspaces: shared, server, web (agent lands in M4)
 - All tool results must match SafetyToolResult in shared/src/types.ts
 - Wind direction from APIs is where wind comes FROM (see SPEC 6.2)
 - Never commit secrets; config via .env (see .env.example)
@@ -12,18 +12,22 @@ Full spec: SPEC.md. Read the relevant section before changing code.
 
 ## Where things live
 
-- `shared/src/types.ts` — the contract; `shared/src/geo.ts` — distance, bearing, units
-- `server/src/sources/*` — external API clients (I/O only)
-- `server/src/tools/*` — one file per MCP tool; pure logic split out so it is testable
+- `shared/src/types.ts` — the contract; `shared/src/geo.ts` — distance, bearing, units, direction words
+- `server/src/sources/*` — external API clients, I/O only: firms, nws, usgs, openMeteo, overpass, amazonLocation
+- `server/src/tools/*` — one file per MCP tool (`getWind.ts`) plus its pure logic (`wind.ts`)
 - `server/src/demo/fixtures.ts` — DEMO_MODE scenario lookup
-- `server/fixtures/scenarios.json` — demo scenarios (Sacramento, Los Angeles, calm)
+- `server/fixtures/scenarios.json` — demo scenarios (Sacramento, Los Angeles, Chicago, Hilo)
+- `web/src/mcp/router.ts` — temporary keyword router standing in for the agent until M4
+- `web/src/map/layers.ts` — one entry per MapLayer kind; add a kind there, not in the component
 
 ## Source quirks worth remembering
+
 - NWS: needs a contact in `User-Agent`, answers HTTP 400 outside the US — report "US only", not an error
 - NWS: alerts tied to zones have `geometry: null` — keep them in `data`, draw nothing
 - Overpass: 406 on a User-Agent containing an email in parentheses; send `SafeZone/0.1`. Busy
   instances answer 504, so `overpass.ts` tries mirrors in turn
 - Open-Meteo wind: `wind_direction_10m` is where the wind comes FROM
+- MapLibre must stay out of Vite's dependency pre-bundling, or its worker fails to load
 
 ## Conventions
 
@@ -32,11 +36,16 @@ Full spec: SPEC.md. Read the relevant section before changing code.
 - Input errors → `ToolInputError`; a dead source → `SourceUnavailableError` (`retryable: false` for
   missing configuration); tools never throw raw
 - `data` keys are snake_case, matching the input schema; internal types stay camelCase
+- Distances ship as `distance_km` **and** `distance_mi` (`distanceProperties`); never re-derive one
+  from the other in the browser, or a popup will disagree with the spoken summary
 - Keep `/mcp` stateless: no per-session state outside the in-memory cache
+- The map keys sources by `MapLayer.id`: the same id replaces data, a new id adds a source
 
 ## Commands
 
-- `npm run dev` — MCP server on :8787
+- `npm run demo` — server with recorded data plus the simulator, no keys needed
+- `npm run dev:server` / `npm run dev:web` — one at a time
 - `npm test`, `npm run lint`, `npm run typecheck`
 - `npm run smoke` — initialize + tools/list + tools/call against a running server
 - `npm run inspector` — MCP Inspector, then connect to http://localhost:8787/mcp
+- `npm run record-fixtures` — refresh demo fixtures from the live APIs

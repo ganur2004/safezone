@@ -84,6 +84,15 @@ export function formatKmAndMiles(km: number): string {
   return `${roundDistance(km)} km (${roundDistance(kmToMiles(km))} mi)`;
 }
 
+/**
+ * Both units for a map feature's properties. Rounding once here keeps a popup
+ * from disagreeing with the spoken summary, which would happen if the client
+ * converted an already-rounded kilometre value.
+ */
+export function distanceProperties(km: number): { distance_km: number; distance_mi: number } {
+  return { distance_km: roundDistance(km), distance_mi: roundDistance(kmToMiles(km)) };
+}
+
 /** Smallest absolute angle between two bearings, 0–180. */
 export function angleDiff(a: number, b: number): number {
   return Math.abs(((a - b + 540) % 360) - 180);

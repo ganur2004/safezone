@@ -58,6 +58,17 @@ keyed by tool plus coordinates rounded to 0.01°.
 - `demo/` — scenario lookup for `DEMO_MODE`; picks the nearest recorded scenario.
 - `risk/` — the rule set behind `assess_risk` (milestone M5).
 
+## The simulator
+
+`web/` is a Vite + React app with a single MapLibre instance. It holds no hazard logic of its own:
+it renders whatever layers a `SafetyToolResult` carries, keyed by `MapLayer.id`, replacing a
+source's data when the id repeats and adding a source when it does not. `web/src/map/layers.ts` maps
+each layer kind to its MapLibre layers, so adding a hazard type is a change in one file.
+
+Two things are deliberately temporary. `web/src/mcp/router.ts` picks tools from keywords and
+accumulates factors per place — in M4 the agent service does this with Bedrock, and the browser
+posts to `/api/chat` instead. The microphone button is rendered but disabled until then.
+
 ## Failure behaviour
 
 A dead source raises `SourceUnavailableError` and becomes an MCP error result with a readable
