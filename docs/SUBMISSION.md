@@ -3,17 +3,17 @@
 The checklist from SPEC section 14, with honest status. Deadline: **22 October 2026** (internal;
 Devpost closes 23 October, 12:00 PDT).
 
-| #   | Item                                  | Status      | Who / what is needed                                |
-| --- | ------------------------------------- | ----------- | --------------------------------------------------- |
-| 1   | Public repository, MIT licence        | ⚠️ partly   | `LICENSE` is in place; push to a public GitHub repo |
-| 2   | README in English, with a screenshot  | ✅ done     | screenshots in `docs/images/`                       |
-| 3   | Video, under 3 minutes, YouTube/Vimeo | ❌ not done | must be recorded — script in `VIDEO-SCRIPT.md`      |
-| 4   | Devpost description in English        | ✅ drafted  | `DEVPOST.md`; paste into the form                   |
-| 5   | Feedback on the Amazon tools          | ✅ done     | `AMAZON-TOOLS-FEEDBACK.md`                          |
-| 6   | Friction log                          | ✅ done     | `FRICTION-LOG.md`, four entries                     |
-| 7   | Mini-competitions named               | ✅ drafted  | AWS and Open Source, in `DEVPOST.md`                |
-| 8   | Both team members on Devpost          | ❌ not done | add each other on the submission                    |
-| 9   | Submitted before 22 October           | ❌ not done | —                                                   |
+| #   | Item                                  | Status      | Who / what is needed                                                                        |
+| --- | ------------------------------------- | ----------- | ------------------------------------------------------------------------------------------- |
+| 1   | Public repository, MIT licence        | ⚠️ partly   | `LICENSE` is in place; repo starts **private**, must be flipped to public before submitting |
+| 2   | README in English, with a screenshot  | ✅ done     | screenshots in `docs/images/`                                                               |
+| 3   | Video, under 3 minutes, YouTube/Vimeo | ❌ not done | must be recorded — script in `VIDEO-SCRIPT.md`                                              |
+| 4   | Devpost description in English        | ✅ drafted  | `DEVPOST.md`; paste into the form                                                           |
+| 5   | Feedback on the Amazon tools          | ✅ done     | `AMAZON-TOOLS-FEEDBACK.md`                                                                  |
+| 6   | Friction log                          | ✅ done     | `FRICTION-LOG.md`, four entries                                                             |
+| 7   | Mini-competitions named               | ✅ drafted  | AWS and Open Source, in `DEVPOST.md`                                                        |
+| 8   | Both team members on Devpost          | ❌ not done | add each other on the submission                                                            |
+| 9   | Submitted before 22 October           | ❌ not done | —                                                                                           |
 
 ## What is blocked, and on what
 
@@ -54,6 +54,8 @@ Option 3 costs nothing and uses real recorded data. Option 1 is the best if the 
 
 ## Before submitting
 
+- [ ] **Make the repository public.** It was pushed private on purpose; a private repo fails the
+      first line of the checklist, and a judge cannot open the link.
 - [ ] `npm install && npm run build && npm test && npm run lint` on a clean clone
 - [ ] `npm run demo` works with no `.env` present
 - [ ] README's live demo link points at the real CloudFront URL
