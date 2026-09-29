@@ -109,9 +109,21 @@ both a sentence and a geometry, a lot of design questions answered themselves.
 
 ## What's next for SafeZone
 
-Registering the MCP server with Alexa+ proper, and the MCP Apps extension so a device with a screen
-can show the same map in the conversation. Beyond the hackathon: watch a place and tell you when its
-risk level changes, rather than waiting to be asked.
+**Official alerts outside the United States.** SafeZone reads warnings from NOAA's National Weather
+Service, and NOAA is a US agency — every country's warnings come from its own meteorological
+service, so there is no single global feed to point at. Ask about Almaty today and the earthquake,
+air quality, wind and hospital data all work, but the official-alerts line is empty and says so.
+The way in is GDACS, the disaster alert system run by the EU's Joint Research Centre with the UN:
+global, keyless, and it covers earthquakes, cyclones, floods, wildfires, volcanoes and droughts. It
+reports at a different grain — "moderate flood in Thailand" rather than "Red Flag Warning in your
+county" — so it belongs beside the national feeds rather than in place of them, with the national
+service used wherever one publishes a machine-readable feed.
+
+**Alexa+ itself.** Registering the MCP server with Alexa+ proper, and the MCP Apps extension so a
+device with a screen can show the same map inside the conversation.
+
+**Watching instead of answering.** Follow a place and speak up when its risk level changes, so the
+first you hear about the fire is before you think to ask.
 
 ## Built with
 
