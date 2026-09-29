@@ -143,7 +143,10 @@ function alertFactor(alerts: AlertInput[]): RiskFactor | undefined {
     id: "official-alert",
     source: "alert",
     severity: worst.severity,
-    title: `${worst.event} is in effect`,
+    // Starts with a word of ours, not with the event name: riskSummary drops the
+    // first letter to lower case when it glues a title mid-sentence, which would
+    // otherwise turn "Rip Current Statement" into "rip Current Statement".
+    title: `An official ${worst.event} is in effect`,
     recommendation: worst.instruction
       ? `Follow official instructions: ${worst.instruction}`
       : "Follow the instructions of local authorities.",
@@ -233,4 +236,9 @@ export function riskSummary(assessment: RiskAssessment, placeLabel?: string): st
   return `Risk level is ${level}${where}: ${cause}. ${advice}`.trim();
 }
 
+/**
+ * Titles are written as standalone phrases for the panel, and spliced into a
+ * sentence here. Every factor title must therefore begin with an ordinary word
+ * of our own — never with an interpolated name, which this would damage.
+ */
 const lowerFirst = (text: string): string => text.charAt(0).toLowerCase() + text.slice(1);

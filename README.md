@@ -160,8 +160,12 @@ cp .env.example .env
 DEMO_MODE=false npm run demo
 ```
 
-Six of the seven tools work immediately — NWS, USGS, Open-Meteo and Overpass need no keys. These
-optional settings add the rest:
+Values in `.env` are picked up automatically — every entry point loads it, and Vite reads the same
+file for the simulator.
+
+**Eight of the nine tools work immediately**, with no keys and no account: NWS, USGS, Open-Meteo,
+Overpass and OSRM are all open. Only fire hotspots need a key. These optional settings add the
+rest:
 
 - `FIRMS_MAP_KEY` — free from https://firms.modaps.eosdis.nasa.gov/api/map_key/, enables
   `get_fire_hotspots`. Without it that one tool answers with a clear error and the others are

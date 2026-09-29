@@ -244,6 +244,16 @@ describe("riskSummary (SPEC 6.3)", () => {
     expect(summary).toContain("go-bag");
   });
 
+  it("keeps the alert's own name capitalised when it is spliced into a sentence", () => {
+    // The spoken summary lower-cases the first letter of a factor title, which
+    // used to turn "Rip Current Statement" into "rip Current Statement".
+    const summary = riskSummary(
+      assessRisk(inputs({ alerts: [{ event: "Rip Current Statement", severity: "moderate" }] })),
+    );
+    expect(summary).toContain("an official Rip Current Statement is in effect");
+    expect(summary).not.toContain("rip Current Statement");
+  });
+
   it("names both causes when the level was escalated", () => {
     const summary = riskSummary(
       assessRisk(inputs({ fire: fire({ closestDistanceKm: 8 }), usAqi: 175 })),
