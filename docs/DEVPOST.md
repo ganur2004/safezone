@@ -134,8 +134,17 @@ Weather Service, USGS, Open-Meteo, OpenStreetMap / Overpass, Web Speech API.
 ## Prize categories
 
 - **Alexa+ track** — a self-hosted MCP server, which the rules accept in place of an Agent Skill.
-- **AWS mini-competition** — Bedrock, Polly, Location Service, Lambda, CloudFront, S3 and CDK.
-- **Open Source mini-competition** — MIT licensed, every data source open, and it runs with no keys.
+- **AWS Builder (mini challenge)** — Amazon Bedrock for the tool loop, Polly for speech, Location
+  Service for geocoding and routing, and the whole deployment on Lambda, CloudFront and S3,
+  described in CDK. The integrations are documented in `docs/ARCHITECTURE.md` and `docs/DEPLOY.md`.
+- **Open Source (mini challenge)** — a fix upstream in `serverless-http`, found while putting this
+  project on Lambda. `ServerlessRequest` extends `http.IncomingMessage` and fills in `headers` but
+  never `rawHeaders`, so anything reading that standard property sees nothing. Our MCP server
+  answered every request with "415 Content-Type must be application/json" while the health check
+  looked fine, because the MCP SDK's transport builds its WHATWG `Request` from `rawHeaders`. The
+  pull request populates it, with a test.
+  - Contribution: _PR URL_
+  - Repository: `dougmoscrop/serverless-http` (MIT)
 
 ## Try it
 

@@ -3,22 +3,29 @@
 The checklist from SPEC section 14, with honest status. Deadline: **22 October 2026** (internal;
 Devpost closes 23 October, 12:00 PDT).
 
-| #   | Item                                  | Status      | Who / what is needed                                                                        |
-| --- | ------------------------------------- | ----------- | ------------------------------------------------------------------------------------------- |
-| 1   | Public repository, MIT licence        | ⚠️ partly   | `LICENSE` is in place; repo starts **private**, must be flipped to public before submitting |
-| 2   | README in English, with a screenshot  | ✅ done     | screenshots in `docs/images/`                                                               |
-| 3   | Video, under 3 minutes, YouTube/Vimeo | ❌ not done | must be recorded — script in `VIDEO-SCRIPT.md`                                              |
-| 4   | Devpost description in English        | ✅ drafted  | `DEVPOST.md`; paste into the form                                                           |
-| 5   | Feedback on the Amazon tools          | ✅ done     | `AMAZON-TOOLS-FEEDBACK.md`                                                                  |
-| 6   | Friction log                          | ✅ done     | `FRICTION-LOG.md`, four entries                                                             |
-| 7   | Mini-competitions named               | ✅ drafted  | AWS and Open Source, in `DEVPOST.md`                                                        |
-| 8   | Both team members on Devpost          | ❌ not done | add each other on the submission                                                            |
-| 9   | Submitted before 22 October           | ❌ not done | —                                                                                           |
+| #   | Item                                  | Status      | Who / what is needed                                                                         |
+| --- | ------------------------------------- | ----------- | -------------------------------------------------------------------------------------------- |
+| 1   | Public repository, MIT licence        | ⚠️ partly   | `LICENSE` is in place; repo starts **private**, must be flipped to public before submitting  |
+| 2   | README in English, with a screenshot  | ✅ done     | screenshots in `docs/images/`                                                                |
+| 3   | Video, under 3 minutes, YouTube/Vimeo | ❌ not done | must be recorded — script in `VIDEO-SCRIPT.md`                                               |
+| 4   | Devpost description in English        | ✅ drafted  | `DEVPOST.md`; paste into the form                                                            |
+| 5   | Feedback on the Amazon tools          | ✅ done     | `AMAZON-TOOLS-FEEDBACK.md`                                                                   |
+| 6   | Friction log                          | ✅ done     | `FRICTION-LOG.md`, four entries                                                              |
+| 7   | Mini-competitions named               | ⚠️ partly   | AWS Builder qualifies; Open Source needs the serverless-http PR opened and its URL pasted in |
+| 8   | Both team members on Devpost          | ❌ not done | add each other on the submission                                                             |
+| 9   | Submitted before 22 October           | ❌ not done | —                                                                                            |
 
 ## What is blocked, and on what
 
 These are the things nobody can finish from inside the repository. Each needs an account, a
 recording, or a decision.
+
+### 0. AWS promotional credits — deadline 21 October, 12:00 PT
+
+**Blocked on: somebody filling in the form.** The rules offer $150 in AWS promotional credits at
+https://forms.gle/5hyhr1u6x3fuV2aW7, **while supplies last**, and only to individuals already
+registered for the hackathon — so press "Join Hackathon" first. Anything spent above the credits is
+the entrant's own money, which is what the budget alert in the stack is for.
 
 ### 1. Deploy, and the live demo link
 
@@ -32,13 +39,24 @@ Expect the first deploy to surface Bedrock model access before anything else.
 timings, and the demo runs from recorded fixtures so it cannot fail live. Record in Chrome — voice
 input needs it.
 
-### 3. Alexa+ registration
+### 3. The Open Source mini challenge
+
+**Blocked on: forking and opening the pull request.** The rules do not count SafeZone's own licence:
+the contribution has to be _additional_ to the primary submission, which is why the form asks for a
+contribution URL **and** a project repository URL separately.
+
+The contribution is ready as a branch, `populate-raw-headers` against `dougmoscrop/serverless-http`:
+a fix plus a test for `rawHeaders` never being populated — the bug that made every call to our own
+MCP server return 415 on Lambda. Fork the repository, push the branch, open the pull request, and
+paste its URL into `DEVPOST.md`. The rules say a pull request does not have to be merged.
+
+### 4. Alexa+ registration
 
 **Blocked on: developer preview access**, which we could not obtain. The rules accept the simulator,
 so this is not required to submit. If access appears, `McpEndpoint` from the deploy output is the
 address to register.
 
-### 4. Real fire data for the headline demo
+### 5. Real fire data for the headline demo
 
 **A judgement call, not a blocker.** The recorded Sacramento wind is westerly and light, so the fires
 to the north-east are _downwind_ and the demo shows **moderate** rather than the high-risk upwind
