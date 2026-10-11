@@ -41,7 +41,7 @@ new SafeZoneStack(app, text("stackName", "SafeZone"), {
   nwsUserAgent: text("nwsUserAgent", "SafeZone (safezone-hackathon@example.com)"),
   bedrockEnabled: flag("bedrock", false),
   // Inference profiles are Region-scoped: "au." is the Sydney family.
-  bedrockModelId: text("bedrockModelId", "au.anthropic.claude-sonnet-5"),
+  bedrockModelId: text("bedrockModelId", "au.anthropic.claude-sonnet-4-5-20250929-v1:0"),
   pollyEnabled: flag("polly", false),
   pollyVoiceId: text("pollyVoice", "Joanna"),
   ...(budgetEmail ? { budgetEmail } : {}),

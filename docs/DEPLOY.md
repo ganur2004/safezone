@@ -133,6 +133,34 @@ npx cdk destroy --prefix infra
 The bucket empties itself and the log groups go with the stack, so nothing is left behind except a
 Secrets Manager secret you created by hand.
 
+## Bedrock on a new account
+
+Three gates, in this order, and each gives a different error:
+
+1. **Account verification** — "Your account is currently being verified." Clears by itself, in under
+   two hours in our case.
+2. **The Anthropic use case form** — "Model use case details have not been submitted for this
+   account." Submit it from the model's card in the Bedrock **Model catalog**; the Model access page
+   is retired and does not have it. Takes a few minutes to apply.
+3. **Inference quota** — `ThrottlingException`, and it is the one with no quick fix. A new account
+   can have every model inference quota set to **0** while the AWS default for the same quota is
+   10,000 requests a minute, so a quota-increase request is refused: "You must provide a quota value
+   greater than the default quota value of 10000." Check what the account actually has:
+
+   ```bash
+   aws service-quotas get-service-quota --service-code bedrock \
+     --quota-code L-4A6BFAB1 --region ap-southeast-2 --query 'Quota.Value'
+   ```
+
+   Zero there means the account is not activated for model inference yet, not that a limit is too
+   low. It tends to resolve as the account matures; otherwise open an AWS Support case under Service
+   Limit Increase. Calling another Region does not help — the zero is account-wide.
+
+Which models an account may use is separate again: the Opus and Sonnet 5 families answered "is not
+available for this account" here, while Sonnet 4.5 and Haiku 4.5 were allowed. List what a Region
+offers with `aws bedrock list-inference-profiles`, then try one — the error tells you which gate you
+are at.
+
 ## Known gaps
 
 - **Not deployed yet.** See the note at the top.
