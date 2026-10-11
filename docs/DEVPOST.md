@@ -148,7 +148,7 @@ Weather Service, USGS, Open-Meteo, OpenStreetMap / Overpass, Web Speech API.
 
 ## Try it
 
-- Live demo: _to be filled in once deployed_
+- Live demo: https://d227d864bivil2.cloudfront.net
 - Repository: _public GitHub URL_
 - Video: _YouTube link_
 

@@ -20,18 +20,25 @@ Devpost closes 23 October, 12:00 PDT).
 These are the things nobody can finish from inside the repository. Each needs an account, a
 recording, or a decision.
 
-### 0. AWS promotional credits — deadline 21 October, 12:00 PT
+### 0. AWS promotional credits — **done**
 
-**Blocked on: somebody filling in the form.** The rules offer $150 in AWS promotional credits at
-https://forms.gle/5hyhr1u6x3fuV2aW7, **while supplies last**, and only to individuals already
-registered for the hackathon — so press "Join Hackathon" first. Anything spent above the credits is
-the entrant's own money, which is what the budget alert in the stack is for.
+$150 granted and redeemed, on top of the $100 AWS gives a new account, so there is $250 of headroom
+against a stack that costs cents a day. Redeeming required upgrading off the Free plan, which does
+not accept promotional credits. The budget alert in the stack emails at 80% of $20.
 
-### 1. Deploy, and the live demo link
+### 1. Deploy, and the live demo link — **done**
 
-**Blocked on: AWS credentials.** The stack is written and synthesizes; see `DEPLOY.md`. Until it is
-deployed, the Devpost "Try it" section has no link, and the README says the project is not deployed.
-Expect the first deploy to surface Bedrock model access before anything else.
+Live at **https://d227d864bivil2.cloudfront.net**, on real data in `ap-southeast-2`, with Amazon
+Polly for speech and a NASA FIRMS key in Secrets Manager. The MCP endpoint is
+`https://ayqlrjlocnuxkk44xu3xs32pqe0lcqqd.lambda-url.ap-southeast-2.on.aws/mcp`.
+
+What is still off: **Amazon Bedrock**, because the AWS account is being verified. Until then the
+agent runs the scripted fallback. Switching it on is one redeploy:
+
+```bash
+npm run build && npx cdk deploy --prefix infra \
+  -c demoMode=false -c polly=true -c firmsSecret=safezone/firms -c bedrock=true
+```
 
 ### 2. The video
 

@@ -29,11 +29,14 @@ credentials), **recording the video** (`docs/VIDEO-SCRIPT.md` has the shot list 
 **submitting on Devpost** (`docs/DEVPOST.md` is written, ready to paste). `docs/SUBMISSION.md`
 tracks all of it.
 
-**Not deployed yet.** `infra/` synthesizes and both Lambda bundles have been invoked locally with
-Function URL payloads, but nobody has run `cdk deploy` against a real account — there are no AWS
-credentials on the development machines. The same goes for the Amazon Bedrock and Amazon Polly
-paths, which are written and unit-tested against fakes. The default configuration uses the scripted
-agent and the browser voice, which is what the demo below runs. See `docs/DEPLOY.md`.
+**It is deployed and live: https://d227d864bivil2.cloudfront.net** — running on real data in
+`ap-southeast-2`, speaking with Amazon Polly. The MCP server is at
+`https://ayqlrjlocnuxkk44xu3xs32pqe0lcqqd.lambda-url.ap-southeast-2.on.aws/mcp`, which is the address to
+register with Alexa+ or to open in MCP Inspector. See `docs/DEPLOY.md` for the runbook.
+
+**Amazon Bedrock is not switched on yet.** The AWS account is still being verified, so the agent
+runs the scripted fallback from SPEC 7.4 rather than a Bedrock tool loop. The loop itself is
+written and unit-tested against a fake Converse client; turning it on is one redeploy.
 
 **Alexa+ is not connected.** The MCP server is what the Alexa+ track asks for and it is ready to
 register, but the developer preview is not available to us, so the simulator is the demo. The rules
