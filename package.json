@@ -31,7 +31,8 @@
     "dev:server": "npm run dev --workspace server",
     "dev:agent": "npm run dev --workspace agent",
     "synth": "npm run build --workspace web && npm run synth --workspace infra",
-    "deploy": "npm run build && npm run deploy --workspace infra"
+    "deploy": "npm run build && npm run deploy --workspace infra",
+    "verify:prod": "bash scripts/verify-prod.sh"
   },
   "devDependencies": {
     "@eslint/js": "^9.37.0",

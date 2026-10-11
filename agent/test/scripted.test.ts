@@ -171,6 +171,35 @@ describe("runScripted", () => {
     expect(reply.reply).toContain("get_wind ok");
   });
 
+  it("names the source that failed instead of reciting the geocode line", async () => {
+    // Overpass returns 504 often enough that the deployed demo hit this: the
+    // hospital question came back "Sacramento ... is at the location I will use".
+    const mcp = fakeMcp({
+      find_safe_places: async () => ({
+        text: "Sorry, OpenStreetMap (Overpass API) returned HTTP 504.",
+        isError: true,
+      }),
+    });
+    const reply = await runScripted(mcp, [
+      { role: "user", content: "Where is the nearest hospital in Sacramento?" },
+    ]);
+    expect(reply.reply).toMatch(/could not reach the place search/i);
+    expect(reply.reply).not.toMatch(/location I will use/);
+    // The marker still reaches the map, so the simulator keeps its context.
+    expect(reply.toolResults).toHaveLength(1);
+  });
+
+  it("lists every source that failed", async () => {
+    const down = async () => ({ text: "boom", isError: true });
+    const mcp = fakeMcp({ get_wind: down, get_air_quality: down });
+    const reply = await runScripted(mcp, [
+      { role: "user", content: "How is the wind and air in Sacramento?" },
+    ]);
+    expect(reply.reply).toMatch(
+      /could not reach air quality and the wind|the wind and air quality/i,
+    );
+  });
+
   it("says so when the place cannot be found", async () => {
     const mcp = fakeMcp({
       geocode: async () => ({ text: "I could not find that place.", isError: true }),

@@ -60,6 +60,8 @@ export async function runScripted(
   const toolsUsed: string[] = [];
   /** Results fetched only as input for another call: drawn, but not spoken. */
   const supporting = new Set<SafetyToolResult>();
+  /** Tools that answered with an error, so the reply can admit what is missing. */
+  const failed: string[] = [];
 
   const call = async (
     name: string,
@@ -68,6 +70,7 @@ export async function runScripted(
   ): Promise<SafetyToolResult | undefined> => {
     toolsUsed.push(name);
     const outcome = await mcp.callTool(name, args);
+    if (outcome.isError) failed.push(name);
     if (outcome.result) {
       toolResults.push(outcome.result);
       resultTools.push(name);
@@ -167,7 +170,7 @@ export async function runScripted(
   }
 
   return {
-    reply: speak(toolResults, supporting),
+    reply: speak(toolResults, supporting, failed),
     toolResults,
     resultTools,
     toolsUsed,
@@ -181,11 +184,44 @@ export const isPlacementOnly = (result: SafetyToolResult): boolean => {
   return layers.length > 0 && layers.every((layer) => layer.kind === "home");
 };
 
-function speak(results: SafetyToolResult[], supporting: Set<SafetyToolResult>): string {
+/** What each tool was there to answer, for when it could not. */
+const TOOL_SUBJECT: Record<string, string> = {
+  get_fire_hotspots: "the fire data",
+  get_weather_alerts: "official alerts",
+  get_air_quality: "air quality",
+  get_wind: "the wind",
+  get_earthquakes: "earthquake data",
+  find_safe_places: "the place search",
+  get_route: "routing",
+  assess_risk: "the risk assessment",
+};
+
+function speak(
+  results: SafetyToolResult[],
+  supporting: Set<SafetyToolResult>,
+  failed: string[],
+): string {
   const spoken = results.filter((result) => !isPlacementOnly(result) && !supporting.has(result));
-  const text = (spoken.length > 0 ? spoken : results)
-    .map((result) => result.summary.trim())
-    .filter(Boolean)
-    .join(" ");
-  return text || "I could not find anything to report for that place.";
+  if (spoken.length > 0) {
+    return spoken
+      .map((result) => result.summary.trim())
+      .filter(Boolean)
+      .join(" ");
+  }
+
+  /*
+   * Nothing to say. Falling back to whatever is left would answer a question
+   * about hospitals with "Sacramento is at the location I will use", which is
+   * how this read when Overpass returned 504 on the deployed demo. Name what
+   * failed instead: the sources here are public and go down regularly.
+   */
+  const subjects = [...new Set(failed.map((tool) => TOOL_SUBJECT[tool] ?? tool))];
+  if (subjects.length > 0) {
+    const list =
+      subjects.length === 1
+        ? subjects[0]
+        : `${subjects.slice(0, -1).join(", ")} and ${subjects.at(-1)}`;
+    return `I could not reach ${list} just now. Please try again in a moment.`;
+  }
+  return "I could not find anything to report for that place.";
 }
