@@ -102,8 +102,9 @@ export class SafeZoneStack extends Stack {
       runtime: lambda.Runtime.NODEJS_22_X,
       architecture: lambda.Architecture.ARM_64,
       memorySize: 512,
-      // Overpass alone can take 12s, and assess_risk runs the sources in parallel.
-      timeout: Duration.seconds(30),
+      // Overpass is retried across mirrors and can take 30s in the worst case;
+      // assess_risk runs its sources in parallel, so it is not additive.
+      timeout: Duration.seconds(45),
       logGroup: shortLivedLogGroup(this, "McpServerLogs"),
       environment: {
         DEMO_MODE: String(props.demoMode),
@@ -141,14 +142,15 @@ export class SafeZoneStack extends Stack {
       },
     });
 
+    /*
+     * No `cors` here on purpose. A Function URL's CORS settings and the Express
+     * middleware inside the function both write Access-Control-Allow-Origin, and
+     * the browser rejects the response outright when the header arrives twice —
+     * "contains multiple values ... but only one is allowed". The app owns CORS,
+     * because it is the layer that also has to work when run locally.
+     */
     const mcpUrl = mcpServer.addFunctionUrl({
       authType: lambda.FunctionUrlAuthType.NONE,
-      // Alexa+ has to reach this too, so it cannot be locked to our own origin.
-      cors: {
-        allowedOrigins: ["*"],
-        allowedMethods: [lambda.HttpMethod.POST, lambda.HttpMethod.GET],
-        allowedHeaders: ["content-type", "mcp-protocol-version", "accept"],
-      },
     });
 
     /* ------------------------------------------------------- the agent */
@@ -194,13 +196,9 @@ export class SafeZoneStack extends Stack {
       );
     }
 
+    // CORS is handled inside the function; see the note on the MCP URL above.
     const agentUrl = agent.addFunctionUrl({
       authType: lambda.FunctionUrlAuthType.NONE,
-      cors: {
-        allowedOrigins: [siteUrl],
-        allowedMethods: [lambda.HttpMethod.POST, lambda.HttpMethod.GET],
-        allowedHeaders: ["content-type"],
-      },
     });
 
     /* --------------------------------------------------- deploy the site */

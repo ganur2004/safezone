@@ -26,10 +26,13 @@ const firmsSecret = app.node.tryGetContext("firmsSecret") as string | undefined;
 const budgetEmail = app.node.tryGetContext("budgetEmail") as string | undefined;
 
 new SafeZoneStack(app, text("stackName", "SafeZone"), {
-  // us-east-1 is where Bedrock model access is easiest to get (SPEC 10).
+  // SPEC 10 planned us-east-1, but AWS assigns a new account's project a Region
+  // from the owner's contact country and will not move it without irreversibly
+  // converting the account into an Organization. Sydney is where this account
+  // lives; CloudFront still serves the simulator from an edge near the viewer.
   env: {
     account: process.env.CDK_DEFAULT_ACCOUNT,
-    region: process.env.CDK_DEFAULT_REGION ?? "us-east-1",
+    region: process.env.CDK_DEFAULT_REGION ?? "ap-southeast-2",
   },
   description: "SafeZone: MCP server, agent service and map simulator",
   // Recorded data by default, so a first deploy cannot fail for a missing key.
@@ -37,7 +40,8 @@ new SafeZoneStack(app, text("stackName", "SafeZone"), {
   ...(firmsSecret ? { firmsSecretName: firmsSecret } : {}),
   nwsUserAgent: text("nwsUserAgent", "SafeZone (safezone-hackathon@example.com)"),
   bedrockEnabled: flag("bedrock", false),
-  bedrockModelId: text("bedrockModelId", "us.anthropic.claude-sonnet-4-5-20250929-v1:0"),
+  // Inference profiles are Region-scoped: "au." is the Sydney family.
+  bedrockModelId: text("bedrockModelId", "au.anthropic.claude-sonnet-5"),
   pollyEnabled: flag("polly", false),
   pollyVoiceId: text("pollyVoice", "Joanna"),
   ...(budgetEmail ? { budgetEmail } : {}),

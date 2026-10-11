@@ -28,7 +28,7 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): Config {
     demoMode: asBoolean(env.DEMO_MODE),
     firmsMapKey: env.FIRMS_MAP_KEY?.trim() || undefined,
     amazonLocationApiKey: env.AMAZON_LOCATION_API_KEY?.trim() || undefined,
-    awsRegion: env.AWS_REGION?.trim() || "us-east-1",
+    awsRegion: env.AWS_REGION?.trim() || "ap-southeast-2",
     nwsUserAgent: env.NWS_USER_AGENT?.trim() || "SafeZone (safezone-hackathon@example.com)",
     allowedOrigins: (env.ALLOWED_ORIGINS ?? "http://localhost:5173")
       .split(",")

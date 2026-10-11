@@ -9,9 +9,19 @@ import {
   Map as MapLibreMap,
   NavigationControl,
   Popup,
+  setWorkerUrl,
   type GeoJSONSource,
   type LngLatBoundsLike,
 } from "maplibre-gl";
+/*
+ * MapLibre loads its worker from a URL it computes itself, which the dev server
+ * resolves straight out of node_modules — so the map works locally while the
+ * production build never emits the file, and the deployed site asks CloudFront
+ * for a worker that is not there. `?worker&url` makes Vite bundle it (it is an
+ * ES module that imports a sibling, so copying the file alone is not enough)
+ * and hand back the hashed asset URL.
+ */
+import workerUrl from "maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url";
 import type { MapLayer, MapView } from "@safezone/shared";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { startAnimations } from "./animate.js";
@@ -30,6 +40,8 @@ export interface MapCanvasProps {
   hidden?: ReadonlySet<string>;
   onReady?: () => void;
 }
+
+setWorkerUrl(workerUrl);
 
 export function MapCanvas({ layers, view, hidden, onReady }: MapCanvasProps): React.JSX.Element {
   const container = useRef<HTMLDivElement>(null);

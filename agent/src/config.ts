@@ -27,10 +27,10 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): Config {
     mcpServerUrl: env.MCP_SERVER_URL?.trim() || "http://localhost:8787/mcp",
     bedrockEnabled: asBoolean(env.BEDROCK_ENABLED, false),
     // Any tool-capable model available in the account's region works (SPEC 7.2).
-    bedrockModelId: env.BEDROCK_MODEL_ID?.trim() || "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
+    bedrockModelId: env.BEDROCK_MODEL_ID?.trim() || "au.anthropic.claude-sonnet-5",
     pollyEnabled: asBoolean(env.POLLY_ENABLED, asBoolean(env.BEDROCK_ENABLED, false)),
     pollyVoiceId: env.POLLY_VOICE_ID?.trim() || "Joanna",
-    awsRegion: env.AWS_REGION?.trim() || "us-east-1",
+    awsRegion: env.AWS_REGION?.trim() || "ap-southeast-2",
     allowedOrigins: (env.ALLOWED_ORIGINS ?? "http://localhost:5173")
       .split(",")
       .map((origin) => origin.trim())

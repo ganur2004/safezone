@@ -22,7 +22,19 @@ Both services are stateless Express apps behind buffered Function URLs: no API G
 nothing to keep warm. The MCP server's URL allows any origin because Alexa+ has to reach it too; the
 agent's allows only the CloudFront domain.
 
-Region is `us-east-1` by default, which is where Bedrock model access is easiest to get.
+Region is `ap-southeast-2` (Sydney). SPEC 10 planned `us-east-1`, but AWS assigns a new account's
+project a Region from the owner's contact country and will not move it without irreversibly turning
+the account into an Organization and editing the service control policy that pins the Region. The
+simulator is unaffected — CloudFront serves it from an edge near the viewer — and only the API calls
+cross the Pacific, a couple of hundred milliseconds on an answer that already takes a second or two.
+
+Inference profiles are Region-scoped, so the model id carries the `au.` prefix in Sydney where it
+would be `us.` in the United States. To see what a Region offers:
+
+```bash
+aws bedrock list-inference-profiles --region ap-southeast-2 --type-equals SYSTEM_DEFINED \
+  --query "inferenceProfileSummaries[?status=='ACTIVE'].[inferenceProfileId]" --output text
+```
 
 ## Before the first deploy
 
@@ -36,7 +48,7 @@ Region is `us-east-1` by default, which is where Bedrock model access is easiest
 2. Bootstrap CDK once per account and region:
 
    ```bash
-   npx cdk bootstrap aws://<account-id>/us-east-1
+   npx cdk bootstrap aws://<account-id>/ap-southeast-2
    ```
 
 3. Optional, for live fire data — store the NASA FIRMS key in Secrets Manager. It is pulled in at
@@ -87,8 +99,8 @@ The first deploy prints three outputs:
 
 ```
 SafeZone.SimulatorUrl = https://d111111abcdef8.cloudfront.net
-SafeZone.AgentUrl     = https://<id>.lambda-url.us-east-1.on.aws/
-SafeZone.McpEndpoint  = https://<id>.lambda-url.us-east-1.on.aws/mcp
+SafeZone.AgentUrl     = https://<id>.lambda-url.ap-southeast-2.on.aws/
+SafeZone.McpEndpoint  = https://<id>.lambda-url.ap-southeast-2.on.aws/mcp
 ```
 
 The simulator reads the agent URL at runtime from `/config.json`, which the same deployment writes

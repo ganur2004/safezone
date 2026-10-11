@@ -12,15 +12,24 @@ import { cacheKey, postForJson, withCache } from "../lib/http.js";
 export const OVERPASS_SOURCE_NAME = "OpenStreetMap (Overpass API)";
 export const OVERPASS_URL = "https://www.openstreetmap.org/copyright";
 /**
- * Public Overpass instances are frequently busy and answer 504; we try them in
- * order. Each attempt is capped well below the 8s of the other sources, because
- * Overpass is genuinely slower and a voice answer still has to arrive.
+ * Public Overpass instances fail often and independently: measured from a
+ * deployed Lambda, one request in three came back 500 while kumi.systems was
+ * returning 500 for everything. Both of the global mirrors appear here, and the
+ * main one appears twice, because these failures arrive fast (half a second to
+ * two seconds) and are usually gone on the next try — so a repeat costs little
+ * and recovers most of them.
+ *
+ * Region-limited instances are deliberately absent: overpass.osm.ch answers 200
+ * with zero elements outside Switzerland, which would look like "no hospitals
+ * nearby" rather than an error.
  */
 const OVERPASS_ENDPOINTS = [
   "https://overpass-api.de/api/interpreter",
   "https://overpass.kumi.systems/api/interpreter",
+  "https://overpass-api.de/api/interpreter",
 ];
-const OVERPASS_ATTEMPT_TIMEOUT_MS = 12000;
+/** Three attempts have to fit inside the Lambda's own timeout. */
+const OVERPASS_ATTEMPT_TIMEOUT_MS = 10000;
 const OVERPASS_USER_AGENT = "SafeZone/0.1";
 
 export type SafePlaceType = "hospital" | "fire_station" | "shelter" | "any";
