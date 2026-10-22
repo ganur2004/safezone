@@ -143,14 +143,14 @@ Weather Service, USGS, Open-Meteo, OpenStreetMap / Overpass, Web Speech API.
   answered every request with "415 Content-Type must be application/json" while the health check
   looked fine, because the MCP SDK's transport builds its WHATWG `Request` from `rawHeaders`. The
   pull request populates it, with a test.
-  - Contribution: _PR URL_
+  - Contribution: https://github.com/dougmoscrop/serverless-http/pull/315
   - Repository: `dougmoscrop/serverless-http` (MIT)
 
 ## Try it
 
 - Live demo: https://d227d864bivil2.cloudfront.net
-- Repository: _public GitHub URL_
-- Video: _YouTube link_
+- Repository: https://github.com/ganur2004/safezone
+- Video: https://youtu.be/uXzbvXpvTok
 
 > SafeZone is a demonstration project. It does not replace official emergency services. In an
 > emergency, call 911 and follow the instructions of local authorities.

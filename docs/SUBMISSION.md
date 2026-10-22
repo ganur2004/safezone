@@ -3,17 +3,19 @@
 The checklist from SPEC section 14, with honest status. Deadline: **22 October 2026** (internal;
 Devpost closes 23 October, 12:00 PDT).
 
-| #   | Item                                  | Status      | Who / what is needed                                                                         |
-| --- | ------------------------------------- | ----------- | -------------------------------------------------------------------------------------------- |
-| 1   | Public repository, MIT licence        | ⚠️ partly   | `LICENSE` is in place; repo starts **private**, must be flipped to public before submitting  |
-| 2   | README in English, with a screenshot  | ✅ done     | screenshots in `docs/images/`                                                                |
-| 3   | Video, under 3 minutes, YouTube/Vimeo | ❌ not done | must be recorded — script in `VIDEO-SCRIPT.md`                                               |
-| 4   | Devpost description in English        | ✅ drafted  | `DEVPOST.md`; paste into the form                                                            |
-| 5   | Feedback on the Amazon tools          | ✅ done     | `AMAZON-TOOLS-FEEDBACK.md`                                                                   |
-| 6   | Friction log                          | ✅ done     | `FRICTION-LOG.md`, four entries                                                              |
-| 7   | Mini-competitions named               | ⚠️ partly   | AWS Builder qualifies; Open Source needs the serverless-http PR opened and its URL pasted in |
-| 8   | Both team members on Devpost          | ❌ not done | add each other on the submission                                                             |
-| 9   | Submitted before 22 October           | ❌ not done | —                                                                                            |
+**Submitted on 22 October 2026: https://devpost.com/software/safezone-7xzlan**
+
+| #   | Item                                  | Status  | Who / what is needed                                                          |
+| --- | ------------------------------------- | ------- | ----------------------------------------------------------------------------- |
+| 1   | Public repository, MIT licence        | ✅ done | https://github.com/ganur2004/safezone, public; GitHub detects the MIT licence |
+| 2   | README in English, with a screenshot  | ✅ done | screenshots in `docs/images/`                                                 |
+| 3   | Video, under 3 minutes, YouTube/Vimeo | ✅ done | https://youtu.be/uXzbvXpvTok                                                  |
+| 4   | Devpost description in English        | ✅ done | from `DEVPOST.md`                                                             |
+| 5   | Feedback on the Amazon tools          | ✅ done | `AMAZON-TOOLS-FEEDBACK.md`                                                    |
+| 6   | Friction log                          | ✅ done | `FRICTION-LOG.md`, four entries                                               |
+| 7   | Mini-competitions named               | ✅ done | AWS Builder qualifies; Open Source: serverless-http pull request #315 is open |
+| 8   | Both team members on Devpost          | ✅ done | both on the submission                                                        |
+| 9   | Submitted before 22 October           | ✅ done | https://devpost.com/software/safezone-7xzlan                                  |
 
 ## What is blocked, and on what
 
@@ -42,20 +44,20 @@ npm run build && npx cdk deploy --prefix infra \
 
 ### 2. The video
 
-**Blocked on: somebody recording it.** `VIDEO-SCRIPT.md` has the shot list, the narration and the
+**Done: https://youtu.be/uXzbvXpvTok.** `VIDEO-SCRIPT.md` has the shot list, the narration and the
 timings, and the demo runs from recorded fixtures so it cannot fail live. Record in Chrome — voice
 input needs it.
 
-### 3. The Open Source mini challenge
+### 3. The Open Source mini challenge — **done**
 
-**Blocked on: forking and opening the pull request.** The rules do not count SafeZone's own licence:
+**Opened: https://github.com/dougmoscrop/serverless-http/pull/315.** The rules do not count SafeZone's own licence:
 the contribution has to be _additional_ to the primary submission, which is why the form asks for a
 contribution URL **and** a project repository URL separately.
 
 The contribution is ready as a branch, `populate-raw-headers` against `dougmoscrop/serverless-http`:
 a fix plus a test for `rawHeaders` never being populated — the bug that made every call to our own
-MCP server return 415 on Lambda. Fork the repository, push the branch, open the pull request, and
-paste its URL into `DEVPOST.md`. The rules say a pull request does not have to be merged.
+MCP server return 415 on Lambda. It is linked from `DEVPOST.md`. The rules say a pull request does
+not have to be merged.
 
 ### 4. Alexa+ registration
 
@@ -79,11 +81,11 @@ Option 3 costs nothing and uses real recorded data. Option 1 is the best if the 
 
 ## Before submitting
 
-- [ ] **Make the repository public.** It was pushed private on purpose; a private repo fails the
+- [x] **Make the repository public.** It was pushed private on purpose; a private repo fails the
       first line of the checklist, and a judge cannot open the link.
 - [ ] `npm install && npm run build && npm test && npm run lint` on a clean clone
 - [ ] `npm run demo` works with no `.env` present
-- [ ] README's live demo link points at the real CloudFront URL
-- [ ] `DEVPOST.md` links filled in: demo, repository, video
+- [x] README's live demo link points at the real CloudFront URL
+- [x] `DEVPOST.md` links filled in: demo, repository, video
 - [ ] Screenshots regenerated if the interface changed
-- [ ] Repository made public, and the licence visible on the GitHub page
+- [x] Repository made public, and the licence visible on the GitHub page
