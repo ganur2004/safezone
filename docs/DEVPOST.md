@@ -62,8 +62,10 @@ you speak  →  simulator  →  /api/chat  →  agent  →  MCP tools  →  open
   detections, NOAA/NWS for official alerts, USGS for earthquakes, Open-Meteo for air quality and
   wind, OpenStreetMap through Overpass for hospitals and shelters, Amazon Location Service for
   geocoding and routing.
-- **Agent service** — plays the part Alexa+ plays for a real device: Amazon Bedrock runs a Converse
-  tool-use loop over the MCP tools, and Amazon Polly speaks the answer.
+- **Agent service** — plays the part Alexa+ plays for a real device, and Amazon Polly speaks the
+  answer. Its Amazon Bedrock Converse tool-use loop is written and unit-tested; while our AWS account
+  finishes verification for Bedrock, the live deployment runs the deterministic scripted fallback
+  over the same MCP tools, and switching to Bedrock is one redeploy.
 - **Simulator** — React and MapLibre. Web Speech API for listening, one map layer style per hazard
   kind, and a risk panel that shows the reasoning rather than just the verdict.
 - **Infrastructure** — AWS CDK: CloudFront and S3 for the simulator, a Lambda Function URL each for
@@ -125,6 +127,8 @@ device with a screen can show the same map inside the conversation.
 **Watching instead of answering.** Follow a place and speak up when its risk level changes, so the
 first you hear about the fire is before you think to ask.
 
+**Bedrock on in production.** Once account verification completes.
+
 ## Built with
 
 TypeScript, Node.js, Model Context Protocol, AWS Lambda, Amazon Bedrock, Amazon Polly, Amazon
@@ -134,9 +138,11 @@ Weather Service, USGS, Open-Meteo, OpenStreetMap / Overpass, Web Speech API.
 ## Prize categories
 
 - **Alexa+ track** — a self-hosted MCP server, which the rules accept in place of an Agent Skill.
-- **AWS Builder (mini challenge)** — Amazon Bedrock for the tool loop, Polly for speech, Location
-  Service for geocoding and routing, and the whole deployment on Lambda, CloudFront and S3,
-  described in CDK. The integrations are documented in `docs/ARCHITECTURE.md` and `docs/DEPLOY.md`.
+- **AWS Builder (mini challenge)** — Polly for speech, Location Service for geocoding and routing,
+  and the whole deployment on Lambda, CloudFront, S3 and Secrets Manager, described in CDK. The
+  Bedrock Converse tool loop is written and unit-tested; the live demo runs the scripted fallback
+  until the account finishes verification for Bedrock. The integrations are documented in
+  `docs/ARCHITECTURE.md` and `docs/DEPLOY.md`.
 - **Open Source (mini challenge)** — a fix upstream in `serverless-http`, found while putting this
   project on Lambda. `ServerlessRequest` extends `http.IncomingMessage` and fills in `headers` but
   never `rawHeaders`, so anything reading that standard property sees nothing. Our MCP server
